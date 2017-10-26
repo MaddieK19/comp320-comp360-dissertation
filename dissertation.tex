@@ -95,45 +95,37 @@ The abstract goes here.
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{I}{troduction} section 
-\subsection{What is (are) the key research question(s) that you will seek to answer in	your project?}
-How does visualising RRT path finding in an AI agent effect the perceived intelligence of the agent?
+\IEEEPARstart{I}{troduction} section \\
+\\
+The research questions proposed in this project are: how does visualising RRT path finding in a Non Player Character (NPC) effect the perceived intelligence of the NPC in digital games? and how does visualising RRT path finding in a Non Player Character (NPC) effect the way partcipants navigate a level of game? 
 
-How does visualising RRT path finding in an AI agent effect the the way players navigate a level of game?
-
-\subsection{How will answering these questions contribute to the state of knowledge in the field of your project?}
-Papers have looked at visualising and foregrounding AI but not at what effect this has on the player's perception of how intelligent the agent is.
-
-The question proposed in this paper is: how does visualising RRT path finding in an AI agent effect the perceived intelligence of the agent in digital games?  
-
-While visualising and foregrounding AI in games has been looked at previously \cite{} the effects on perceived intelligence have not been researched??
-
-The aim of the paper is visualise RRT path-finding on an AI agent in a game .....
+The project will look at different methods of visualising RRT path finding to investigate what effects that can have on how the partcipants plays the game and explores the level.  Previous papers have researched visualising Artifical Intelligence (AI) and foregrounding AI but not at what effect this has on how the partcipants play the game.
 
 
 \subsection{Hypothesis:}
-Null: Visualising RRT has no effect on perceived intelligence of the AI.
+Null: Visualising RRT has no effect on how the partcipant plays a level of game. \\
+Hypothesis: Visualising RRT has a significant effect on how the partcipant plays a level of game. 
 
 
 \section{Literature Review}
-\subsection{Visualising Data/AI}
+\subsection{Visualising Data and AI}
+AI is frequently used in digital games. However, Treanor \textit{et al} say that the AI is often designed to fit the game and is therefore rudimentary??? \cite{treanor2015}. They suggest a series of design patterns that foregrounds AI in games. ....  
+They surveyed many games that foreground AI and proposed design patterns for different methods of foregrounding AI. The two design patterns of interest for this paper are AI as a Villian and AI is visualised. The design pattern "AI as Villian" is where the enemy's AI is trying to create an experience instead or out right defeating the player. This related the this paper as the visualising of RRT is not to find a way to find the player but to give the player a way to predict or interpret what the Ai is doing and therfore overcome it.
+Another design pattern of interest is "AI is Visualised". This pattern involves visualising the AI's state and decision making. This is normally hidden from the player but this design pattern looks at making a mechanic from visualising it. The example given by Treanor \textit{et al} is Third Eye Crime.  Third Eye Crime is a game that followed the "AI is Visualised" design pattern \cite{Isla2014}.  Third Eye Crime displayed the enemy's path finding to the player using Occupancy maps.  
+This was designed to make the player want trigger the mechanic ...  Again this paper will also use this design pattern by visualising the NPC's pathfinding.  The RRT pathfinding will be visualised in different ways.
 
-Haworth \textit{et al} research visualising decision trees in games to see what effect it had on children's analytical reasoning and game play \cite{Haworth2010}. 
 
-While they did not come any definite conclusions their results suggested that data aided players in playing the game. However an issue they noted was that the game could be unbalanced at the end making the usefulness of the tree being displayed questionable.  
+While Haworth \textit{et al} do not visualise an AI process they do visualise the possible decsision in a game on a tree structure \cite{Haworth2010}. They research visualising decision trees in a game to see what effect it had on children's analytical reasoning and game play.  While they did not come to any definite conclusions their results suggested that data aided players in playing the game as in later level the children struggled to beat the game without the visualised tree. However, an issue they noted was that the game could be unbalanced at the end making the usefulness of the tree being questionable.  
 
-Haworth \textit{et al} only made a simple game that was tested on children. In contrast Isla visualised pathfinding in a game that is now for sale?? (Word it better) \cite{Isla2014}.
+A further issue is that Haworth \textit{et al} only tested the tree in a relatively simple 2D game that was tested on children. This does not give any data on 3D games on the market??? In contrast, Isla's visualised pathfinding in Third Eye Crime is on sale?? (Word it better) \cite{Isla2014}.
  
-Bauer \textit{et al} also research visualising tree structures? \cite{bauer2012}. They used Rapidly-Exploring Random Trees (RRT) in level design tools to predict possible moves the player could make. They visualised  
+Like  Haworth \textit{et al}, Bauer \textit{et al} also research visualising tree structures \cite{bauer2012}. However, they did use an AI technique, they used Rapidly-Exploring Random Trees (RRT). They used RRT in level design tools to predict possible moves the player could make.  They then used a clustering algorithm to organise the tree to make it legiable? 
+
  
-CHECK Cook \textit{et al} surveyed many games that foreground AI and proposed design patterns for different methods of foregrounding AI.  The method proposed in this paper is similar to their design pattern Visualising AI.  
-Third Eye Crime is a game that followed this design pattern \cite{Isla2014}.  Third Eye Crime displayed the enemy's path finding to the player using Occupancy maps. 
- 
-This was designed to make the player want trigger the mechanic ...  Similarly the pathfinding visualisation  
 
 
 \subsection{Pathfinding}
-In digital games the A* path finding algorithm appears to be the be the most widely used \cite{Algfoor2015}. 
+In digital games the A* path finding algorithm appears to be the most widely used \cite{Algfoor2015}. 
 
 Third Eye Crime \cite{Isla2014} visualises enemy path finding as the main mechanic. Isla uses occupancy maps this does not produced an exact path but shows the probability of the players being in an area. 
 
@@ -146,8 +138,11 @@ PAPER ON RRT
 
 
 \section{Methodology}
-\subsection{What methodology will you use to seek answers to these questions?}
-The methodology that will be used to seek the answers to the proposed questions will be play testing and questionnaires. This will require human partcipants to play the game and fill in the questionnaires. There will be mulitple variations of the game. The first will have no visualiation the NPC will use pathfinding to patrol the level but the will be no visualisation to indicate what it is doing.  The second variation will have a visualisation of the RRT pathfinding in front of it. While the RRT will be used to pathfind in a large area on a small area will be visualised in an attempt to not confuse the partcipants. The third variation will also have visualised RRt pathfinding but instead of a visual tree it will be environmental queues that give the partcipants clues to where the NPC may go.
+The methodology that will be used to seek the answers to the proposed questions will be play testing and questionnaires. This will require human partcipants to play the game and fill in the questionnaires. 
+
+\subsection{Playtest Variations}
+A-B testing!!!
+There will be mulitple variations of the game. The first will have no visualiation the NPC will use pathfinding to patrol the level but the will be no visualisation to indicate what it is doing.  The second variation will have a visualisation of the RRT pathfinding in front of it. While the RRT will be used to pathfind in a large area on a small area will be visualised in an attempt to not confuse the partcipants. The third variation will also have visualised RRt pathfinding but instead of a visual tree it will be environmental queues that give the partcipants clues to where the NPC may go.
 
 While the participant is playing the game will export their location to a CSV file every second for use in R. There will also be a questionnaire for the participants to fill out after completing the play test.
 
