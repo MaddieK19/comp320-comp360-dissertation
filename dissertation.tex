@@ -95,8 +95,7 @@ The abstract goes here.
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{I}{troduction} section \\
-\\
+\IEEEPARstart{I}{troduction} section.... \\
 The research questions proposed in this project are: how does visualising RRT path finding in a Non Player Character (NPC) effect the perceived intelligence of the NPC in digital games? and how does visualising RRT path finding in a Non Player Character (NPC) effect the way partcipants navigate a level of game? 
 
 The project will look at different methods of visualising RRT path finding to investigate what effects that can have on how the partcipants plays the game and explores the level.  Previous papers have researched visualising Artifical Intelligence (AI) and foregrounding AI but not at what effect this has on how the partcipants play the game.
@@ -109,8 +108,8 @@ Hypothesis: Visualising RRT has a significant effect on how the partcipant plays
 
 \section{Literature Review}
 \subsection{Visualising Data and AI}
-AI is frequently used in digital games. However, Treanor \textit{et al} say that the AI is often designed to fit the game and is therefore rudimentary??? \cite{treanor2015}. They suggest a series of design patterns that foregrounds AI in games. ....  
-They surveyed many games that foreground AI and proposed design patterns for different methods of foregrounding AI. The two design patterns of interest for this paper are AI as a Villian and AI is visualised. The design pattern "AI as Villian" is where the enemy's AI is trying to create an experience instead or out right defeating the player. This related the this paper as the visualising of RRT is not to find a way to find the player but to give the player a way to predict or interpret what the Ai is doing and therfore overcome it.
+While AI is frequently used in digital games it is not often visualised or foregrounded. However, Treanor \textit{et al} say that the AI is often designed to fit the game and is therefore rudimentary??? \cite{treanor2015}.
+They surveyed many games that foreground AI in different ways and proposed design patterns for different methods of foregrounding AI. The two design patterns of interest for this project are AI as a Villian and AI is Visualised. The design pattern "AI as Villian" is where the enemy's AI is trying to create an experience instead or out right defeating the player. The example they gave as an example of this pattern was Alien Isloation where the player is hunted by an NPC.  This related the this paper as the visualising of RRT is not to find a way to find the player but to give the player a way to predict or interpret what the Ai is doing and therfore overcome it.
 Another design pattern of interest is "AI is Visualised". This pattern involves visualising the AI's state and decision making. This is normally hidden from the player but this design pattern looks at making a mechanic from visualising it. The example given by Treanor \textit{et al} is Third Eye Crime.  Third Eye Crime is a game that followed the "AI is Visualised" design pattern \cite{Isla2014}.  Third Eye Crime displayed the enemy's path finding to the player using Occupancy maps.  
 This was designed to make the player want trigger the mechanic ...  Again this paper will also use this design pattern by visualising the NPC's pathfinding.  The RRT pathfinding will be visualised in different ways.
 
@@ -121,7 +120,7 @@ A further issue is that Haworth \textit{et al} only tested the tree in a relativ
  
 Like  Haworth \textit{et al}, Bauer \textit{et al} also research visualising tree structures \cite{bauer2012}. However, they did use an AI technique, they used Rapidly-Exploring Random Trees (RRT). They used RRT in level design tools to predict possible moves the player could make.  They then used a clustering algorithm to organise the tree to make it legiable? 
 
- 
+* how to present data to player 
 
 
 \subsection{Pathfinding}
@@ -132,7 +131,7 @@ Third Eye Crime was previously mentioned for it's use of design patterns. Howeve
  
 A further paper on path finding is Wang and Lu's paper which looksg at path finding in a 3D environment. While again they were using A* they look at using A* in 3D and suggest using nodes instead of a grid?? \cite{wang2012}.
 
-PAPER ON RRT
+Rapidly-Exploring Random Trees(RRT) are a search method used more widely in robotics than digital games\cite{Kuffner2000}. Kuffner and LaValle first proposed RRT in 2000, they intended to produce a random algorithm more efficent than the other search algorithms avaliable at the time. RRT Path Planner is a variant of RRT proposed by Kuffner and LaValle that can be used to find paths from the generated tree \cite{Kuffner2000}.
 
 
 
@@ -141,7 +140,10 @@ The methodology that will be used to seek the answers to the proposed questions 
 
 \subsection{Playtest Variations}
 There will be mulitple variations of the game. The first will have no visualiation the NPC will use pathfinding to patrol the level but the will be no visualisation to indicate what it is doing.  The second variation will have a visualisation of the RRT pathfinding in front of it. While the RRT will be used to pathfind in a large area on a small area will be visualised in an attempt to not confuse the partcipants. The third variation will also have visualised RRt pathfinding but instead of a visual tree it will be environmental queues that give the partcipants clues to where the NPC may go. A-B testing will used on partcipants. Partcipants will be assigned different version of the game to play and then the results will be compared. \\
-While the participant is playing the game will export their location to a CSV file every second for use in R. There will also be a questionnaire for the participants to fill out after completing the play test.
+\\
+While the participant is playing the game will export their current location to a CSV file every second for use in R. A heat map can then be generated from this data to see if there are any significant patterns. A heat map will be used as they are easy to generate and easy to discern patterns from \cite{Wallner2015}
+
+There will also be a questionnaire for the participants to fill out after completing the play test.
 
 \subsection{Questionnaire}
 The questionnaire will be completed using an online questionnaire such as Google Forms. The parcipants will have to answers questions using Likert scales.
@@ -150,8 +152,8 @@ The questionnaire will be completed using an online questionnaire such as Google
 
 
 \subsection{Preliminary Results}
-What preliminary results have you obtained?
-None??
+What preliminary results have you obtained? \\
+No preliminary experiments have been therefore there are no preliminary results yet.
 
 
 \section{Conclusion}
