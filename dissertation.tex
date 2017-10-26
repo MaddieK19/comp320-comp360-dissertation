@@ -125,13 +125,12 @@ Like  Haworth \textit{et al}, Bauer \textit{et al} also research visualising tre
 
 
 \subsection{Pathfinding}
-In digital games the A* path finding algorithm appears to be the most widely used \cite{Algfoor2015}. 
+In digital games the A* path finding algorithm appears to be the most widely used \cite{Algfoor2015}.  Algfoor \textit{et al} surveyed numerous papers on path finding. The focus appeared to be on the type of grids used in pathfindign and then numerous algorithms that can be used \cite{Algfoor2015}. The most popular being the A* algorithm for use in digital games and robotics. RRT pathfindgin was nto mentioned. 
+They surveryed many grid types and gave the advantages of each. However, RRT does not use grids it instead uses nodes makeing the grid type irrelevant.\\
 
-Third Eye Crime \cite{Isla2014} visualises enemy path finding as the main mechanic. Isla uses occupancy maps this does not produced an exact path but shows the probability of the players being in an area. 
-
-Algfoor \textit{et al} surveyed numerous papers on path finding. 
-
-Wang and Lu looked at path finding in 3D while the paper applied to planes it may be relevant here... \cite{wang2012}
+Third Eye Crime was previously mentioned for it's use of design patterns. However it also uses pathfinding as an improtant mechanic \cite{Isla2014}. Isla uses occupancy map for pathfinding. Occupancy or Influence maps do not produce an exact path instead they show the probability of the player being in different parts of the map \cite{Isla2014, Miles2006}. Isla used Occupancy maps to show where the enemy AI thinks the player currently is. Miles and Loius used influcnece maps but used it to inform A* pathfinding instead of use the map itelf for pathfinding \cite{Miles2006}.\\
+ 
+A further paper on path finding is Wang and Lu's paper which looksg at path finding in a 3D environment. While again they were using A* they look at using A* in 3D and suggest using nodes instead of a grid?? \cite{wang2012}.
 
 PAPER ON RRT
 
@@ -141,10 +140,13 @@ PAPER ON RRT
 The methodology that will be used to seek the answers to the proposed questions will be play testing and questionnaires. This will require human partcipants to play the game and fill in the questionnaires. 
 
 \subsection{Playtest Variations}
-A-B testing!!!
-There will be mulitple variations of the game. The first will have no visualiation the NPC will use pathfinding to patrol the level but the will be no visualisation to indicate what it is doing.  The second variation will have a visualisation of the RRT pathfinding in front of it. While the RRT will be used to pathfind in a large area on a small area will be visualised in an attempt to not confuse the partcipants. The third variation will also have visualised RRt pathfinding but instead of a visual tree it will be environmental queues that give the partcipants clues to where the NPC may go.
-
+There will be mulitple variations of the game. The first will have no visualiation the NPC will use pathfinding to patrol the level but the will be no visualisation to indicate what it is doing.  The second variation will have a visualisation of the RRT pathfinding in front of it. While the RRT will be used to pathfind in a large area on a small area will be visualised in an attempt to not confuse the partcipants. The third variation will also have visualised RRt pathfinding but instead of a visual tree it will be environmental queues that give the partcipants clues to where the NPC may go. A-B testing will used on partcipants. Partcipants will be assigned different version of the game to play and then the results will be compared. \\
 While the participant is playing the game will export their location to a CSV file every second for use in R. There will also be a questionnaire for the participants to fill out after completing the play test.
+
+\subsection{Questionnaire}
+The questionnaire will be completed using an online questionnaire such as Google Forms. The parcipants will have to answers questions using Likert scales.
+
+
 
 
 \subsection{Preliminary Results}
