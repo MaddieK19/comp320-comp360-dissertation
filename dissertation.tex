@@ -112,15 +112,15 @@ AI appears in most modern digital games. However, it is rarely foreground or vis
 
 
 Treanor  \textit{et al}  surveyed many games that foreground AI in different ways.  From this they proposed a series of design patterns for foregrounding AI in digital games. 
-The two design patterns relevant to this project are firstly "AI as a Villain".  They describe this pattern as having the AI not try to outright defeat the player. Instead it's designed to create an experience like Alien Isolation.  In Alien Isolation the AI hunts the player. This foregrounded appears here as the player has to observe the AI and learn how to avoid. 
+The two design patterns relevant to this project are firstly ``AI as a Villain".  They describe this pattern as having the AI not try to outright defeat the player. Instead it's designed to create an experience like Alien Isolation.  In Alien Isolation the AI hunts the player. This foregrounded appears here as the player has to observe the AI and learn how to avoid. 
 
 This paper will also use AI as a villain as enemy NPC's  will have their path-finding visualized around them. The participants will have to observe this to learn how to not get caught by the enemy NPC.  
 
 
-The second relevant design pattern is "AI is Visualized". This is where there is a visual representation of the AI's state or decision making in the game. 
+The second relevant design pattern is ``AI is Visualized". This is where there is a visual representation of the AI's state or decision making in the game. 
 
 Most games hide this from the player but this design pattern visualizes it making it mechanic.  
-The example given by Treanor \textit{et al} is Third Eye Crime.  Third Eye Crime is a game that followed the "AI is Visualised" design pattern \cite{Isla2014}.  Third Eye Crime displayed the enemy's path finding to the player using Occupancy maps.  
+The example given by Treanor \textit{et al} is Third Eye Crime.  Third Eye Crime is a game that followed the ``AI is Visualised" design pattern \cite{Isla2014}.  Third Eye Crime displayed the enemy's path finding to the player using Occupancy maps.  
 This design to makes the player want trigger the mechanic.  
 
 This pattern is relevant to this project as the enemy NPC  will have  RRT path-finding visualized around it. Allowing the player to see where the enemy is going and decide how to overcome it.
@@ -140,7 +140,7 @@ Third Eye Crime was previously mentioned for it's use of design patterns. Howeve
  
 A further paper on path finding is Wang and Lu's paper which looks at path finding in a 3D environment. While again they were using A* they look at using A* in 3D and suggest using nodes instead of a grid?? \cite{wang2012}.
 
-Rapidly-Exploring Random Trees(RRT) are a search method used more widely in robotics than digital games \cite{Kuffner2000}. Kuffner and LaValle first proposed RRT in 2000, they intended to produce a random algorithm more efficient than the other search algorithms available at the time. RRT Path Planner is a variant of RRT that can be used to find paths from the generated tree \cite{Kuffner2000}.
+Rapidly-Exploring Random Trees (RRT) are a search method used more widely in robotics than digital games \cite{Kuffner2000}. Kuffner and LaValle first proposed RRT in 2000, they intended to produce a random algorithm more efficient than the other search algorithms available at the time. RRT Path Planner is a variant of RRT that can be used to find paths from the generated tree \cite{Kuffner2000}.
 
 RRT's goal is to find a path between two point with no collisions, the path found may not the the optimal path though \cite{Kuffner2000, Karaman2011}.  Karaman and Sertac say that the chance of RRT finding an optimal path is 0 \cite{karaman2010}.  Karaman \textit{et al} propose another version of RRT called RRT* this version 
 
