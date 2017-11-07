@@ -58,7 +58,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{ How Does Visualising RRT Path-finding in an NPC Effect How Participants Explore a Level?}
+\title{ How Does Visualising Path-finding in an NPC Effect How Participants Explore a Level?}
 %
 %
 % author name
@@ -96,6 +96,7 @@ The abstract goes here.
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
 \IEEEPARstart{I}{troduction} section.... \\
+\\
 The research questions proposed in this project are: how does visualising RRT path finding in a Non Player Character (NPC) effect the perceived intelligence of the NPC in digital games? and how does visualising RRT path finding in a Non Player Character (NPC) effect the way partcipants navigate a level of game? 
 
 The project will look at different methods of visualising RRT path finding to investigate what effects that can have on how the partcipants plays the game and explores the level.  Previous papers have researched visualising Artifical Intelligence (AI) and foregrounding AI but not at what effect this has on how the partcipants play the game.
@@ -109,7 +110,7 @@ The project will look at different methods of visualising RRT path finding to in
 \section{Related Work}
 \subsection{Foregrounding and Visualising AI}
 % Foreground visualising AI
-AI appears in most modern digital games. However, it is rarely foreground or visualized in those games.  Treanor  \textit{et al} say that the AI in games if often designed to fit the game. Therefore, this AI is supporting the game play   \cite{treanor2015, eladhari2011}.  \\
+AI appears in most modern digital games. However, it is rarely foreground or visualized in those games.  Treanor  \textit{et al} say that the AI in games if often designed to fit the game. Therefore, this AI is supporting the game play~\cite{treanor2015, eladhari2011}.  \\
 
 
 Treanor  \textit{et al}  surveyed many games that foreground AI in different ways.  From this they proposed a series of design patterns for foregrounding AI in digital games. 
@@ -121,54 +122,54 @@ This paper will also use AI as a villain as enemy NPC's  will have their path-fi
 The second relevant design pattern is ``AI is Visualized". This is where there is a visual representation of the AI's state or decision making in the game. 
 
 Most games hide this from the player but this design pattern visualizes it making it mechanic.  
-The example given by Treanor \textit{et al} is Third Eye Crime.  Third Eye Crime is a game that followed the ``AI is Visualised" design pattern \cite{Isla2014}.  Third Eye Crime displayed the enemy's path finding to the player using Occupancy maps.  
+The example given by Treanor \textit{et al} is Third Eye Crime.  Third Eye Crime is a game that followed the ``AI is Visualised" design pattern~\cite{Isla2014}.  Third Eye Crime displayed the enemy's path finding to the player using Occupancy maps.  
 This design to makes the player want trigger the mechanic.  
 
 This pattern is relevant to this project as the enemy NPC  will have  RRT path-finding visualized around it. Allowing the player to see where the enemy is going and decide how to overcome it.
 
 % Tidied up to here
 % Visualising in general
-While Haworth \textit{et al} do not visualise an AI process they do visualise the possible decision in a game on a tree structure \cite{Haworth2010}. They research visualising decision trees in a game to see what effect it had on children's analytical reasoning and game play.  While they did not come to any definite conclusions their results suggested that data aided players in playing the game as in later level the children struggled to beat the game without the visualised tree. However, an issue they noted was that the game could be unbalanced at the end making the usefulness of the tree being questionable.  
+While Haworth \textit{et al} do not visualise an AI process they do visualise the possible decision in a game on a tree structure~\cite{Haworth2010}. They research visualising decision trees in a game to see what effect it had on children's analytical reasoning and game play.  While they did not come to any definite conclusions their results suggested that data aided players in playing the game as in later level the children struggled to beat the game without the visualised tree. However, an issue they noted was that the game could be unbalanced at the end making the usefulness of the tree being questionable.  
 
-A further issue is that Haworth \textit{et al} only tested the tree in a relatively simple 2D game that was tested on children. This does not give any data on 3D games on the market??? In contrast, Isla's visualised path-finding in Third Eye Crime is on sale?? (Word it better) \cite{Isla2014}.
+A further issue is that Haworth~\textit{et al} only tested the tree in a relatively simple 2D game that was tested on children. This does not give any data on 3D games on the market??? In contrast, Isla's visualised path-finding in Third Eye Crime is on sale?? (Word it better)~\cite{Isla2014}.
  
-Like  Haworth \textit{et al}, Bauer \textit{et al} also research visualising tree structures \cite{bauer2012}. However, they did use an AI technique, they used Rapidly-Exploring Random Trees (RRT).
+Like  Haworth \textit{et al}, Bauer \textit{et al} also research visualising tree structures~\cite{bauer2012}. However, they did use an AI technique, they used Rapidly-Exploring Random Trees (RRT).
 
 \subsection{Pathfinding}
 % A* / pathfinding in games
 %  Expand this section
-In digital games the A* path finding algorithm appears to be the most widely used \cite{Algfoor2015}.  Algfoor \textit{et al} surveyed numerous papers on path finding. The focus appeared to be on the type of grids used in path-finding and then numerous algorithms that can be used \cite{Algfoor2015}. The most popular being the A* algorithm for use in digital games and robotics. RRT path-finding was not mentioned. 
+In digital games the A* path finding algorithm appears to be the most widely used~\cite{Algfoor2015}.  Algfoor \textit{et al} surveyed numerous papers on path finding. The focus appeared to be on the type of grids used in path-finding and then numerous algorithms that can be used~\cite{Algfoor2015}. The most popular being the A* algorithm for use in digital games and robotics. RRT path-finding was not mentioned. 
 They surveyed many grid types and gave the advantages of each. However, RRT does not use grids it instead uses nodes making the grid type irrelevant.\\
 
-Third Eye Crime was previously mentioned for it's use of design patterns. However it also uses path-finding as an important mechanic \cite{Isla2014}. Isla uses occupancy map for path-finding. Occupancy or Influence maps do not produce an exact path instead they show the probability of the player being in different parts of the map \cite{Isla2014, Miles2006}. Isla used Occupancy maps to show where the enemy AI thinks the player currently is. Miles and Loius used influence maps but used it to inform A* path-finding instead of use the map itself for path-finding \cite{Miles2006}.\\
+Third Eye Crime was previously mentioned for it's use of design patterns. However it also uses path-finding as an important mechanic \cite{Isla2014}. Isla uses occupancy map for path-finding. Occupancy or Influence maps do not produce an exact path instead they show the probability of the player being in different parts of the map~\cite{Isla2014, Miles2006}. Isla used Occupancy maps to show where the enemy AI thinks the player currently is. Miles and Loius used influence maps but used it to inform A* path-finding instead of use the map itself for path-finding~\cite{Miles2006}.\\
  
-A further paper on path finding is Wang and Lu's paper which looks at path finding in a 3D environment. While again they were using A* they look at using A* in 3D and suggest using nodes instead of a grid?? \cite{wang2012}.
+A further paper on path finding is Wang and Lu's paper which looks at path finding in a 3D environment. While again they were using A* they look at using A* in 3D and suggest using nodes instead of a grid??~\cite{wang2012}.
 
 %  RRT
 %  Expand this section
-Rapidly-Exploring Random Trees (RRT) are a search method used more widely in robotics than digital games \cite{Kuffner2000}. Kuffner and LaValle first proposed RRT in 2000, they intended to produce a random algorithm more efficient than the other search algorithms available at the time. RRT Path Planner is a variant of RRT that can be used to find paths from the generated tree \cite{Kuffner2000}.
+Rapidly-Exploring Random Trees (RRT) are a search method used more widely in robotics than digital games~\cite{Kuffner2000}. Kuffner and LaValle first proposed RRT in 2000, they intended to produce a random algorithm more efficient than the other search algorithms available at the time. RRT Path Planner is a variant of RRT that can be used to find paths from the generated tree~\cite{Kuffner2000}.
 
-RRT's goal is to find a path between two point with no collisions, the path found may not the the optimal path though \cite{Kuffner2000, Karaman2011}.  Karaman and Sertac say that the chance of RRT finding an optimal path is 0 \cite{karaman2010}.  Karaman \textit{et al} propose another version of RRT called RRT* this version 
+RRT's goal is to find a path between two point with no collisions, the path found may not the the optimal path though~\cite{Kuffner2000, Karaman2011}.  Karaman and Sertac say that the chance of RRT finding an optimal path is 0 \cite{karaman2010}.  Karaman \textit{et al} propose another version of RRT called RRT* this version 
 
 %  RRT & games
-Bauer and Popovic used RRT for level design in games  \cite{bauer2012}. Like Haworth \textit{et al} they visualised the data to aid users \cite{bauer2012, Haworth2010}. However unlike Haworth \textit{et al} the visualisation is for game developers not the players. 
+Bauer and Popovic used RRT for level design in games~\cite{bauer2012}. Like Haworth \textit{et al} they visualised the data to aid users~\cite{bauer2012}~\cite{Haworth2010}. However unlike Haworth \textit{et al} the visualisation is for game developers not the players. 
 
-Their focus is on level design not game-play. They designed a tool that could analyse a level generated by PCG or a level designer. They then use RRT to calculate possible routes the player could take when playing. This produced an image that was difficult to read so Dongen's method is used for graph clustering to make the output more legible \cite{bauer2012, van2001}.  This project is focused on using the visualisation in the game to the game design. However, a similar technique will be required to organise the RRT output to make it understandable to the player in way that they can look at the visualisation and interpret what the NPC is going to do. 
+Their focus is on level design not game-play. They designed a tool that could analyse a level generated by PCG or a level designer. They then use RRT to calculate possible routes the player could take when playing. This produced an image that was difficult to read so Dongen's method is used for graph clustering to make the output more legible~\cite{bauer2012, van2001}.  This project is focused on using the visualisation in the game to the game design. However, a similar technique will be required to organise the RRT output to make it understandable to the player in way that they can look at the visualisation and interpret what the NPC is going to do. 
 
 \subsection{Exploring Game Environments}
 % Wayfinding
-One method of guiding players through games is to use wayfinding. Wayfinding in games is often visual cues in the environment that will guide the player to an area of interest \cite{si2017, Bacim2008}. While the intention of visualising the RRT path-finding is not to guide players through a level but one of the behaviours being observed in participants is whether they  navigate or explore differently with the presence of visible path-finding. 
+One method of guiding players through games is to use wayfinding. Wayfinding in games is often visual cues in the environment that will guide the player to an area of interest~\cite{si2017, Bacim2008}. While the intention of visualising the RRT path-finding is not to guide players through a level but one of the behaviours being observed in participants is whether they  navigate or explore differently with the presence of visible path-finding. 
 
-Moura and Bartram investigated the effects different wayfinding cues have on players \cite{moura2014}.  They looked at methods used in AAA games and mimicked them in their own game. Their results showed that the absence of wayfinding cues was obvious to players. In contrast the version with wayfinding cues did not have enough cues to sufficiently guide the player. These results suggest that wayfinding cues alone may not be enough to guide the player. While the visualisation of RRT pathfinding in this project will be used as an enemy another application could be in wayfinding. Either as an enemy or friendly NPC the visualisation of path-finding could be used to aid the player. However, Moura and Bartram concluded that results were inconclusive and that more research is required. 
+Moura and Bartram investigated the effects different wayfinding cues have on players~\cite{moura2014}.  They looked at methods used in AAA games and mimicked them in their own game. Their results showed that the absence of wayfinding cues was obvious to players. In contrast the version with wayfinding cues did not have enough cues to sufficiently guide the player. These results suggest that wayfinding cues alone may not be enough to guide the player. While the visualisation of RRT pathfinding in this project will be used as an enemy another application could be in wayfinding. Either as an enemy or friendly NPC the visualisation of path-finding could be used to aid the player. However, Moura and Bartram concluded that results were inconclusive and that more research is required. 
  
 % Player Exploration
 %  Expand this section
-Si \textit{et al} investigated how players explore virtual environments \cite{si2017}. While their experiments were specific to Real Time Strategy (RTS) games the results may apply to other game types.
+Si \textit{et al} investigated how players explore virtual environments~\cite{si2017}. While their experiments were specific to Real Time Strategy (RTS) games the results may apply to other game types.
 
-*TODO* Link to Haworth visualisation sort of aided exploration of their maze game....
+*TODO* Link to Haworth visualisation sort of aided exploration of their maze game
 
 
-Moura \textit{et al} investigate way-finding cues in triple A games \cite{moura2014}. They want to see what effects these cues had on player behaviour and whether that behaviour could be classified. While their results were inconclusive they found that cues alone were not enough to guide the player.  
+Moura \textit{et al} investigate way-finding cues in triple A games~\cite{moura2014}. They want to see what effects these cues had on player behaviour and whether that behaviour could be classified. While their results were inconclusive they found that cues alone were not enough to guide the player.  
 
 \section{Methodology} %  SECTION NEEDS CITATIONS
 The methodology that will be used to seek the answers to the proposed questions will be play testing and questionnaires. This will require human participants to play the game and fill in the questionnaires. 
@@ -176,7 +177,7 @@ The methodology that will be used to seek the answers to the proposed questions 
 \subsection{Playtest Variations}
 There will be multiple variations of the game. The first will have no visualisation the NPC will use path-finding to patrol the level but the will be no visualisation to indicate what it is doing.  The second variation will have a visualisation of the RRT path-finding in front of it. While the RRT will be used to path-find in a large area on a small area will be visualised in an attempt to not confuse the participants. The third variation will also have visualised RRT path-finding but instead of a visual tree it will be environmental queues that give the participants clues to where the NPC may go. A-B testing will used on participants. Participants will be assigned different version of the game to play and then the results will be compared. \\
 \\
-While the participant is playing the game will export their current location to a .CSV file every second for use in R. A heat map can then be generated from this data to see if there are any significant patterns. A heat map will be used as they are easy to generate and easy to discern patterns from \cite{Wallner2015}.
+While the participant is playing the game will export their current location to a .CSV file every second for use in R. A heat map can then be generated from this data to see if there are any significant patterns. A heat map will be used as they are easy to generate and easy to discern patterns from~\cite{Wallner2015}.
 
 There will also be a questionnaire for the participants to fill out after completing the play test.\\
 
