@@ -95,11 +95,11 @@ The abstract goes here.
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{I}{troduction} section.... \\
+\IEEEPARstart{I}{troduction} section \\
 \\
-The research questions proposed in this project are: how does visualising RRT path finding in a Non Player Character (NPC) effect the perceived intelligence of the NPC in digital games? and how does visualising RRT path finding in a Non Player Character (NPC) effect the way partcipants navigate a level of game? 
+The research questions proposed in this project are: how does visualising RRT path finding in a Non Player Character (NPC) effect how a player explores a game?
 
-The project will look at different methods of visualising \textit{Rapidly Exploring Random Trees} (RRT) path finding to investigate what effects that can have on how the partcipants plays the game and explores the level.  Previous papers have researched visualising Artifical Intelligence (AI) and foregrounding AI but not at what effect this has on how the partcipants play the game.
+The project will look at visualising \textit{Rapidly Exploring Random Trees} (RRT) path finding to investigate what effects that can have on how the partcipants plays the game and explores the level.  Previous papers have researched visualising \textit{Artifical Intelligence} (AI) and foregrounding AI but not at what effect this has on how the partcipants play the game.
 
 
 \subsection{Hypothesis:}
@@ -144,7 +144,7 @@ Like  Haworth \textit{et al}, Bauer \textit{et al} also research visualising tre
 In digital games the A* path finding algorithm appears to be the most widely used~\cite{Algfoor2015}.  Algfoor \textit{et al} surveyed numerous papers on path finding. The focus appeared to be on the type of grids used in path-finding and then numerous algorithms that can be used~\cite{Algfoor2015}. The most popular being the A* algorithm for use in digital games and robotics. RRT path-finding was not mentioned. 
 They surveyed many grid types and gave the advantages of each. However, RRT does not use grids it instead uses nodes making the grid type irrelevant.\\
 
-Third Eye Crime was previously mentioned for it's use of design patterns. However it also uses path-finding as an important mechanic \cite{Isla2014}. Isla uses occupancy map for path-finding. Occupancy or Influence maps do not produce an exact path instead they show the probability of the player being in different parts of the map~\cite{Isla2014, Miles2006}. Isla used Occupancy maps to show where the enemy AI thinks the player currently is. Miles and Loius used influence maps but used it to inform A* path-finding instead of use the map itself for path-finding~\cite{Miles2006}.\\
+Third Eye Crime was previously mentioned for it's use of design patterns. However, it also uses visualisation as an important mechanic \cite{Isla2014}. Isla uses occupancy map to show where the enemy NPC thinks the player could be. Occupancy or Influence maps do not produce a path instead they show the probability of the player being in different locations across the map~\cite{Isla2014, Miles2006}. Isla used Occupancy maps to show where the enemy AI thinks the player currently is. He then used ....... for the NPC to navigate to the most likely location of the player. Similarily, Miles and Loius used also used influence maps. While their example is specific to \textit{Real Time Stratedgy} (RTS) games like Isla they used Occupancy maps as a base to for A* path-finding instead of A* using the map itself for path-finding~\cite{Miles2006}.\\
  
 A further paper on path finding is Wang and Lu's paper which looks at path finding in a 3D environment. While again they were using A* they look at using A* in 3D and suggest using nodes instead of a grid??~\cite{wang2012}.
 
