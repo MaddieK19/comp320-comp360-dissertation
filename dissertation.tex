@@ -117,7 +117,7 @@ Percent of level explored and/or time spent in level??
 AI is used in most modern digital games. However, it is rarely foregrounded or visualized in those games.  Treanor~\textit{et al} say that the AI in games if often designed to fit the game. Therefore, this AI is supporting the game play rather than being central to it~\cite{treanor2015, eladhari2011}.  \\
 
 Treanor~\textit{et al} surveyed many games that foreground AI in different ways.  From this they proposed a series of design patterns for foregrounding AI in digital games. 
-The two design patterns relevant to this project are firstly ``AI as a Villain".  They describe this pattern as having the AI not try to outright defeat the player. Instead it's designed to create an experience like Alien Isolation.  In Alien Isolation the AI hunts the player. This foregrounded appears here as the player has to observe the AI and learn how to avoid. 
+The two design patterns relevant to this project are firstly ``AI as a Villain".  They describe this pattern as having the AI not try to outright defeat the player. Instead it's designed to create an experience like Alien Isolation~\cite{game:AlienIsolation, treanor2015}.  In Alien Isolation the AI hunts the player. This foregrounded appears here as the player has to observe the AI and learn how to avoid. 
 
 This paper will also use AI as a villain as enemy NPC's  will have their path-finding visualized around them. The participants will have to observe this to learn how to not get caught by the enemy NPC.  
 
@@ -126,9 +126,9 @@ The second relevant design pattern is ``AI is Visualized". This is where there i
 
 Most games hide this from the player but this design pattern visualizes it making it mechanic.  
 The example given by Treanor \textit{et al} is the game Third Eye Crime.  Third Eye Crime is a game that followed the ``AI is Visualised" design pattern~\cite{Isla2014, game:ThirdEyeCrime}.  
-The game uses probabilistic object tracking through Occupancy maps. The game displays this as where the enemy thinks the player could be in the map.  The Occupancy Map is used to track the player \cite{Isla2014}.   Where stealth games normally involve avoiding enemies this design encourages the player to trigger the mechanic allowing them to use the visualisation to mislead and avoid the enemy \cite{Isla2014, game:ThirdEyeCrime}.  
+The game uses probabilistic object tracking through Occupancy maps. The game uses Occupancy Maps to display where the enemy thinks the player could be in the map, as the enemy moves around the map it removes areas where the player is not from the Occupancy Map~\cite{Isla2014}.  Generally stealth games involve avoiding enemies,  this design encourages the player to trigger the mechanic allowing them to use the visualisation to mislead and avoid the enemy \cite{Isla2014, game:ThirdEyeCrime}.  
 
-This pattern is relevant to this project as the enemy NPC  will have  RRT path-finding visualized around it. Allowing the player to see where the enemy is going and decide how to overcome it.
+This pattern is relevant to this project as the enemy NPC will have RRT path-finding visualized around it. Allowing the player to see where the enemy is going and decide how to overcome or outsmart it.
 
 % Tidied up to here
 % Visualising in general
@@ -144,10 +144,15 @@ Like  Haworth \textit{et al}, Bauer \textit{et al} also research visualising tre
 In digital games the A* path finding algorithm appears to be the most widely used~\cite{Algfoor2015}.  Algfoor \textit{et al} surveyed numerous papers on path finding. The focus appeared to be on the type of grids used in path-finding and then numerous algorithms that can be used~\cite{Algfoor2015}. The most popular being the A* algorithm for use in digital games and robotics. RRT path-finding was not mentioned. 
 They surveyed many grid types and gave the advantages of each. However, RRT does not use grids it instead uses nodes making the grid type irrelevant.\\
 
-Third Eye Crime was previously mentioned for it's use of design patterns. However, it also uses visualisation as an important mechanic \cite{Isla2014}. Isla uses occupancy map to show where the enemy NPC thinks the player could be. Occupancy or Influence maps do not produce a path instead they show the probability of the player being in different locations across the map~\cite{Isla2014, Miles2006}. Isla used Occupancy maps to show where the enemy AI thinks the player currently is. He then used ....... for the NPC to navigate to the most likely location of the player. Similarily, Miles and Loius used also used influence maps. While their example is specific to \textit{Real Time Stratedgy} (RTS) games like Isla they used Occupancy maps as a base to for A* path-finding instead of A* using the map itself for path-finding~\cite{Miles2006}.\\
+Third Eye Crime was previously mentioned for it's foregrounding of AI. However, it also uses visualisation as an important mechanic~\cite{Isla2014}~\cite{ game:ThirdEyeCrime}. Isla uses Occupancy Maps to show where the enemy NPC thinks the player could be. Occupancy or Influence maps do not produce a path instead they show the probability of the player being in different locations across the map~\cite{Isla2014, Miles2006}. Isla used Occupancy maps to show where the enemy AI thinks the player currently is. He then used ....... for the NPC to navigate to the most likely location of the player. Similarily, Miles and Loius used also used influence maps. While their example is specific to \textit{Real Time Stratedgy} (RTS) games like Isla they used Occupancy maps as a base to for A* path-finding instead of A* using the map itself for path-finding~\cite{Miles2006}.\\
  
 A further paper on path finding is Wang and Lu's paper which looks at path finding in a 3D environment. While again they were using A* they look at using A* in 3D and suggest using nodes instead of a grid??~\cite{wang2012}.
 
+Mendonça~\textit{et al} look at path-finding both in robotics and digital games~\cite{Mendonça2015}. Their focus is on stealth path-finding in games and applying that to robotics. Like RRT, the methods they propose does not necessarily find the optimal path~\cite{karaman2010}~\cite{Mendonça2015}. They tried to find the most stealthy path. They generated custom navigation meshes (navmeshes) and assigned a weight to each polygon in the navmesh depending on how close it is to cover. 
+^^ point is optimal not always necessary ^^
+\\
+
+navmeshes \cite{Hale2008} \cite{Mendonça2015}
 %  RRT
 %  Expand this section
 Rapidly-Exploring Random Trees~(RRT) are a search method used more widely in robotics than digital games~\cite{Kuffner2000}. Kuffner and LaValle first proposed RRT in 2000, they intended to produce a random algorithm more efficient than the other search algorithms available at the time. Figure~\ref{KuffnerRRT} shows  Kuffner and LaValle's RRT Path Planner a variant of RRT that can be used to find paths from the generated tree~\cite{Kuffner2000}.
@@ -159,7 +164,7 @@ Rapidly-Exploring Random Trees~(RRT) are a search method used more widely in rob
 \end{figure} 
 
 
-RRT's goal is to find a path between two point with no collisions, the path found may not the the optimal path though~\cite{Kuffner2000, Karaman2011}.  Karaman and Sertac say that the chance of RRT finding an optimal path is 0 \cite{karaman2010}.  Karaman \textit{et al} propose another version of RRT called RRT* this version 
+RRT's goal is to find a path between two point with no collisions, the path found may not the the optimal path though~\cite{Kuffner2000, Karaman2011}.  Karaman and Sertac say that the chance of RRT finding an optimal path is very unlikely~\cite{karaman2010}.  Karaman \textit{et al} propose another version of RRT called RRT* this version 
 
 %  RRT & games
 Bauer and Popovic used RRT for level design in games~\cite{bauer2012}. Like Haworth \textit{et al} they visualised the data to aid users~\cite{bauer2012}~\cite{Haworth2010}. However unlike Haworth \textit{et al} the visualisation is for game developers not the players. 
