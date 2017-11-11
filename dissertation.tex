@@ -144,18 +144,25 @@ Like  Haworth \textit{et al}, Bauer \textit{et al} also research visualising tre
 In digital games the A* path finding algorithm appears to be the most widely used~\cite{Algfoor2015}.  Algfoor \textit{et al} surveyed numerous papers on path finding. The focus appeared to be on the type of grids used in path-finding and then numerous algorithms that can be used~\cite{Algfoor2015}. The most popular being the A* algorithm for use in digital games and robotics. RRT path-finding was not mentioned. 
 They surveyed many grid types and gave the advantages of each. However, RRT does not use grids it instead uses nodes making the grid type irrelevant.\\
 
+Hu~\textit{et al} propose an implementation of A* path-finding in Unity, the engine being used by this project~\cite{Hu2012}.  While their implementation is in an older version Unity the implementation in Unity 5.6 should still be similar. 
+
 Third Eye Crime was previously mentioned for it's foregrounding of AI. However, it also uses visualisation as an important mechanic~\cite{Isla2014}~\cite{ game:ThirdEyeCrime}. Isla uses Occupancy Maps to show where the enemy NPC thinks the player could be. Occupancy or Influence maps do not produce a path instead they show the probability of the player being in different locations across the map~\cite{Isla2014, Miles2006}. Isla used Occupancy maps to show where the enemy AI thinks the player currently is. He then used ....... for the NPC to navigate to the most likely location of the player. Similarily, Miles and Loius used also used influence maps. While their example is specific to \textit{Real Time Stratedgy} (RTS) games like Isla they used Occupancy maps as a base to for A* path-finding instead of A* using the map itself for path-finding~\cite{Miles2006}.\\
  
 A further paper on path finding is Wang and Lu's paper which looks at path finding in a 3D environment. While again they were using A* they look at using A* in 3D and suggest using nodes instead of a grid??~\cite{wang2012}.
 
 Mendonça~\textit{et al} look at path-finding both in robotics and digital games~\cite{Mendonça2015}. Their focus is on stealth path-finding in games and applying that to robotics. Like RRT, the methods they propose does not necessarily find the optimal path~\cite{karaman2010}~\cite{Mendonça2015}. They tried to find the most stealthy path. They generated custom navigation meshes (navmeshes) and assigned a weight to each polygon in the navmesh depending on how close it is to cover. 
+
+As Mendonça~\textit{et al} as use path-finding to find a stealthy path the path with the optimal distance may not always be the path with the lowest cost in relation to the robot or AI agent staying cover. Therefore, the optimal path may not always be required. 
+
+This project will favour interesting visualisations over the optimal path in the variant that uses   
+
 ^^ point is optimal not always necessary ^^
 \\
 
 navmeshes \cite{Hale2008} \cite{Mendonça2015}
 %  RRT
 %  Expand this section
-Rapidly-Exploring Random Trees~(RRT) are a search method used more widely in robotics than digital games~\cite{Kuffner2000}. Kuffner and LaValle first proposed RRT in 2000, they intended to produce a random algorithm more efficient than the other search algorithms available at the time. Figure~\ref{KuffnerRRT} shows  Kuffner and LaValle's RRT Path Planner a variant of RRT that can be used to find paths from the generated tree~\cite{Kuffner2000}.
+Rapidly-Exploring Random Trees~(RRT) are a search method used more widely in robotics than digital games~\cite{LaValle1998}~\cite{Kuffner2000}. Kuffner and LaValle first proposed RRT in 2000, they intended to produce a random algorithm more efficient than the other search algorithms available at the time. Figure~\ref{KuffnerRRT} shows  Kuffner and LaValle's RRT Path Planner a variant of RRT that can be used to find paths from the generated tree~\cite{Kuffner2000}.
 
 \begin{figure}[h]
 	\includegraphics[width=1.0\linewidth]{KuffnerRRT.png}
