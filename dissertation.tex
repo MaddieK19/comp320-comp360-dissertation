@@ -98,7 +98,7 @@ The abstract goes here.
 % and "HIS" in caps to complete the first word.
 \IEEEPARstart{T}{he} research questions proposed in this project are: how does visualising \textit{Rapidly Exploring Random Trees} (RRT) path finding in a \textit{Non Player Character} (NPC) affect how a player explores a game level?
 
-This project will look at visualising an enemy NPC's path-finding using RRT based path-finding. Figure~\ref{KuffnerRRT} shows an example of RRT path-finding where the RRT explores the area and then a path is drawn along the tree~\cite{Kuffner2000}.  The visualisation will occur around an enemy NPC allowing the participant to see where the enemy is going in a level of a game made in Unity~\cite{software:Unity}. Logging tools in the play testing software will record how long a player spends in a level and what percent of the level they explore. This data will be used to see if the visualisation has any effect on how the participant explores the level of the given game. 
+This project will look at visualising an enemy NPC's path-finding using RRT based path-finding. Figure~\ref{KuffnerRRT} shows an example of RRT path-finding where the RRT explores the area and then a path is drawn along the tree~\cite{Kuffner2000}.  The visualisation will be around an enemy NPCs allowing the participant to see where the enemy is going and what their line of sight is. The visualisation will be implemented in a level of a 3D game made in Unity~\cite{software:Unity}. Logging tools in the play testing software will record how long a player spends in a level and what percent of the level they explore. This data will be used to see if the visualisation has any effect on how the participant explores the level of the given game. 
 
 Previous papers have researched visualising \textit{Artifical Intelligence} (AI) and foregrounding AI. However, there is little on on what effect this has on how the participants play the game.
 
@@ -171,7 +171,7 @@ Rapidly-Exploring Random Trees~(RRT) are a search method used more widely in rob
 \end{figure} 
 
 
-RRT's goal is to find a path between two point with no collisions, the path found may not the the optimal path though~\cite{Kuffner2000, Karaman2011}.  Karaman and Sertac say that the chance of RRT finding an optimal path is very unlikely~\cite{karaman2010}.  Karaman \textit{et al} propose another version of RRT called RRT* this version 
+RRT's goal is to find a path between two point with no collisions, the path found may not the the optimal path though~\cite{Kuffner2000, Karaman2011}.  Karaman and Sertac say that the chance of RRT finding an optimal path is very unlikely~\cite{karaman2010}~\cite{Tremblay2014}.  Karaman \textit{et al} propose a variant of RRT called RRT*. RRT* starts the same as RRT but when a new node has to choose a parent node instead of choosing the node that is nearest it evaluates the cost of the possible nodes in regards to reaching it's goal.
 
 %  RRT & games
 Bauer and Popovic used RRT for level design in games~\cite{bauer2012}. Like Haworth \textit{et al} they visualised the data to aid users~\cite{bauer2012}~\cite{Haworth2010}. However unlike Haworth \textit{et al} the visualisation is for game developers not the players. 
@@ -198,13 +198,22 @@ While the use if RRT to find a stealthy path is different to RRT's application i
 	\label{TremblayRRT}
 \end{figure} 
 
+\begin{figure}[h]
+	\includegraphics[width=1.0\linewidth]{TremblayHeatMap.png}
+	\caption{ Heat maps of a single level where the design has been changed each time \cite{Tremblay2013}.}
+	\label{TremblayHeatMap}
+\end{figure} 
 
 
- Tremblay~\textit{et al} again look at the use of search algorithms for use in game development~\cite{Tremblay2014}. They looked at the use of A*, \textit{Mote Carlo Tree Search} (MCTS) and RRT to visualise player behaviour in platform games. Like 
+
+
+ Tremblay~\textit{et al} again look at the use of search algorithms for use in game development and build on the 2013 paper on RRT in stealth games~\cite{Tremblay2014}. They looked at the use of A*, \textit{Mote Carlo Tree Search} (MCTS) and RRT to visualise player behaviour in platform games. Like 
+
+RRT is limited to drawing straight lines between the nodes, as straight lines are not always possible in RRT  Tremblay~\textit{et al} also used either A* or MCTS to find a path to the node and ensure that it is reachable.........
 
 \begin{figure}[h]
 	\includegraphics[width=1.0\linewidth]{Tremblay2014.png}
-	\caption{ CAPTION \cite{Tremblay2014}.}
+	\caption{ Tremblay~\textit{et al}'s visualisation of an RRT tree\cite{Tremblay2014}.}
 	\label{Tremblay2014}
 \end{figure} 
 
@@ -246,7 +255,7 @@ A-B testing will used on participants. Participants will be assigned different v
 \\
 While the participant plays their current location will be exported to a .CSV file every second. Varying the export rate is unlikely to provide data of interest as the focus is on time spent in a level and how much was explored. 
 
-R will then be used to analyse the exported data. Firstly to generate heat maps to see if there are any noticeable patterns as Wallner says heat map are useful as they are easy to generate and easy to discern patterns from~\cite{Wallner2015}. 
+R will then be used to analyse the exported data. Firstly to generate heat maps to see if there are any noticeable patterns as Wallner says heat map are useful as they are easy to generate and easy to discern patterns from~\cite{Wallner2015}. Tremblay~\textit{et al} also used heat maps on their RRT visualisation. The heat map would be used though this was more as a diagnostic tool for level designers to use to see where player could go and the effects of them altering the level design which can be seen in Figure \ref{TremblayHeatMap}.
 Other statistical analysis such as  bar charts will also be generated to support the heat maps.
  
 There will also be a questionnaire for the participants to fill out after completing the play test.\\
@@ -265,7 +274,7 @@ Alongside play testing participants will also be asked to fill out a questionnai
 
 
 \section{Conclusion}
-The conclusion goes here.
+In conclusion, RRT's use in level design suggests that it can be applied to games as well as robotics but some of the robotics optimisations such as RRT* may be required to get a path closer to the optimal path at run time.
 
 % references section
 
