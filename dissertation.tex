@@ -103,7 +103,7 @@ This project will look at visualising an enemy NPC's path-finding using RRT path
 
 Figure~\ref{KuffnerRRT} shows an example of RRT path-finding. Here the RRT explores the area and then draws a path along the tree~\cite{Kuffner2000}.  RRT involves nodes being randomly placed. Then it chooses a parent node based on whichever pre-existing node it closest to it.
 
-This project will look at visualising the tree produced by RRT and the process taken to produce it.  The visualisation will be around an enemy NPCs. This will allow the participants to see where the enemy NPC is going and what their line of sight is. 
+This research paper will look at visualising the tree produced by RRT and the process taken to produce it.  The visualisation will be around an enemy NPCs. This will allow the participants to see where the enemy NPC is going and what their line of sight is. 
 
 Implementation  of the visualisation will be in a level of a 3D game made in Unity 5.6~\cite{software:Unity}. Logging tools in the play testing software will record the amount of time spent in a level and what percent of the level they explore.   Analysis of this data will then determine whether the visualisation has any affect on participant exploration.
 
@@ -114,7 +114,7 @@ Previous papers have researched visualising~\textit{Artifical Intelligence} (AI)
 \textbf{Null Hypothesis}: Visualising RRT path-finding has no affect on the percent of the level the participant explores. \\
 \textbf{Hypothesis 1}: Visualising RRT significantly affects the percent of the level the participant explores. \\
 \textbf{Hypothesis 2}: Visualising RRT significantly affects the length of time the participant spends in the level. \\
-\textbf{Hypothesis 3}:  Visualising Unity navmeshes affects t  the percent of the level the participant explores compared to RRT. \\
+\textbf{Hypothesis 3}:  Visualising Unity navmeshes affects the percent of the level the participant explores compared to RRT. \\
 
 \section{Related Work}
 \subsection{Foregrounding and Visualising AI}
@@ -122,26 +122,26 @@ Previous papers have researched visualising~\textit{Artifical Intelligence} (AI)
 Most modern digital game make use of AI.  However, it is rarely foregrounded or visualised in those games.   Treanor~\textit{et al} say that often the design of AI in games is to fit the game and complement game play. These AI are supporting the game play rather than being central to it~\cite{treanor2015}~\cite{eladhari2011}.  \\
 
 Treanor~\textit{et al} surveyed many games that foreground or visualise AI in different ways.    From this they propose a series of design patterns for foregrounding AI in digital games. 
-The two design patterns relevant to this project are ``AI as a Villain" and ``AI is Visualized" .  They describe the first pattern as having the AI not try to outright defeat the player. Instead it's designed to create an experience like in the game Alien Isolation~\cite{game:AlienIsolation, treanor2015}.  In Alien Isolation the AI hunts the player. This is foregrounding as the player has to observe the AI and learn how to avoid.  There is also some visualisation as the player has a scanner that will inform them of the AI's position. 
+The two design patterns relevant to this project are ``AI as a Villain" and ``AI is Visualised" .  They describe the first pattern as having the AI not try to outright defeat the player. Instead it's designed to create an experience like in the game Alien Isolation~\cite{game:AlienIsolation}~\cite{treanor2015}.  In Alien Isolation the AI hunts the player. This is foregrounding as the player has to observe the AI and learn how to avoid.  There is also some visualisation as the player has a scanner that will inform them of the AI's position. 
 
-This paper will use ``AI as a villain" pattern as enemy NPC's  will have their path-finding visualized around them. The participants will have to observe this to learn how to not get caught by the enemy NPC.    
+This paper will use ``AI as a villain" pattern as enemy NPC's  will have their path-finding visualised around them. The participants will have to observe this to learn how to not get caught by the enemy NPC.    
 
 
-The second relevant design pattern is ``AI is Visualized".  This is where there is a visual representation of the AI's state or decision making in the game. 
+The second relevant design pattern is ``AI is Visualised".  This is where there is a visual representation of the AI's state or decision making in the game. 
 
-Most games hide this from the player but this design pattern visualizes it making it mechanic.  
-The example given by Treanor~\textit{et al} is the game Third Eye Crime.  Third Eye Crime is a game that followed the ``AI is Visualised" design pattern~\cite{Isla2014, game:ThirdEyeCrime}.  
-The game uses probabilistic object tracking through Occupancy maps. The game uses Occupancy Maps to display where the enemy thinks the player could be in the map. As the enemy moves around the map it removes areas where the player is not from the Occupancy Map~\cite{Isla2014}.  
+Most games hide this from the player but this design pattern visualises it making it mechanic.  
+The example given by Treanor~\textit{et al} is the game Third Eye Crime.  Third Eye Crime is a game that followed the ``AI is Visualised" design pattern~\cite{Isla2014}~\cite{game:ThirdEyeCrime}.  
+The game uses probabilistic object tracking through Occupancy Maps. The game uses Occupancy Maps to display where the enemy thinks the player could be in the map. As the enemy moves around the map it removes areas where the player is not from the Occupancy Map~\cite{Isla2014}.  
 
 Generally stealth games involve avoiding enemies.  This design encourages the player to trigger the mechanic,  allowing them to use the visualisation to mislead and avoid the enemy~\cite{Isla2014}~\cite{game:ThirdEyeCrime}.  
 
-This pattern is relevant to this project as the enemy NPC will have RRT path-finding visualized around it. Allowing the player to see where the enemy is going and decide how to overcome or outsmart it.
+This pattern is relevant to this project as the enemy NPC will have RRT path-finding visualised around it. Allowing the player to see where the enemy is going and decide how to overcome or outsmart it.
 
 % Visualising in general
 While Haworth~\textit{et al} do not visualise an AI decision making process they do visualise the possible decisions available to the player in a game on a tree structure~\cite{Haworth2010}.   They research visualising decision trees in a game to see what effect it had on children's analytical reasoning and game play.  
 Their study did not come to any definite conclusions. However, their results suggested that the trees aided players. In the later levels of the game the children without the visualised decision tree struggled to beat the game.   However, they noted this could also be due to unbalanced later levels.  This makes the usefulness of the tree being questionable in this example.  
 
-A potential issue with this study is that Haworth~\textit{et al} only tested the tree on a simple 2D game for school children. Of these school children only a few had experienced playing digital games before.  This may mean that this data may not be relevant for 3D games or games available to buy on the market.  In contrast, Isla's visualised Occupancy Maps are in the game Third Eye Crime which is available on Steam, IOS and Android~\cite{Isla2014}~\cite{game:ThirdEyeCrime}.
+A potential issue with this study is that Haworth~\textit{et al} only tested the tree on a simple 2D game for school children. Of these school children only a few had experienced playing digital games before.  This could mean that the data is not relevant for 3D games or games available to buy on the market.  In contrast, Isla's visualised Occupancy Maps are in the game Third Eye Crime which is available on Steam, IOS and Android~\cite{Isla2014}~\cite{game:ThirdEyeCrime}.
 
 Like  Haworth~\textit{et al}, Bauer~\textit{et al} also research visualising tree structures~\cite{bauer2012}. However, they did use an AI technique, they used Rapidly-Exploring Random Trees (RRT).
 
@@ -157,7 +157,7 @@ They surveyed many grid types and gave the advantages of each. However, RRT does
 
 Hu~\textit{et al} propose an implementation of A* path-finding in the Unity engine, the engine used in this project~\cite{Hu2012}.  While their implementation is in an older version Unity the implementation in Unity 5.6 should still be similar. 
 
-The previous section mentioned Third Eye Crime for it's foregrounding of AI.  It also uses visualisation as an important mechanic~\cite{Isla2014}~\cite{ game:ThirdEyeCrime}.  Isla uses Occupancy Maps to show where the enemy NPC thinks the player could be. Occupancy or Influence maps do not produce a path instead they show the probability of the player being in different locations across the map~\cite{Isla2014, Miles2006}. Isla used Occupancy maps to show where the enemy AI thinks the player currently is. The enemy then moves to investigate that area reducing the probability of the player being there to 0.  Similarly, Miles and Loius used also used influence maps. While their example is specific to \textit{Real Time Stratedgy} (RTS) games, like Isla they used Occupancy maps.  They used them as a base to for A* path-finding instead of A* using the map itself for path-finding~\cite{Miles2006}.\\
+The previous section mentioned Third Eye Crime for it's foregrounding of AI.  It also uses visualisation as an important mechanic~\cite{Isla2014}~\cite{ game:ThirdEyeCrime}.  Isla uses Occupancy Maps to show where the enemy NPC thinks the player could be. Occupancy or Influence Maps do not produce a path instead they show the probability of the player being in different locations across the map~\cite{Isla2014, Miles2006}. Isla used Occupancy Maps to show where the enemy AI thinks the player currently is. The enemy then moves to investigate that area reducing the probability of the player being there to 0.  Similarly, Miles and Loius used also used influence maps. While their example is specific to \textit{Real Time Stratedgy} (RTS) games, like Isla they used Occupancy Maps.  They used them as a base to for A* path-finding instead of A* using the map itself for path-finding~\cite{Miles2006}.\\
 
 A further paper on path-finding is Wang and Lu's paper which looks at path-finding in a 3D environment. While again they were using A* they look at using A* in 3D and suggest using nodes instead of a grid~\cite{wang2012}.
 
