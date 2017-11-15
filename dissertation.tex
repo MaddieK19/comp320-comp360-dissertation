@@ -112,10 +112,7 @@ The research question proposed in this project is: how does visualising RRT path
 
 \subsection{A* Pathfinding}
 % A* / pathfinding in games
-In digital games the A* path-finding algorithm appears to be the most used~\cite{Algfoor2015}.  Algfoor~\textit{et al} surveyed numerous papers on path finding. 
-
-Their focus was on the use of different grids in path-finding and the numerous algorithms available~\cite{Algfoor2015}. The most popular being the A* algorithm for use in both digital games and robotics. RRT path-finding was not mentioned here. 
-They surveyed many grid types and gave the advantages of each. However, RRT does not use grids it instead uses nodes making the grid type irrelevant.
+In digital games the A* path-finding algorithm appears to be the most used~\cite{Algfoor2015}.  Algfoor~\textit{et al}~\cite{Algfoor2015} surveyed numerous papers on path finding. Their focus was on the use of different grids in path-finding and the numerous algorithms available~\cite{Algfoor2015}. The most popular being the A* algorithm for use in both digital games and robotics. They surveyed many grid types and gave the advantages of each. However, RRT does not use grids it instead uses nodes making the grid type irrelevant.
 
 Hu~\textit{et al} propose an implementation of A* path-finding in the Unity engine, the engine used in this project~\cite{Hu2012}.  While their implementation is in an older version Unity the implementation in Unity 5.6 should still be similar. 
 
@@ -198,7 +195,7 @@ RRT is limited to drawing straight lines between the nodes, as straight lines ar
 
 \subsection{Foregrounding and Visualising AI}
 % Foreground visualising AI
-Most modern digital game make use of AI.  However, it is rarely foregrounded or visualised in those games.   Treanor~\textit{et al}~\cite{treanor2015} say that often the design of AI in games is to fit the game and complement game play. These AI are supporting the game play rather than being central to it~\cite{eladhari2011}.  \\
+Most modern digital game make use of AI.  However, it is rarely foregrounded or visualised in those games. Treanor~\textit{et al}~\cite{treanor2015} say that often the design of AI in games is to fit the game and complement game play. These AI are supporting the game play rather than being central to it.  \\
 
 Treanor~\textit{et al}~\cite{treanor2015} surveyed many games that foreground or visualise AI in different ways.    From this they propose a series of design patterns for foregrounding AI in digital games. 
 The two design patterns relevant to this project are ``AI as a Villain" and ``AI is Visualised" .  They describe the first pattern as having the AI not try to outright defeat the player. Instead it is designed to create an experience like in the game Alien Isolation~\cite{treanor2015}~\cite{game:AlienIsolation}.  In Alien Isolation the AI hunts the player. This is foregrounding as the player has to observe the AI and learn how to avoid.  There is also some visualisation as the player has a scanner that will inform them of the AI's position. 
@@ -277,26 +274,25 @@ A-B testing will used on participants. A-B testing is where each participant wil
 \\
 The software will log the participant's position in the level throughout their play test. This data will be exported in a .CSV every second. Varying the export rate is unlikely to provide data of interest as the focus is on time spent in a level and how much was explored. 
 
-The exported data will then be analysed using R. Wallner says heat map are useful as they are easy to generate and easy to discern patterns from~\cite{Wallner2015}.  Tremblay~\textit{et al} also used heat maps on their RRT visualisations. They used heat maps as part of their tool for level designers to use to see where player could go and the effects of them altering the level design which can be seen in Figure \ref{TremblayHeatMap}. Here they will only be used for analysis and to assist in finding noticeable patterns.
+The exported data will then be analysed using R~\cite{software:R}. Wallner says heat map are useful as they are easy to generate and easy to discern patterns from~\cite{Wallner2015}.  Tremblay~\textit{et al} also used heat maps on their RRT visualisations. They used heat maps as part of their tool for level designers to use to see where player could go and the effects of them altering the level design which can be seen in Figure \ref{TremblayHeatMap}. Here they will only be used for analysis and to assist in finding noticeable patterns.
 \\
-Other statistical analysis in R, such as bar charts, will also be generated to support the heat maps.
+Other statistical analysis in R will be generated to support the heat maps. ADD MORE T TEST and Confidence INTERVALS
  
 After completing a play test of the game participants will be asked to complete a questionnaire on their experience.\\
 
 \subsection{Questionnaire}
-Alongside play testing participants will also be asked to fill out a questionnaire on the game online using Google Forms. Nordin \textit{et al} say that questionnaires are vital for understanding how players feel when playing digital games~\cite{nordin2014}~\cite{Denisova2016}. They can also help give uniformity and consistency to the data gathered from participants~\cite{Denisova2016}.
+Alongside play testing participants will also be asked to fill out a questionnaire on the game online using Google Forms. Nordin \textit{et al}s~\cite{nordin2014} say that questionnaires are vital for understanding how players feel when playing digital games~\cite{nordin2014}~\cite{Denisova2016}. They can also help give uniformity and consistency to the data gathered from participants~\cite{Denisova2016}.
 
 Questionnaires are also beneficial as they can prompt players to give answers they may not have given spontaneously. The two options here are to either create a questionnaire specifically for the experiment or use an existing one. There are a wide variety of questionnaires that already exist to measure players experiences in play testing~\cite{nordin2014}~\cite{Jennett2008}. These come with the benefit of being more likely to be thoroughly tested such as the \textit{Immersive  Experience
 Questionnaire} (IEQ) which uses Likert scales responses~\cite{nordin2014}~\cite{Jennett2008}.
  
-However, Nordin \textit{et al} say there are many issues with using existing questionnaires. Firstly, many of these questionnaires are not readily available. Another issue is that not all questionnaires have been thoroughly checked for validity. There is the potential issue of a researcher not fully understanding the questions put forward by another researcher or may not understand what data that question is intended to get.
+However, Nordin \textit{et al}s~\cite{nordin2014} say there are many issues with using existing questionnaires. Firstly, many of these questionnaires are not readily available. Another issue is that not all questionnaires have been thoroughly checked for validity. There is the potential issue of a researcher not fully understanding the questions put forward by another researcher or may not understand what data that question is intended to get.
 
-As the quantitative data gained from play testing is more important than qualitative data here the questionnaire will be based on the IEQ with added questions related to the visualisation. The IEQ tests for immersion but has questions related to interacting with the game world and causes of frustration in it that may relate to the visualisation of path finding.
-
+Most of the hypothesis can be tested using the quantitative from the play tests. However, some of the hypothesis require qualitative data so a questionnaire will be necessary.  The IEQ tests for immersion but has questions related to interacting with the game world and causes of frustration in it that may relate to the visualisation of path finding.  Therefore, relevant questions from the IEQ will be used as well as additional questions taken from the hypothesis of this paper.
 
 
 \section{Conclusion}
-In conclusion, while the use of RRT's is more frequent in robotics than digital games it's use appears feasible in this project. It's past use in game design tools shows that clustering can make the output understandable to the user. However,  the need of optimisations  such as RRT* or the use of A* may arise to produce of more optimal path. 
+In conclusion, while the use of RRT's is more frequent in robotics than digital games it's use appears feasible in this project. Its past use in game design tools shows that clustering can make the output understandable to the user. However,  the need of optimisations  such as RRT* or the use of A* may arise to produce of more optimal path. 
 
 Visualisation and foregrounding of AI has been successfully used before again suggest it can used here. Finally previous studies have looked at way-finding and player exploration. These suggest that environmental factors in digital environments do affect player exploration.
 % references section
