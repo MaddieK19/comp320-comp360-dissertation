@@ -97,7 +97,7 @@ The abstract goes here.
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{T}{his} project will look at visualising the path-finding of an enemy \textit{Non Player Character}(NPC) using \textit{Rapidly-exploring Random Tree}(RRT) path-finding.  Figure~\ref{KuffnerRRT} shows an example of RRT path-finding. Here the RRT explores the area and then draws a path along the tree between the start and the goal points~\cite{Kuffner2000}. 
+\IEEEPARstart{T}{his} project will look at visualising the path-finding of an enemy \textit{Non Player Character} (NPC) using \textit{Rapidly-exploring Random Tree} (RRT) path-finding.  Figure~\ref{KuffnerRRT} shows an example of RRT path-finding. Here the RRT explores the area and then draws a path along the tree between the start and the goal points~\cite{Kuffner2000}. 
 
 This research paper will look at visualising the tree produced by RRT and the process taken to produce it. The visualisation will be around an enemy NPC. This will allow the players to see where the enemy NPC is going and what their line of sight is. 
 
@@ -112,7 +112,7 @@ The research question proposed in this project is: how does visualising RRT path
 % A* / pathfinding in games
 A* path-finding is widely used in both robotics and digital games~\cite{Algfoor2015}. In games A* appears to be the most commonly used path-finding algorithm~\cite{Algfoor2015}.
 
-Hart~\textit{et al}~\cite{Hart1968} first propose A* path-finding in 1968 as an improvement on Dijkstra's algorithm. Figure \ref{A*Pseudo} shows pseudo-code for implementing A*. 
+Hart~\textit{et al}~\cite{Hart1968} first proposed A* path-finding in 1968 as an improvement on Dijkstra's algorithm. A* aims to expand the fewest nodes possible to minimise the cost where the cost is the distance between the start and the goal. Figure \ref{A*Pseudo} shows pseudo-code for implementing A*. 
 
 \begin{figure}[h]
 	\includegraphics[width=1.0\linewidth]{APseudocode.png}
@@ -120,23 +120,20 @@ Hart~\textit{et al}~\cite{Hart1968} first propose A* path-finding in 1968 as an 
 	\label{A*Pseudo}
 \end{figure} 
 
-Algfoor~\textit{et al}~\cite{Algfoor2015} surveyed numerous papers on path finding. Their focus was on the use of different grids in path-finding and the numerous algorithms available~\cite{Algfoor2015}. The most popular being the A* algorithm for use in both digital games and robotics. They surveyed many grid types and gave the advantages of each. However, RRT does not use grids it instead uses nodes making the grid type irrelevant.
+Algfoor~\textit{et al}~\cite{Algfoor2015} surveyed numerous papers on path finding. Their focus was on the use of different grids in path-finding and the numerous algorithms available~\cite{Algfoor2015}. The most popular being the A* algorithm for use in both digital games and robotics. They surveyed many grid types and gave the advantages of each. 
+
+Nash \textit{et al}~\cite{Nash2007} say that A* can not find the shortest path as it is limited to the grid. The shortest path can be found A* with post-smoothing paths or by using A* variants such as Theta*~\cite{Nash2007}~\cite{Firmansyah2016}. Theta* expands on A* as it allows for all edges and angles in the grid to be used. Therefore, a more optimal path can be found.
+
+While their focus is no Android games Firmansyah~\textit{et al}~\cite{Firmansyah2016} compared A* with Theta*. They found that performed similarly time wise. However, A* produced a path with less nodes and Theta* produced a shorter path. 
 
 Hu~\textit{et al} propose an implementation of A* path-finding in the Unity engine, the engine used in this project~\cite{Hu2012}.  While their implementation is in an older version Unity the implementation in Unity 5.6 should still be similar. 
 
-The previous section mentioned Third Eye Crime for it's foregrounding of AI.  It also uses visualisation as an important mechanic~\cite{Isla2014}~\cite{game:ThirdEyeCrime}.  Isla uses Occupancy Maps to show where the enemy NPC thinks the player could be. Occupancy or Influence Maps do not produce a path instead they show the probability of the player being in different locations across the map~\cite{Isla2014}~\cite{Miles2006}. Isla used Occupancy Maps to show where the enemy AI thinks the player currently is. The enemy then moves to investigate that area reducing the probability of the player being there to 0.  Similarly, Miles and Loius used also used influence maps. While their example is specific to \textit{Real Time Strategy} (RTS) games, like Isla they used Occupancy Maps.  They used them as a base to for A* path-finding instead of A* using the map itself for path-finding~\cite{Miles2006}.
 A further paper on path-finding is Wang and Lu's paper which looks at path-finding in a 3D environment. While again they were using A* they look at using A* in 3D and suggest using nodes instead of a grid~\cite{wang2012}.
 
-Mendonça~\textit{et al} look at path-finding both in robotics and digital games~\cite{Mendonça2015}. Their focus is on stealth path-finding in games and applying that to robotics. Like RRT, the methods they propose does not necessarily find the optimal path~\cite{karaman2010}~\cite{Mendonça2015}. Instead they try to find the most stealthy path. They generate custom navigation meshes (navmeshes). Then they assign a weight to each polygon in the navmesh depending on how close it is to being behind cover. 
-
-As Mendonça~\textit{et al} use path-finding to find a stealthy path, the path with the optimal distance may not always be the path with the lowest cost in relation to the AI agent being in cover. Therefore, a requirement might not always be the optimal path. 
-
-This project will favour interesting visualisations over the optimal path in the variants that use RRT. 
-
-%^^ point is optimal not always necessary ^^
+Tremblay~\textit{et al}~\cite{Tremblay2014} look at the use of path-finding algorithms in level design. They compared 2 dimensional A*, 3 dimensional A*, RRT using A* for motion planner, RRT using \textit{Monte Carlo Tree Search} (MCTS) and MCTS alone. 2 dimensional A* consistently gave the fastest result with the highest success rate. As this was for game level design instead of game play they ran the algorithms 1000 times on high specification computers. When used in this project the algorithms will only be run once however as A* in 2 dimensions had a 100 percent success rate this should be an issue. 
 
 \subsection{RRT and Pathfinding}
-Rapidly-Exploring Random Trees~(RRT) are a search method used more in robotics than digital games~\cite{LaValle1998}~\cite{Kuffner2000}.   Kuffner and LaValle first proposed RRT. They intended to produce a random algorithm more efficient than the other search algorithms available at the time. 
+Rapidly-Exploring Random Trees~(RRT) are a search method used more in robotics than digital games~\cite{LaValle1998}~\cite{Kuffner2000}. Kuffner and LaValle~\cite{Kuffner2000} first proposed RRT in 2000. They intended to produce a random algorithm more efficient than the other search algorithms available at the time. 
 
 Figure~\ref{KuffnerRRT} shows  Kuffner and LaValle's RRT Path Planner. Path Planner is a variant of RRT which has the intended use of finding paths from a generated tree~\cite{Kuffner2000}.
 \begin{figure}[h]
@@ -145,9 +142,23 @@ Figure~\ref{KuffnerRRT} shows  Kuffner and LaValle's RRT Path Planner. Path Plan
 	\label{KuffnerRRT}
 \end{figure} 
 
-RRT's goal is to find a path between two point with no collisions. The path found may not be the optimal path though~\cite{Kuffner2000, Karaman2011}.  Karaman and Sertac say that the chance of RRT finding an optimal path is very unlikely~\cite{karaman2010}~\cite{Tremblay2014}.  Karaman \textit{et al} propose a variant of RRT called RRT*. RRT* starts the same as RRT. However, when a new node has to choose a parent node instead of choosing the  nearest node it evaluates the cost of the nodes in regards to reaching it's goal. Each iteration involves re-evaluating parent nodes to reduce the cost. Rewiring of the tree happens when a lower cost path is located.
+The process for RRT involves the random placement of nodes. A parent is then selected for the node by finding the closest pre-existing node~\cite{Kuffner2000}. Figure~\ref{RRTPseudocode} shows the pseudo-code for the RRT algorithm. 
+
+\begin{figure}[h]
+	\includegraphics[width=1.0\linewidth]{RRTPseudocode.png}
+	\caption{ Kuffner and LaValle's RRT algorithm pseudo-code~\cite{Kuffner2000}.}
+	\label{RRTPseudocode}
+\end{figure} 
+
+RRT's goal is to find a path between two point with no collisions. The path found may not be the optimal path though~\cite{Kuffner2000, Karaman2011}. Karaman and Sertac say that the chance of RRT finding an optimal path is very unlikely~\cite{karaman2010}~\cite{Tremblay2014}.  Karaman \textit{et al} propose a variant of RRT called RRT*. RRT* starts the same as RRT. However, when a new node has to choose a parent node instead of choosing the  nearest node it evaluates the cost of the nodes in regards to reaching it's goal. Each iteration involves re-evaluating parent nodes to reduce the cost. Rewiring of the tree happens when a lower cost path is located.
+
+
+This project will favour interesting visualisations over the optimal path in the variants that use RRT. 
 
 \subsection{Pathfinding}
+MOVE
+The Foregrounding AI section will look at Third Eye Crime in detail for it's use of AI visualisation. However, t also uses visualisation as an important mechanic~\cite{Isla2014}~\cite{game:ThirdEyeCrime}.  Isla uses Occupancy Maps to show where the enemy NPC thinks the player could be. Occupancy or Influence Maps do not produce a path instead they show the probability of the player being in different locations across the map~\cite{Isla2014}~\cite{Miles2006}. Isla used Occupancy Maps to show where the enemy AI thinks the player currently is. The enemy then moves to investigate that area reducing the probability of the player being there to 0.  Similarly, Miles and Loius used also used influence maps. While their example is specific to \textit{Real Time Strategy} (RTS) games, like Isla they used Occupancy Maps.  They used them as a base to for A* path-finding instead of A* using the map itself for path-finding~\cite{Miles2006}.
+
 Bauer and Popovic use RRT for level design in digital games~\cite{bauer2012}. Like Haworth \textit{et al}, they visualise the data to aid users~\cite{bauer2012}~\cite{Haworth2010}. However, unlike Haworth \textit{et al} the visualisation is for game developers not the players. 
 
 \begin{figure}[h]
@@ -161,6 +172,10 @@ This produces an image that is difficult to read. The use of Dongen's method for
 
 The focus of this project is on a similar type of  visualisation but in a game instead of game design. Therefore, there is a need for a similar technique to organise the output of RRT.  This should make the visualisation  more useful as it should aid the player in way that they can look at the visualisation and interpret what the NPC is going to do. 
 
+
+Mendonça~\textit{et al}~\cite{Mendonça2015} look at path-finding both in robotics and digital games. Their focus is on stealth path-finding in games and applying that to robotics. Like RRT, the methods they propose does not necessarily find the shortest path~\cite{karaman2010}~\cite{Mendonça2015}. Instead they try to find the most stealthy path. They generate custom navigation meshes (navmeshes). Then they assign a weight to each polygon in the navmesh depending on how close it is to being behind cover. 
+
+As Mendonça~\textit{et al}~\cite{Mendonça2015} use path-finding to find a stealthy path, the path with the optimal distance may not always be the path with the lowest cost in relation to the AI agent being in cover. Therefore, a requirement might not always be the optimal path. 
 
 Tremblay~\textit{et al}~\cite{Tremblay2013}, like Bauer and Popovic~\cite{bauer2012}, also use RRT visualisations to aid level design. 
 
@@ -185,7 +200,7 @@ While the use of RRT to find a stealthy path is different to it's use in this pr
 	\label{TremblayHeatMap}
 \end{figure} 
 
-Tremblay~\textit{et al} again look at the use of search algorithms for use in game development. This work builds on the 2013 paper on RRT in stealth games~\cite{Tremblay2014}. They look at the use of A*, \textit{Monte Carlo Tree Search} (MCTS) and RRT to visualise player behaviour in platform games similar to Bauer ~\cite{Tremblay2014}  ~\cite{bauer2012} . 
+Tremblay~\textit{et al} again look at the use of search algorithms for use in game development. This work builds on the 2013 paper on RRT in stealth games~\cite{Tremblay2014}. They look at the use of A*, MCTS and RRT to visualise player behaviour in platform games similar to Bauer ~\cite{Tremblay2014}  ~\cite{bauer2012} . 
 
 RRT is limited to drawing straight lines between the nodes, as straight lines are not always possible in RRT  Tremblay~\textit{et al} also use either A* or MCTS to find a path to the node and ensure that it is reachable.
 % EXPAND ON
@@ -253,7 +268,7 @@ The methodology that will be used to test the given hypothesis will be play test
 \textbf{Hypothesis 3}:  Visualising Unity navmeshes affects the percent of the level the participant explores compared to RRT. \\
 
 
-The game the enemy NPC will be tested in is a 3D metroidvania game which has a focus on exploration. Players will be given one of the game variations to play and then asked to complete a questionnaire on their experience. The game will also log the players position at regular intervals to calculate what percent of the level they explore. How long a participant spends exploring the level will also be logged.
+The game the enemy NPC will be tested in is a 3D metroidvania game which has a focus on exploration. A metroidvania is an action-adventure game with a focus on exploration to discover new areas ad power ups. Players will be given one of the game variations to play and then asked to complete a questionnaire on their experience. The game will also log the players position at regular intervals to calculate what percent of the level they explore. How long a participant spends exploring the level will also be logged.
   
 
 \subsection{Playtest Variations}
