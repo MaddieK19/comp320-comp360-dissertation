@@ -78,7 +78,7 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-The abstract goes here.
+This paper will look at path-finding and \textit{Artificial Intelligence} (AI) in digital games.  Specifically how AI can be foregrounded and how both AI and path-finding can be visualised in digital games. Previous papers have looked at AI visualisation in games and how it has all ready been achieved. Path-finding has also been visualised in game design but there is little on path-finding visualisation in games.
 \end{abstract}
 
 \section{Introduction}
@@ -138,7 +138,7 @@ Rapidly-Exploring Random Trees~(RRT) are a search method used more in robotics t
 Figure~\ref{KuffnerRRT} shows  Kuffner and LaValle's RRT Path Planner. Path Planner is a variant of RRT which has the intended use of finding paths from a generated tree~\cite{Kuffner2000}.
 \begin{figure}[h]
 	\includegraphics[width=1.0\linewidth]{KuffnerRRT.png}
-	\caption{ Kuffner and LaValle's RRT path planner~\cite{Kuffner2000}.}
+	\caption{ Kuffner and LaValle's RRT path planner building a tree and plotting a path through it~\cite{Kuffner2000}.}
 	\label{KuffnerRRT}
 \end{figure} 
 
@@ -146,20 +146,16 @@ The process for RRT involves the random placement of nodes. A parent is then sel
 
 \begin{figure}[h]
 	\includegraphics[width=1.0\linewidth]{RRTPseudocode.png}
-	\caption{ Kuffner and LaValle's RRT algorithm pseudo-code~\cite{Kuffner2000}.}
+	\caption{ Kuffner and LaValle's RRT algorithm pseudo-code for RRT construction~\cite{Kuffner2000}.}
 	\label{RRTPseudocode}
 \end{figure} 
 
-RRT's goal is to find a path between two point with no collisions. The path found may not be the optimal path though~\cite{Kuffner2000, Karaman2011}. Karaman and Sertac say that the chance of RRT finding an optimal path is very unlikely~\cite{karaman2010}~\cite{Tremblay2014}.  Karaman \textit{et al} propose a variant of RRT called RRT*. RRT* starts the same as RRT. However, when a new node has to choose a parent node instead of choosing the  nearest node it evaluates the cost of the nodes in regards to reaching it's goal. Each iteration involves re-evaluating parent nodes to reduce the cost. Rewiring of the tree happens when a lower cost path is located.
+RRT's goal is to find a path between two point with no collisions. The path found may not be the optimal path though~\cite{Kuffner2000, Karaman2011}. Karaman and Sertac say that the chance of RRT finding an optimal path is very unlikely~\cite{karaman2010}~\cite{Tremblay2014}.  Karaman \textit{et al} propose a variant of RRT called RRT*. RRT* starts the same as RRT. However, when a new node has to choose a parent node instead of choosing the  nearest node it evaluates the cost of the nodes in regards to reaching its goal. Each iteration involves re-evaluating parent nodes to reduce the cost. Rewiring of the tree happens when a lower cost path is located.
 
+%This project will favour interesting visualisations over the optimal path in the variants that use RRT. 
 
-This project will favour interesting visualisations over the optimal path in the variants that use RRT. 
-
-\subsection{Pathfinding}
-MOVE
-The Foregrounding AI section will look at Third Eye Crime in detail for it's use of AI visualisation. However, t also uses visualisation as an important mechanic~\cite{Isla2014}~\cite{game:ThirdEyeCrime}.  Isla uses Occupancy Maps to show where the enemy NPC thinks the player could be. Occupancy or Influence Maps do not produce a path instead they show the probability of the player being in different locations across the map~\cite{Isla2014}~\cite{Miles2006}. Isla used Occupancy Maps to show where the enemy AI thinks the player currently is. The enemy then moves to investigate that area reducing the probability of the player being there to 0.  Similarly, Miles and Loius used also used influence maps. While their example is specific to \textit{Real Time Strategy} (RTS) games, like Isla they used Occupancy Maps.  They used them as a base to for A* path-finding instead of A* using the map itself for path-finding~\cite{Miles2006}.
-
-Bauer and Popovic use RRT for level design in digital games~\cite{bauer2012}. Like Haworth \textit{et al}, they visualise the data to aid users~\cite{bauer2012}~\cite{Haworth2010}. However, unlike Haworth \textit{et al} the visualisation is for game developers not the players. 
+\subsection{Path-finding}
+Bauer and Popovic~\cite{bauer2012} use RRT for level design in digital games. Like other papers mentioned in the Foregrounding and Visualising AI section they visualise the data to aid users~\cite{bauer2012}~\cite{Haworth2010}. This data visualisation is for use in game development to aid game developers or to analyse procedurally generated levels. 
 
 \begin{figure}[h]
 	\includegraphics[width=1.0\linewidth]{BauerRRT.png}
@@ -167,26 +163,24 @@ Bauer and Popovic use RRT for level design in digital games~\cite{bauer2012}. Li
 	\label{BauerRRT}
 \end{figure} 
 
-Their focus is on level design not game-play. They propose a tool that analyses a level generated by PCG or a level designer. They then use RRT to calculate possible routes the player could take when playing.  
-This produces an image that is difficult to read. The use of Dongen's method for graph clustering makes the output more legible~\cite{bauer2012, van2001}.  
+Their focus is on level design not game-play. They propose a tool that analyses a level generated by PCG or a level designer. They then use RRT to calculate possible routes the player could take when playing.  Figure~\ref{BauerRRT} shows the output of RRT once it has been run on a basic level design.  The first image, image a, may be difficult to read. Therefore, they made use of Dongen's method for graph clustering makes the output more legible as shown in the second image, image b~\cite{bauer2012, Dongen2001}.  
 
-The focus of this project is on a similar type of  visualisation but in a game instead of game design. Therefore, there is a need for a similar technique to organise the output of RRT.  This should make the visualisation  more useful as it should aid the player in way that they can look at the visualisation and interpret what the NPC is going to do. 
+The focus of this project is on a similar type of visualisation but running in the  game instead of during the game design. Therefore, there is a need for a similar technique to cluster the output of RRT. This should make the visualisation more useful as it should aid the player in way that they can look at the visualisation and interpret what the NPC is going to do. 
 
+Mendonça~\textit{et al}~\cite{Mendonça2015} look at path-finding both in robotics and digital games. Their focus is on stealth path-finding in games and applying that to robotics. Like RRT, the methods they propose does not necessarily find the shortest path~\cite{karaman2010}~\cite{Mendonça2015}. Instead they try to find the path where the agent spends the most time in cover. They generate custom navigation meshes (navmeshes). Then they assign a weight to each polygon in the navmesh depending on how close it is to being behind cover. 
 
-Mendonça~\textit{et al}~\cite{Mendonça2015} look at path-finding both in robotics and digital games. Their focus is on stealth path-finding in games and applying that to robotics. Like RRT, the methods they propose does not necessarily find the shortest path~\cite{karaman2010}~\cite{Mendonça2015}. Instead they try to find the most stealthy path. They generate custom navigation meshes (navmeshes). Then they assign a weight to each polygon in the navmesh depending on how close it is to being behind cover. 
-
-As Mendonça~\textit{et al}~\cite{Mendonça2015} use path-finding to find a stealthy path, the path with the optimal distance may not always be the path with the lowest cost in relation to the AI agent being in cover. Therefore, a requirement might not always be the optimal path. 
+As Mendonça~\textit{et al}~\cite{Mendonça2015} use path-finding to find a stealth orientated path, the path with the optimal distance may not always be the path with the lowest cost in relation to the AI agent being in cover. Therefore, a requirement might not always be the optimal path. 
 
 Tremblay~\textit{et al}~\cite{Tremblay2013}, like Bauer and Popovic~\cite{bauer2012}, also use RRT visualisations to aid level design. 
 
 Like Mendonça~\textit{et al}~\cite{Mendonça2015}, they focus on designing stealth games and finding stealth orientated paths in the game levels~\cite{Tremblay2013}. Like Bauer and Popovic, they use RRT to visualise possible moves the player could make. Then they use clustering to make the results less cumbersome to the user~\cite{Tremblay2013}. 
 
-The use of RRT in this case is because it is flexible and inexpensive. Also it's random nature mirrors a wide range of player behaviours~\cite{Tremblay2013}. 
-This project will use RRT but not for reflecting player behaviour.  Instead it's use  is for creating a visualisation that fits with the game and that is interesting for the player to interact with. A path that is interesting to play with is more important in this project than an optimal path. There will then be a comparison between a visualisation of the Unity navmeshes against the RRT visualisation.
+The use of RRT in this case is because it is flexible and inexpensive. Also its random nature mirrors a wide range of player behaviours~\cite{Tremblay2013}. 
+This project will use RRT but not for reflecting player behaviour.  Instead its use  is for creating a visualisation that fits with the game and that is interesting for the player to interact with. A path that is interesting to play with is more important in this project than an optimal path. There will then be a comparison between a visualisation of the Unity navmeshes against the RRT visualisation.
 
-While the use of RRT to find a stealthy path is different to it's use in this project a potential problem is that Tremblay~\textit{et al}'s results showed that the chances of their RRT implementation finding a path decreased as the grid size increased. It also decreased as the number of attempts decreased as shown in Figure \ref{TremblayRRT}. 
+While the use of RRT to find a stealth orientated path is different to its use in this project a potential problem is that Tremblay~\textit{et al}'s results showed that the chances of their RRT implementation finding a path decreased as the grid size increased. It also decreased as the number of attempts decreased as shown in Figure \ref{TremblayRRT}. 
 
-% EXPAND ON POTENTIAL ISSUE WITH IT RUNNING ONCE
+
 
 \begin{figure}[h]
 	\includegraphics[width=1.0\linewidth]{Tremblay2013.png}
@@ -200,13 +194,15 @@ While the use of RRT to find a stealthy path is different to it's use in this pr
 	\label{TremblayHeatMap}
 \end{figure} 
 
-Tremblay~\textit{et al} again look at the use of search algorithms for use in game development. This work builds on the 2013 paper on RRT in stealth games~\cite{Tremblay2014}. They look at the use of A*, MCTS and RRT to visualise player behaviour in platform games similar to Bauer ~\cite{Tremblay2014}  ~\cite{bauer2012} . 
+Tremblay~\textit{et al}~\cite{Tremblay2014} again look at the use of search algorithms for use in game development. This work builds on the 2013 paper on RRT in stealth games. As previously mentioned in the A* Path-finding section they look at the use of A*, MCTS and RRT to visualise player behaviour in platform games similar to Bauer ~\cite{Tremblay2014}~\cite{bauer2012}.  RRT is limited to drawing straight lines between the nodes, as straight lines are not always possible in RRT  Tremblay~\textit{et al} also use either A* or MCTS to find a path to the node and ensure that it is reachable.
+While A* was consistently fast with high success rates, RRT has varying results. RRT using MCTS for motion planning varied between 35 and 84 percent success rates and had the longest run times. In comparison, RRT with A* motion planning consistently had a success rate of over 60 percent. However, the run times for this combination varied. 
+Both of Tremblay~\textit{et al}'s~\cite{Tremblay2014}~\cite{Tremblay2013} papers showed that a potential issue wit the use of RRT is that it may not find a path. Both papers ran RRT combinations over 1000 times. In comparison this paper will run RRT at run time only running the algorithm once unless an RRT variant such as RRT* is used. If a path is not found a tree will still be produced and visualised so may still influence players.
 
-RRT is limited to drawing straight lines between the nodes, as straight lines are not always possible in RRT  Tremblay~\textit{et al} also use either A* or MCTS to find a path to the node and ensure that it is reachable.
-% EXPAND ON
 
 % RRT vs  A*
 % A* and optimal paths vs RRT better visualisation 
+
+The Foregrounding AI section will look at Third Eye Crime in detail for its use of AI visualisation. However, t also uses visualisation as an important mechanic~\cite{Isla2014}~\cite{game:ThirdEyeCrime}.  Isla uses Occupancy Maps to show where the enemy NPC thinks the player could be. Occupancy or Influence Maps do not produce a path instead they show the probability of the player being in different locations across the map~\cite{Isla2014}~\cite{Miles2006}. Isla used Occupancy Maps to show where the enemy AI thinks the player currently is. The enemy then moves to investigate that area reducing the probability of the player being there to 0.  Similarly, Miles and Loius used also used influence maps. While their example is specific to \textit{Real Time Strategy} (RTS) games, like Isla they used Occupancy Maps.  They used them as a base to for A* path-finding instead of A* using the map itself for path-finding~\cite{Miles2006}.
 
 
 \subsection{Foregrounding and Visualising AI}
@@ -247,16 +243,17 @@ Another use of visualisation is in game design. Often to check player behaviour 
 
 \subsection{Exploring Game Environments}
 % Wayfinding
-One method of guiding players through games is to use way-finding. Way-finding in games is often visual cues in the environment that will guide the player to an area of interest~\cite{si2017, Bacim2008}. 
+One method of guiding players through games is to use way-finding. Way-finding in games is often visual cues in the environment that will guide the player to an area of interest~\cite{si2017, Bacim2008}.
+The intention of visualising path-finding in this project is not to guide the players. However, like Si \textit{et al}  it will observe how players navigate and explore levels and whether, like the presence of way-finding cues, it affects player behaviour. 
+Moura and Bartram~\cite{moura2014} investigate the effects of different way-finding cues on players. They looked at methods used in AAA games and mimicked them in their own game. Their results show that the absence of way-finding cues was obvious to players. In contrast, the version with way-finding cues did not have enough cues to sufficiently guide the player. These results suggest that way-finding cues alone may not be enough to guide the player. They concluded that there is a need for more research as the results were inconclusive. 
 
-The intention of visualising RRT path-finding in this project is not to guide the players. However, like Si \textit{et al}  it will observe how players navigate and explore levels and whether, like the presence of way-finding cues, it affects player behaviour. 
+While this project focuses on enemy NPC path-finding this could be another interesting application of path-finding and visualisation. The path-finding could remain hidden from the player as it normally is in digital games but way-finding cues could be placed based off the path. This could then subtly guide the player through the game.
 
-Moura and Bartram investigate the effects of different way-finding cues on players~\cite{moura2014}.  They looked at methods used in AAA games and mimicked them in their own game. Their results show that the absence of way-finding cues was obvious to players. In contrast, the version with way-finding cues did not have enough cues to sufficiently guide the player. These results suggest that way-finding cues alone may not be enough to guide the player. While the use of visualisation of RRT path-finding in this project will be as an enemy another application could be in way-finding. Either as an enemy or friendly NPC the visualisation of path-finding could have a use a an aid to the player. However, Moura and Bartram concluded there is a need for more research as the results were inconclusive. 
- 
+
 % Player Exploration
 Si \textit{et al} investigated how players explore virtual environments~\cite{si2017}. While their experiments were specific to Real Time Strategy (RTS) games the results may apply to other game types. Si~\textit{et al} say that three common types of spatial exploration are; environment mapping, bonus item collecting and location/landmark discovery. The relevant exploration type for this project is spatial mapping. Firstly as it is what the enemy NPC will be doing.  Secondly as it is the player behaviour that is being measured by the logging tool in the software.
 
-Haworth~\textit{et al} did not look at player exploration but the game they used in their study involved a map where participants had to explore a maze. Participants which had the decision tree visualisation found it easier to navigate the maze. This suggests that visualisation could aid the exploration process~\cite{Haworth2010}.
+A paper looked at in the Foregrounding and Visualising was Haworth~\textit{et al}'s study. While they did not look at player exploration the game they used involved a map where participants had to explore a maze. Participants which had the decision tree visualisation found it easier to navigate the maze. While Moura and Bartram~\cite{moura2014} suggested way-finding alone was not enough to guide a player this suggests that visualisation could aid the exploration process~\cite{Haworth2010}.
 
 \section{Methodology}
 The methodology that will be used to test the given hypothesis will be play testing and questionnaires. This will require human participants to play the game and fill in the questionnaires. 
@@ -265,7 +262,9 @@ The methodology that will be used to test the given hypothesis will be play test
 \textbf{Null Hypothesis}: Visualising RRT path-finding has no affect on the percent of the level the participant explores. \\
 \textbf{Hypothesis 1}: Visualising RRT significantly affects the percent of the level the participant explores. \\
 \textbf{Hypothesis 2}: Visualising RRT significantly affects the length of time the participant spends in the level. \\
-\textbf{Hypothesis 3}:  Visualising Unity navmeshes affects the percent of the level the participant explores compared to RRT. \\
+\textbf{Hypothesis 3}: Visualising Unity navmeshes affects the percent of the level the participant explores compared to RRT. \\
+\textbf{Hypothesis 4}:  Visualising Unity navmeshes are not comprehensible to players. \\
+\textbf{Hypothesis 5}:  Visualising RRT is not comprehensible to players. \\
 
 
 The game the enemy NPC will be tested in is a 3D metroidvania game which has a focus on exploration. A metroidvania is an action-adventure game with a focus on exploration to discover new areas ad power ups. Players will be given one of the game variations to play and then asked to complete a questionnaire on their experience. The game will also log the players position at regular intervals to calculate what percent of the level they explore. How long a participant spends exploring the level will also be logged.
@@ -292,7 +291,7 @@ The software will log the participant's position in the level throughout their p
 
 The exported data will then be analysed using R~\cite{software:R}. Wallner says heat map are useful as they are easy to generate and easy to discern patterns from~\cite{Wallner2015}.  Tremblay~\textit{et al} also used heat maps on their RRT visualisations. They used heat maps as part of their tool for level designers to use to see where player could go and the effects of them altering the level design which can be seen in Figure \ref{TremblayHeatMap}. Here they will only be used for analysis and to assist in finding noticeable patterns.
 
-Other statistical analysis in R will be generated to support the heat maps. ADD MORE T TEST and Confidence INTERVALS
+Other statistical analysis in R will be generated to support the heat maps. T-Tests will be performed to compare the data on the null hypothesis and the sets of data on hypotheses 1 to 3.
  
 After completing a play test of the game participants will be asked to complete a questionnaire on their experience.
 
@@ -304,11 +303,11 @@ Questionnaire} (IEQ) which uses Likert scales responses~\cite{nordin2014}~\cite{
  
 However, Nordin \textit{et al}~\cite{nordin2014} say there are many issues with using existing questionnaires. Firstly, many of these questionnaires are not readily available. Another issue is that not all questionnaires have been thoroughly checked for validity. There is the potential issue of a researcher not fully understanding the questions put forward by another researcher or may not understand what data that question is intended to get.
 
-Most of the hypothesis can be tested using the quantitative from the play tests. However, some of the hypothesis require qualitative data so a questionnaire will be necessary.  The IEQ tests for immersion but has questions related to interacting with the game world and causes of frustration in it that may relate to the visualisation of path finding.  Therefore, relevant questions from the IEQ will be used as well as additional questions taken from the hypothesis of this paper.
+Most of the hypothesis can be tested using the quantitative from the play tests. However, hypotheses 4 and 5 require qualitative data so a questionnaire will be necessary. The IEQ tests for immersion but has questions related to interacting with the game world and causes of frustration in it that may relate to the visualisation of path finding.  Therefore, relevant questions from the IEQ will be used as well as additional questions based on hypotheses 4 and five of this paper.
 
 
 \section{Conclusion}
-In conclusion, while the use of RRT's is more frequent in robotics than digital games it's use appears feasible in this project. Its past use in game design tools shows that clustering can make the output understandable to the user. However,  the need of optimisations  such as RRT* or the use of A* may arise to produce of more optimal path. 
+In conclusion, while the use of RRT's is more frequent in robotics than digital games its use appears feasible in this project. Its past use in game design tools shows that clustering can make the output understandable to the user. However,  the need of optimisations  such as RRT* or the use of A* may arise to produce of more optimal path. 
 
 Visualisation and foregrounding of AI has been successfully used before again suggest it can used here. Finally previous studies have looked at way-finding and player exploration. These suggest that environmental factors in digital environments do affect player exploration.
 % references section
