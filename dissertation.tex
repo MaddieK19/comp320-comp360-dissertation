@@ -51,6 +51,7 @@
 \usepackage{graphicx}
 % Insert additional usepackage commands here
 \graphicspath{ {Figures/} }
+\usepackage{wrapfig}
 
 \begin{document}
 %
@@ -64,7 +65,7 @@
 %
 %
 % author name
-\author{1507866}
+\author{Madeleine Kay}
 
 % The paper headers -- please do not change these, but uncomment one of them as appropriate
 % Uncomment this one for COMP320
@@ -108,6 +109,7 @@ Previous papers have researched visualising~\textit{Artifical Intelligence} (AI)
 The research question proposed in this project is: how does visualising RRT path finding in a NPC affect how a player explores a game level?
 
 \section{Related Work}
+PARAGRAPH ON SUBSECTION ROADMAP
 
 \subsection{A* Pathfinding}
 % A* / pathfinding in games
@@ -250,19 +252,26 @@ The methodology that will be used to test the given hypotheses will be play test
 The game the enemy NPC will be tested in is a 3D metroidvania game which has a focus on exploration. A metroidvania game is an action-adventure game with a focus on exploration to discover new areas and power ups. Players will be given one of the game variations to play and then asked to complete a questionnaire on their experience. The game will also log the player's position at regular intervals to calculate what percent of the level they explore. How long a participant spends exploring the level will also be logged.
 
 \subsection{Playtest Variations}
+There will be multiple play tests with each play testing sessions having altered versions of the variations listed in table \ref{table:PlaytestVariations} 
 There will be multiple variations of the game to test the different hypothesis. 
 
-\subsubsection{Control: Unity Navmesh}
-The first variation will be the control version of the game. This version will have no visualisation on the enemy NPC's path-finding. The enemies in the game will use the default Unity navmeshes.
 
-\subsubsection{Unity Navmesh Visualised}
-The second variation will use Unity's built in navmeshes and navmesh agents for path-finding. This will be visualised on the floor of the level around the enemy NPC.
+\begin{table}[ht]
+	\centering
+	\caption{Playtest Variations}
+	\label{table:PlaytestVariations}
+	\def\arraystretch{1.5}
+	\begin{tabular}{ |c |c |c |}
+		\hline
+			  							& \textbf{Unity Navmesh}& \textbf{RRT} \\
+		\hline
+		\textbf{Hidden Path-finding}	& Variation 1			& Variation 3 \\
+		\hline
+		\textbf{Visualised Path-finding}& Variation 2		  	& Variation 4 \\
+		\hline
+	\end{tabular}
+\end{table}
 
-\subsubsection{RRT Path-finding Visualised}
-The third variation will have visualised path-finding. The path-finding will use RRT and the player will be able to see the tree around the enemy NPC.
-
-\subsubsection{RRT path-finding}
-The final version will also use RRT path-finding but there will no visualisation around the enemy NPC.
 
 A-B testing will be used on participants. A-B testing is where each participant will be assigned a version of the game to play~\cite{Hynninen2014}. In this case to prevent them from guessing what the goal of the play test is. 
 
