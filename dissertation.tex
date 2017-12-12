@@ -103,7 +103,7 @@ Previous papers have researched AI visualisation in games and how to achieve it.
 
 This paper will look at visualising the tree produced by RRT and the process taken to produce it. The visualisation will be around an enemy NPC. This will allow the players to see where the enemy NPC is going and what their line of sight is. 
 
-Implementation of the visualisation will be in a level of a 3D game made in Unity 5.6~\cite{software:Unity}. Logging tools in the play testing software will  the amount of time the players spends in a level and what percent of the level they explore. Analysis of this data will then determine whether the visualisation has had any affect on how participants explore.
+Implementation of the visualisation will be in a level of a 3D game made in Unity 5.6\footnote[1]{Unity 5.6 Available: https://unity3d.com/get-unity/download/archive}. Logging tools in the play testing software will  the amount of time the players spends in a level and what percent of the level they explore. Analysis of this data will then determine whether the visualisation has had any affect on how participants explore.
 
 Previous papers have researched visualising~\textit{Artifical Intelligence} (AI) and foregrounding AI. However, there is little on what effect this has on how the players explore the game.
 The research question proposed in this project is: how does visualising RRT path finding in a NPC affect how a player explores a game level?
@@ -238,16 +238,21 @@ Si \textit{et al}~\cite{si2017} investigated how players explore virtual environ
 A paper looked at in section \ref{VisualisingAI} was Haworth~\textit{et al}'s ~\cite{Haworth2010} study. While they did not look at player exploration the game they used involved a map where participants had to explore a maze. Participants which had the decision tree visualisation found it easier to navigate the maze. While Moura and Bartram~\cite{moura2014} suggested way-finding alone was not enough to guide a player this suggests that visualisation could aid the exploration process~\cite{Haworth2010}.
 
 \section{Methodology} \label{methodology}
-The methodology that will be used to test the given hypotheses will be play testing and a questionnaire. This will require human participants for both parts.
+The proposed research question is: how does visualising path-finding in a NPC affect how players explore a game level? The hypothesis drawn from this question are listed in subsection \ref{hypothesis}.
 
-\subsection{Hypothesis:}
+
+\subsection{Hypothesis:} \label{hypothesis}
 \textbf{Null Hypothesis}: Visualising RRT path-finding has no effect on the percent of the level the participant explores. \\
-\textbf{Hypothesis 1}: Visualising RRT significantly affects the percent of the level the participant explores. \\
+\textbf{Hypothesis 1}:  Visualising RRT significantly affects the percent of the level the participant explores. \\
 \textbf{Hypothesis 2}: Visualising RRT significantly affects the length of time the participant spends in the level. \\
 \textbf{Hypothesis 3}: Visualising Unity navmeshes affects the percent of the level the participant explores compared to RRT. \\
-\textbf{Hypothesis 4}: Visualising Unity navmeshes are not comprehensible to players. \\
-\textbf{Hypothesis 5}: Visualising RRT is comprehensible to players. \\
+\textbf{Hypothesis 4}: Visualising Unity navmeshes significantly affects the length of time the participant spends in the level. \\
+\textbf{Hypothesis 5}: Visualising Unity navmeshes are not comprehensible to players. \\
+\textbf{Hypothesis 6}: Visualising RRT is comprehensible to players. \\
 
+%\textbf{Hypothesis ?}: The percentage of the level that is explored by the player is significantly different between the RRt and navmesh visualisations?
+
+The methodology that will be used to test the given hypotheses will be play testing and a questionnaire. This will require human participants for both parts.
 
 The game the enemy NPC will be tested in is a 3D metroidvania game which has a focus on exploration. A metroidvania game is an action-adventure game with a focus on exploration to discover new areas and power ups. Players will be given one of the game variations to play and then asked to complete a questionnaire on their experience. The game will also log the player's position at regular intervals to calculate what percent of the level they explore. How long a participant spends exploring the level will also be logged.
 
@@ -272,12 +277,14 @@ There will be multiple variations of the game to test the different hypothesis.
 	\end{tabular}
 \end{table}
 
+%TODO:
+During the play tests players will be randomly assigned either RRT or navmesh pathfidning variations of the game. The players will be asked to play two versions of the game: one with visualisation and one without. Both versions they play will be using the same pathfinding method.
 
 A-B testing will be used on participants. A-B testing is where each participant will be assigned a version of the game to play~\cite{Hynninen2014}. In this case to prevent them from guessing what the goal of the play test is. 
 
 The software will log the player's position in the level throughout their play test. This data will be exported in a .CSV every second. Varying the export rate is unlikely to provide data of interest as the focus is on time spent in a level and how much was explored. 
 
-The exported data will then be analysed using R~\cite{software:R}. Wallner says heat maps are useful as they are easy to generate and easy to discern patterns from~\cite{Wallner2015}.  Tremblay~\textit{et al}~\cite{Tremblay2014} also used heat maps on their RRT visualisations. They used them as part of their tool for level designers to use to see where players could go and the effects of them altering the level design which can be seen in Figure \ref{TremblayHeatMap}. Here they will only be used for analysis and to assist in finding noticeable patterns.
+The exported data will then be analysed using R\footnote[2]{R Available: https://www.r-project.org/}. Wallner says heat maps are useful as they are easy to generate and easy to discern patterns from~\cite{Wallner2015}.  Tremblay~\textit{et al}~\cite{Tremblay2014} also used heat maps on their RRT visualisations. They used them as part of their tool for level designers to use to see where players could go and the effects of them altering the level design which can be seen in Figure \ref{TremblayHeatMap}. Here they will only be used for analysis and to assist in finding noticeable patterns.
 
 Other statistical analysis in R will be generated to support the heat maps. T-Tests will be performed to compare the data on the null hypothesis and the sets of data on hypotheses 1 to 3.
  
@@ -290,6 +297,9 @@ Questionnaires are also beneficial as they can prompt players to give answers th
 Questionnaire} (IEQ) which uses Likert scale responses~\cite{nordin2014,Jennett2008}.
  
 However, Nordin \textit{et al}~\cite{nordin2014} say there are many issues with using existing questionnaires. Firstly, many of these questionnaires are not readily available. Another issue is that not all questionnaires have been thoroughly checked for validity. There is also the potential issue of a researcher not fully understanding the questions put forward by another researcher or they may not understand what data that question is intended to get.
+
+%TODO:
+Another potential issue with a questionnaire is self report bias. Some of the hypothesis being tested relate to the player being confused or not understanding the visualisations. Players are unlikely to admit to not understandign the game making the daa gained invalid. \textbf{FIND REF}
 
 Most of the hypotheses here can be tested using the quantitative from the play tests. However, hypotheses 4 and 5 require qualitative data so a questionnaire will be necessary. The IEQ tests for player immersion but has questions related to interacting with the game world and causes of frustration in it that may relate to the visualisation of path finding.  Therefore, relevant questions from the IEQ will be used as well as additional questions based on hypotheses 4 and 5 of this paper.
 
