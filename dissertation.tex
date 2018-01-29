@@ -51,7 +51,7 @@
 \usepackage{graphicx}
 % Insert additional usepackage commands here
 \graphicspath{ {Figures/} }
-\usepackage{wrapfig}
+\usepackage{float}
 
 \begin{document}
 %
@@ -69,9 +69,9 @@
 
 % The paper headers -- please do not change these, but uncomment one of them as appropriate
 % Uncomment this one for COMP320
-\markboth{COMP320: Research Review and Proposal}{COMP320: Research Review and Proposal}
+%\markboth{COMP320: Research Review and Proposal}{COMP320: Research Review and Proposal}
 % Uncomment this one for COMP360
-% \markboth{COMP360: Dissertation}{COMP360: Dissertation}
+ \markboth{COMP360: Dissertation}{COMP360: Dissertation}
 
 % make the title area
 \maketitle
@@ -79,8 +79,12 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-This paper will look at path-finding and \textit{Artificial Intelligence} (AI) in digital games.   Specifically at the use of foregrounding AI and the visualisation of path-finding. 
-Previous papers have researched AI visualisation in games and how to achieve it. There has also been research into the visualisation of path-finding. However, the focus was most commonly on the use of visualisation in game design.
+	Opening: This paper will look at path-finding and \textit{Artificial Intelligence} (AI) in digital games.   Specifically at the use of foregrounding AI and the visualisation of path-finding. \\
+	Challenge: Previous papers have researched AI visualisation in games and how to achieve it. 
+	Action: \\
+	Resolution: \\
+	
+	There has also been research into the visualisation of path-finding. However, the focus was most commonly on the use of visualisation in game design.
 \end{abstract}
 
 \section{Introduction}
@@ -140,6 +144,8 @@ RRTs are a search method used more in robotics than in digital games~\cite{LaVal
 	\caption{ Kuffner and LaValle's RRT path planner building a tree and plotting a path through it~\cite{Kuffner2000}.}
 	\label{KuffnerRRT}
 \end{figure} 
+
+
 
 The process for RRT involves the random placement of nodes. A parent is then selected by finding the closest pre-existing node~\cite{Kuffner2000}. Figure~\ref{RRTPseudocode} shows the pseudo-code for the RRT algorithm. 
 
@@ -256,12 +262,12 @@ There will be multiple play tests with each play testing sessions having altered
 There will be multiple variations of the game to test the different hypothesis. 
 
 
-\begin{table}[ht]
+\begin{table}[H]
 	\centering
 	\caption{Playtest Variations}
 	\label{table:PlaytestVariations}
 	\def\arraystretch{1.5}
-	\begin{tabular}{ |c |c |c |}
+	\begin{tabular}{ |l|l|l|}
 		\hline
 			  							& \textbf{Unity Navmesh}& \textbf{RRT} \\
 		\hline
@@ -272,8 +278,9 @@ There will be multiple variations of the game to test the different hypothesis.
 	\end{tabular}
 \end{table}
 
-
 A-B testing will be used on participants. A-B testing is where each participant will be assigned a version of the game to play~\cite{Hynninen2014}. In this case to prevent them from guessing what the goal of the play test is. 
+
+For the first round of play testing each participant will be asked to play two versions of the game 
 
 The software will log the player's position in the level throughout their play test. This data will be exported in a .CSV every second. Varying the export rate is unlikely to provide data of interest as the focus is on time spent in a level and how much was explored. 
 
