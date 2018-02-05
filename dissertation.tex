@@ -115,8 +115,7 @@ The research question proposed in this project is: how does visualising RRT path
 \section{Related Work} \label{RelatedWork}
 PARAGRAPH ON SUBSECTION ROADMAP
 
-\subsection{A* Pathfinding} \label{A*PF}
-% A* / pathfinding in games
+\subsection{A* Path-finding} \label{A*PF}
 A* path-finding is widely used in both robotics and digital games~\cite{Algfoor2015}. In games A* appears to be the most commonly used path-finding algorithm~\cite{Algfoor2015}.
 
 Hart~\textit{et al}~\cite{Hart1968} first proposed A* path-finding in 1968 as an improvement on Dijkstra's algorithm. A* aims to expand the fewest nodes possible to minimise the cost of the path where the cost is the distance between the start and  goal nodes. Figure \ref{A*Pseudo} shows pseudo-code for implementing A*. 
@@ -283,12 +282,9 @@ There will be multiple variations of the game to test the different hypothesis.
 	\end{tabular}
 \end{table}
 
-<<<<<<< HEAD
-=======
 %TODO:
 During the play tests players will be randomly assigned either RRT or navmesh pathfidning variations of the game. The players will be asked to play two versions of the game: one with visualisation and one without. Both versions they play will be using the same pathfinding method.
 
->>>>>>> 23fb3d9a132624bfaeb3db37e948dc4b8819786e
 A-B testing will be used on participants. A-B testing is where each participant will be assigned a version of the game to play~\cite{Hynninen2014}. In this case to prevent them from guessing what the goal of the play test is. 
 
 For the first round of play testing each participant will be asked to play two versions of the game 
@@ -310,17 +306,26 @@ Questionnaire} (IEQ) which uses Likert scale responses~\cite{nordin2014,Jennett2
 However, Nordin \textit{et al}~\cite{nordin2014} say there are many issues with using existing questionnaires. Firstly, many of these questionnaires are not readily available. Another issue is that not all questionnaires have been thoroughly checked for validity. There is also the potential issue of a researcher not fully understanding the questions put forward by another researcher or they may not understand what data that question is intended to get.
 
 %TODO:
-Another potential issue with a questionnaire is self report bias. Some of the hypothesis being tested relate to the player being confused or not understanding the visualisations. Players are unlikely to admit to not understandign the game making the daa gained invalid. \textbf{FIND REF}
+Another potential issue with a questionnaire is self report bias. Some of the hypothesis being tested relate to the player being confused or not understanding the visualisations. Players are unlikely to admit to not understanding the game making the data gained invalid. \textbf{FIND REF}
 
 Most of the hypotheses here can be tested using the quantitative from the play tests. However, hypotheses 4 and 5 require qualitative data so a questionnaire will be necessary. The IEQ tests for player immersion but has questions related to interacting with the game world and causes of frustration in it that may relate to the visualisation of path finding.  Therefore, relevant questions from the IEQ will be used as well as additional questions based on hypotheses 4 and 5 of this paper.
 
-%TODO:
-Another potential issue with a questionnaire is self report bias. Some of the hypothesis being tested relate to the player being confused or not understanding the visualisations. Players are unlikely to admit to not understanding the game making the data gained invalid. \textbf{FIND REF}
+
+\section{Software Development} \label{softdev}
+..............
+\section{Software Testing} \label{softtest}
+TODO: Bot runs forward/back/jumps checks metrics are recorded. \\ 
+The tools used to develop play test software were Unity 5.6.3f1\footnote[3]{Unity 5.6 Available: https://unity3d.com/get-unity/download/archive} and Visual Studio Community 2017  15.5.4\footnote[4]{Visual Studio Community 2017 Available: https://www.visualstudio.com/downloads/}.
+
+For the analysis R in R Studio was used.
+
 
 \section{Conclusion}
 In conclusion, while the use of RRTs is more frequent in robotics than digital games its use appears feasible in this project. Its past use in game design tools shows that clustering can make the output understandable to the user. However, the need of optimisations such as RRT* or the use of A* may arise to produce a shorter path or to find any path. 
 
 Visualisation and foregrounding of AI have been successfully used before suggesting that it can used here. Finally, previous studies have looked at way-finding and player exploration. These suggest that environmental factors in digital environments do have some effect on player exploration.
+
+
 % references section
 
 \bibliographystyle{IEEEtran}
@@ -328,9 +333,9 @@ Visualisation and foregrounding of AI have been successfully used before suggest
 
 % Appendices
 
-% \appendices
-% \section{First appendix}
-% Appendices are optional. Delete or comment out this part if you do not need them.
+ \appendices
+ \section{First appendix}
+ Appendices are optional. Delete or comment out this part if you do not need them.
 
 % that's all folks
 \end{document}
