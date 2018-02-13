@@ -52,6 +52,9 @@
 % Insert additional usepackage commands here
 \graphicspath{ {Figures/} }
 \usepackage{float}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage[linesnumbered,ruled]{algorithm2e}
 
 \begin{document}
 %
@@ -138,21 +141,50 @@ Tremblay~\textit{et al}~\cite{Tremblay2014} look at the use of path-finding algo
 
 \subsection{RRT and Pathfinding} \label{RRTadnPathfinding}
 RRTs are a search method used more in robotics than in digital games~\cite{LaValle1998,Kuffner2000}. Kuffner and LaValle~\cite{Kuffner2000} first proposed RRT in 2000. They intended to produce a random algorithm more efficient than the other search algorithms available at the time.  Figure~\ref{KuffnerRRT} shows Kuffner and LaValle's~\cite{Kuffner2000} RRT Path Planner. Path Planner is a variant of RRT which has the intended use of finding paths from the generated tree.
+
 \begin{figure}[h]
 	\includegraphics[width=1.0\linewidth]{KuffnerRRT.png}
 	\caption{ Kuffner and LaValle's RRT path planner building a tree and plotting a path through it~\cite{Kuffner2000}.}
 	\label{KuffnerRRT}
 \end{figure} 
 
+\begin{algorithm}
+	\underline{BUILD RRT} $(qinit)$\;
+	$T$.init($q$init)\;
+	\For{$k\gets1$ \KwTo $K$ \KwBy}{
+		$qrand$\gets RANDOM CONFIG()\\
+		EXTEND($T$, $qrand$)\\
+	}
+	Return $T$ 
+	\\\hrulefill
+	\\  
+	\underline{EXTEND} $(T,q)$ \;
+	
+	$q$near\gets NEAREST NEIGHBOR$(q,T)$ \; \\
+	\uIf{NEW CONFIG($q, q$near, $q$new)}{  \\
+		$T$.addVertex($q$new) \;
+		$T$.addEdge($q$near,$q$new)\;
+		\uIf{$q$new = q}{
+			Return $Reached$ 
+		}
+		\uElse{	Return $Advanced$}{}
+		
+	}
+	\uElse{	Return $Trapped$}{} 
+	
+	
+	\caption{RRT}
+\end{algorithm}
+
 
 
 The process for RRT involves the random placement of nodes. A parent is then selected by finding the closest pre-existing node~\cite{Kuffner2000}. Figure~\ref{RRTPseudocode} shows the pseudo-code for the RRT algorithm. 
 
-\begin{figure}[h]
-	\includegraphics[width=1.0\linewidth]{RRTPseudocode.png}
-	\caption{ Kuffner and LaValle's RRT algorithm pseudo-code for RRT construction~\cite{Kuffner2000}.}
-	\label{RRTPseudocode}
-\end{figure} 
+%\begin{figure}[h]
+%	\includegraphics[width=1.0\linewidth]{RRTPseudocode.png}
+%	\caption{ Kuffner and LaValle's RRT algorithm pseudo-code for RRT construction~\cite{Kuffner2000}.}
+%	\label{RRTPseudocode}
+%\end{figure} 
 
 RRTs goal is to find a path between two points with no collisions. The path found may not be the optimal path though~\cite{Kuffner2000,Karaman2011}. Karaman and Sertac~\cite{karaman2010} say that the chance of RRT finding an optimal path is very unlikely~\cite{karaman2010,Tremblay2014}.  Karaman \textit{et al} propose a variant of RRT called RRT*. RRT* starts the same as RRT, however, when a new node has to choose a parent node instead of selecting the nearest node it evaluates the cost of the nodes in regards to reaching its goal. Each iteration re-evaluates the parent nodes to reduce the cost. Rewiring of the tree happens when a lower cost path is found.
 
