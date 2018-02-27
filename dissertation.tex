@@ -154,28 +154,25 @@ RRTs are a search method used more in robotics than in digital games~\cite{LaVal
 	\For{$k\gets1$ \KwTo $K$ \KwBy}{
 		$qrand$\gets RANDOM CONFIG()\\
 		EXTEND($T$, $qrand$)\\
-	}
+	}\\
 	Return $T$ 
 	\\\hrulefill
 	\\  
-	\underline{EXTEND} $(T,q)$ \;
+	\underline{EXTEND} $(T,q)$ \\
 	
-	$q$near\gets NEAREST NEIGHBOR$(q,T)$ \; \\
+	$q$near\gets NEAREST NEIGHBOR$(q,T)$ ;\ \\
 	\uIf{NEW CONFIG($q, q$near, $q$new)}{  \\
-		$T$.addVertex($q$new) \;
-		$T$.addEdge($q$near,$q$new)\;
+		$T$.addVertex($q$new) \\
+		$T$.addEdge($q$near,$q$new)\\
 		\uIf{$q$new = q}{
 			Return $Reached$ 
 		}
-		\uElse{	Return $Advanced$}{}
-		
+		\uElse{	Return $Advanced$}{}		
 	}
 	\uElse{	Return $Trapped$}{} 
-	
-	
+
 	\caption{RRT}
 \end{algorithm}
-
 
 
 The process for RRT involves the random placement of nodes. A parent is then selected by finding the closest pre-existing node~\cite{Kuffner2000}. Figure~\ref{RRTPseudocode} shows the pseudo-code for the RRT algorithm. 
@@ -279,15 +276,56 @@ The proposed research question is: how does visualising path-finding in a NPC af
 
 
 \subsection{Hypothesis:} \label{hypothesis}
-\textbf{Null Hypothesis}: Visualising RRT path-finding has no effect on the percent of the level the participant explores. \\
-\textbf{Hypothesis 1}:  Visualising RRT significantly affects the percent of the level the participant explores. \\
-\textbf{Hypothesis 2}: Visualising RRT significantly affects the length of time the participant spends in the level. \\
-\textbf{Hypothesis 3}: Visualising Unity navmeshes affects the percent of the level the participant explores compared to RRT. \\
-\textbf{Hypothesis 4}: Visualising Unity navmeshes significantly affects the length of time the participant spends in the level. \\
-\textbf{Hypothesis 5}: Visualising Unity navmeshes are not comprehensible to players. \\
-\textbf{Hypothesis 6}: Visualising RRT is comprehensible to players. \\
-
-%\textbf{Hypothesis ?}: The percentage of the level that is explored by the player is significantly different between the RRt and navmesh visualisations?
+\begin{table}[H]
+	\centering
+	\caption{Hypothesis}
+	\label{table:Hypothesis}
+	\def\arraystretch{1.5}
+	\begin{tabular}{|p{0.5cm}|p{3.75cm}|p{3.75cm}|}
+		\hline
+		 & \textbf{Hypothesis}& \textbf{Null Hypothesis} \\
+		\hline
+		1 & Visualising path-finding has an effect on the percent of the level the participant explores.
+			& Visualising path-finding has no effect on the percent of the level the participant explores.
+		\\ \hline
+		
+		2 & Visualising RRT path-finding has an effect on the percent of the level the participant explores.
+		& Visualising RRT path-finding has no effect on the percent of the level the participant explores.
+		\\ \hline
+		
+		3 & Visualising Unity navmeshes has an effect on the percent of the level the participant explores.
+		& Visualising Unity navmeshes has no effect on the percent of the level the participant explores
+		\\ \hline
+		
+		4 & Visualising RRT has an effect on the length of time the participant spends in the level. 
+		& Visualising RRT has no effect on the length of time the participant spends in the level. 
+		\\ \hline
+		
+		5 & Visualising Unity navmeshes has an effect on the length of time the participant spends in the level. 
+		& Visualising Unity navmeshes has no effect on the length of time the participant spends in the level.
+		\\ \hline
+		
+		6 & In comparison to RRT visualisation visualising Unity navmeshes has an effect on the percent of the level the participant explores.
+		& In comparison to RRT visualisation visualising Unity navmeshes has no effect on the percent of the level the participant explores.
+		\\ \hline
+		
+		7 &  In comparison to RRT visualisation visualising Unity navmeshes has an effect on length of time the participant spends in the level. 		
+		&   In comparison to RRT visualisation visualising Unity navmeshes has an effect on length of time the participant spends in the level. 	
+		\\ \hline
+		
+		8 &   The visualisation of  Unity navmeshes is comprehensible to players.
+		&  The visualisation of  Unity navmeshes is not comprehensible to players.
+		\\ \hline
+		
+		9 &  The visualisation of  RRT pathfinding is comprehensible to players.
+		&  The visualisation of  RRT pathfinding is not comprehensible to players.
+		\\ \hline
+			
+		10 &  The comprehensibility of  the visualisation of RRT pathfinding is no different to Unity navmesh visualisation to players.
+		&  The comprehensibility of  the visualisation of RRT pathfinding is different to Unity navmesh visualisation to players.
+		\\ \hline
+	\end{tabular}
+\end{table}
 
 The methodology that will be used to test the given hypotheses will be play testing and a questionnaire. This will require human participants for both parts.
 
