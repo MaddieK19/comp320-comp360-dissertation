@@ -82,10 +82,14 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-	Opening: This paper will look at path-finding and \textit{Artificial Intelligence} (AI) in digital games.   Specifically at the use of foregrounding AI and the visualisation of path-finding. \\
-	Challenge: While previous papers have researched AI visualisation and how to achieve it there did not appear to be many papers on the field of visualising AI in video games. 	There has been research into the visualisation of path-finding. However, the focus was most commonly on the use of visualisation in game design. 
-	Action: This paper looks at visualising a couple of path-finding on enemy NPCs in a 3D metroidvania game developed in Unity.\\
-	Resolution: Analysis of the results showed that ......\\
+% Opening: 
+	This paper will look at the use of path-finding and \textit{Artificial Intelligence} (AI) visualisation in digital games.   Specifically at the use of foregrounding AI and the visualisation of path-finding. 
+%	Challenge: 
+While previous papers have researched AI visualisation and how to achieve it there did not appear to be many papers on the field of visualising AI in video games. There has been research into the visualisation of path-finding. However, the focus was most commonly on the use of visualisation in game design. 
+% Action: 
+	This paper looks at visualising various methods of path-finding on enemy NPCs in a 3D metroidvania game developed in Unity.\\
+%Resolution:
+ Analysis of the results showed that ......\\
 
 \end{abstract}
 
@@ -115,10 +119,12 @@ Previous papers have researched visualising~\textit{Artifical Intelligence} (AI)
 The research question proposed in this project is: how does visualising RRT path finding in a NPC affect how a player explores a game level?
 
 \section{Related Work} \label{RelatedWork}
-PARAGRAPH ON SUBSECTION ROADMAP
+As the focus of this paper is on path-finding that was the first area researched. The methods looked at were A* path-finding in section \ref{A*PF} and RRT path-finding in section \ref{RRTadnPathfinding}.  After that Foregrounding and Visualising AI was researched in section \ref{VisualisingAI}. While there is research on AI visualisation there was a lack of it for digital games and what research was on games often focused on game developement and level design as can be seen in section \ref{VisualisingAI}. 
 
 The literature review .... not many papers on the field of AI visualisation in digital games. 
 EXPLAIN NOT MUCH IN FIELD ON GAMES MAKING THIS 'NEEDED'
+
+
 
 \subsection{A* Path-finding} \label{A*PF}
 A* path-finding is widely used in both robotics and digital games~\cite{Algfoor2015}. In games A* appears to be the most commonly used path-finding algorithm~\cite{Algfoor2015}.
@@ -275,6 +281,8 @@ A paper looked at in section \ref{VisualisingAI} was Haworth~\textit{et al}'s ~\
 \section{Methodology} \label{methodology}
 The proposed research question is: how does visualising path-finding in a NPC affect how players explore a game level? The hypothesis drawn from this question are listed in subsection \ref{hypothesis}.  For an effect size of 0.4 in this study at least 52 to partcipants were needed. 
 
+\textbf{POWERANALYSIS SCREENSHOT}
+
 All?? players were university students, most from game developement related courses. -> This may have influenced the results as students studying game developement using the Unity engine are likely to be to guess what the visualisations are showing??
 Another potential issue is that some partcipants may have user tested a variation of the game before and therefore known parts of the level layouts which could influence how much they explored. 
 
@@ -402,12 +410,32 @@ The test was a bot moving through the door and checking that the GameState class
 \textbf{SCREENSHOTS OF BOT AND DOOR AND GAMESTATE}
 
 \subsection{Timer and Data Export}
+The second bot was to check whether the software could successfaully export the necessary data to a .csv file. This bot is based of the door bot, the only difference is that it closes the game at the end to trigger the data export.  
+
 \textbf{SHOW TIMER ON SCREEN AND EXPORTED DATA}
 
 \subsection{Visualisations}
-\textbf{SHOW THAT PATHFINDING IS VISUALISED WHEN IT SHOULD BE}
+The final test was whether the path-finding visualisation worked as intended. This did not require a bot it can be seen tested by observing the scene in Unity. Figure \ref{image:navmeshVisuals} shows the visualisation of the Unity navmesh working in engine.  Figure \ref{image:RRTVisuals} shows the visualisation of the RRT path-finding working in engine.
 
-\section{Conclusion}
+\begin{figure}[h]
+	\includegraphics[width=1.0\linewidth]{NavmeshVis.png}
+	\caption{The navmesh visualisations shown both in editor and in scene.}
+	\label{image:navmeshVisuals}
+\end{figure}  
+
+
+\begin{figure}[h]
+	\includegraphics[width=1.0\linewidth]{RRTVis.png}
+	\caption{The RRT visualisations shown both in editor and in scene.}
+	\label{image:RRTVisuals}
+\end{figure}  
+
+\section{Analysis and Interpreteation}
+Data collected, detail on that \\
+Analysis of data \\
+Interpretation 
+
+\section{Conclusion} \textbf{NEEDS UPDATING BASED OFF DATA}
 In conclusion, while the use of RRTs is more frequent in robotics than digital games its use appears feasible in this project. Its past use in game design tools shows that clustering can make the output understandable to the user. However, the need of optimisations such as RRT* or the use of A* may arise to produce a shorter path or to find any path. 
 
 Visualisation and foregrounding of AI have been successfully used before suggesting that it can used here. Finally, previous studies have looked at way-finding and player exploration. These suggest that environmental factors in digital environments do have some effect on player exploration.
