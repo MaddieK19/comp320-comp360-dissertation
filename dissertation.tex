@@ -159,25 +159,25 @@ RRTs are a search method used more in robotics than in digital games~\cite{LaVal
 \begin{algorithm}
 	\underline{BUILD RRT} $(qinit)$\;
 	$T$.init($q$init)\;
-%	\For{$k\gets1$ \KwTo $K$ \KwBy}{
-%		$qrand$\gets RANDOM CONFIG()\\
-%		EXTEND($T$, $qrand$)\\
-%	}\\
-%	Return $T$ 
-%	\\\hrulefill
-%	\\  
-%	\underline{EXTEND} $(T,q)$ \\
-	%
-%	$q$near\gets NEAREST NEIGHBOR$(q,T)$ ;\ \\
-%	\uIf{NEW CONFIG($q, q$near, $q$new)}{  \\
-%		$T$.addVertex($q$new) \\
-%		$T$.addEdge($q$near,$q$new)\\
-%		\uIf{$q$new = q}{
-%			Return $Reached$ 
-%		}
-%		\uElse{	Return $Advanced$}{}		
-%	}
-%	\uElse{	Return $Trapped$}{} 
+	\For{$k\gets1$ \KwTo $K$ \KwBy}{
+		$qrand$\gets RANDOM CONFIG()\\
+		EXTEND($T$, $qrand$)\\
+	}\\
+	Return $T$ 
+	\\\hrulefill
+	\\  
+	\underline{EXTEND} $(T,q)$ \\
+
+	$q$near\gets NEAREST NEIGHBOR$(q,T)$ ;\ \\
+	\uIf{NEW CONFIG($q, q$near, $q$new)}{  \\
+		$T$.addVertex($q$new) \\
+		$T$.addEdge($q$near,$q$new)\\
+		\uIf{$q$new = q}{
+			Return $Reached$ 
+		}
+		\uElse{	Return $Advanced$}{}		
+	}
+	\uElse{	Return $Trapped$}{} 
 
 	\caption{RRT}
 \end{algorithm}
@@ -185,11 +185,11 @@ RRTs are a search method used more in robotics than in digital games~\cite{LaVal
 
 The process for RRT involves the random placement of nodes. A parent is then selected by finding the closest pre-existing node~\cite{Kuffner2000}. Figure~\ref{RRTPseudocode} shows the pseudo-code for the RRT algorithm. 
 
-\begin{figure}[h]
-	\includegraphics[width=1.0\linewidth]{RRTPseudocode.png}
-	\caption{ Kuffner and LaValle's RRT algorithm pseudo-code for RRT construction~\cite{Kuffner2000}.}
-	\label{RRTPseudocode}
-\end{figure} 
+%\begin{figure}[h]
+%	\includegraphics[width=1.0\linewidth]{RRTPseudocode.png}
+%	\caption{ Kuffner and LaValle's RRT algorithm pseudo-code for RRT construction~\cite{Kuffner2000}.}
+%	\label{RRTPseudocode}
+%\end{figure} 
 
 RRTs goal is to find a path between two points with no collisions. The path found may not be the optimal path though~\cite{Kuffner2000,Karaman2011}. Karaman and Sertac~\cite{karaman2010} say that the chance of RRT finding an optimal path is very unlikely~\cite{karaman2010,Tremblay2014}.  Karaman \textit{et al} propose a variant of RRT called RRT*. RRT* starts the same as RRT, however, when a new node has to choose a parent node instead of selecting the nearest node it evaluates the cost of the nodes in regards to reaching its goal. Each iteration re-evaluates the parent nodes to reduce the cost. Rewiring of the tree happens when a lower cost path is found.
 
@@ -279,12 +279,12 @@ Si \textit{et al}~\cite{si2017} investigated how players explore virtual environ
 A paper looked at in section \ref{VisualisingAI} was Haworth~\textit{et al}'s ~\cite{Haworth2010} study. While they did not look at player exploration the game they used involved a map where participants had to explore a maze. Participants which had the decision tree visualisation found it easier to navigate the maze. While Moura and Bartram~\cite{moura2014} suggested way-finding alone was not enough to guide a player this suggests that visualisation could aid the exploration process~\cite{Haworth2010}.
 
 \section{Methodology} \label{methodology}
-The proposed research question is: how does visualising path-finding in a NPC affect how players explore a game level? The hypothesis drawn from this question are listed in subsection \ref{hypothesis}.  For an effect size of 0.4 in this study at least 52 to partcipants were needed. 
+The proposed research question is: how does visualising path-finding in a NPC affect how players explore a game level? The hypothesis drawn from this question are listed in subsection \ref{hypothesis}.  For an effect size of 0.4 in this study at least 52 to participants were needed. 
 
-\textbf{POWERANALYSIS SCREENSHOT}
+\textbf{POWER ANALYSIS SCREEN SHOT}
 
-All?? players were university students, most from game developement related courses. -> This may have influenced the results as students studying game developement using the Unity engine are likely to be to guess what the visualisations are showing??
-Another potential issue is that some partcipants may have user tested a variation of the game before and therefore known parts of the level layouts which could influence how much they explored. 
+All?? players were university students, most from game development related courses. -> This may have influenced the results as students studying game development using the Unity engine are likely to be to guess what the visualisations are showing??
+Another potential issue is that some participants may have user tested a variation of the game before and therefore known parts of the level layouts which could influence how much they explored. 
 
 
 \subsection{Hypothesis:} \label{hypothesis}
@@ -329,12 +329,12 @@ Another potential issue is that some partcipants may have user tested a variatio
 		&  The visualisation of  Unity navmeshes is not comprehensible to players.
 		\\ \hline
 		
-		9 &  The visualisation of  RRT pathfinding is comprehensible to players.
+		9 &  The visualisation of  RRT path-finding is comprehensible to players.
 		&  The visualisation of  RRT pathfinding is not comprehensible to players.
 		\\ \hline
 			
-		10 &  The comprehensibility of  the visualisation of RRT pathfinding is no different to Unity navmesh visualisation to players.
-		&  The comprehensibility of  the visualisation of RRT pathfinding is different to Unity navmesh visualisation to players.
+		10 &  The comprehensibility of  the visualisation of RRT path-finding is no different to Unity navmesh visualisation to players.
+		&  The comprehensibility of  the visualisation of RRT path-finding is different to Unity navmesh visualisation to players.
 		\\ \hline
 	\end{tabular}
 \end{table}
@@ -342,7 +342,7 @@ Table \ref{table:Hypothesis} shows the hypothesis being tested in this experimen
 
 The game the enemy NPC will be tested in is a 3D metroidvania game which has a focus on exploration. A metroidvania game is an action-adventure game with a focus on exploration to discover new areas and power ups. Players will be given one of the game variations to play and then asked to complete a questionnaire on their experience. The game will also log the player's position at regular intervals to calculate what percent of the level they explore. How long a participant spends exploring the level will also be logged.
 
-\subsection{Playtest Variations}
+\subsection{Play-test Variations}
 Players were all randomly assigned one of the four games variations shown in table \ref{table:PlaytestVariations}. 
 
 \begin{table}[H]
@@ -361,7 +361,7 @@ Players were all randomly assigned one of the four games variations shown in tab
 	\end{tabular}
 \end{table}
 
-During the play tests players will be randomly assigned either RRT or navmesh pathfidning variations of the game. The players will be asked to play two versions of the game: one with visualisation and one without. Both versions they play will be using the same pathfinding method.
+During the play tests players will be randomly assigned either RRT or navmesh path-finding variations of the game. The players will be asked to play two versions of the game: one with visualisation and one without. Both versions they play will be using the same path-finding method.
 
 A-B testing will be used on participants. A-B testing is where each participant will be assigned a version of the game to play~\cite{Hynninen2014}. In this case to prevent them from guessing what the goal of the play test is. 
 
@@ -382,12 +382,12 @@ Alongside play testing participants will also be asked to fill out a questionnai
 Questionnaires are also beneficial as they can prompt players to give answers they may not have given spontaneously. The two options here are to either create a questionnaire specifically for the experiment or to use an existing one. There are a wide variety of questionnaires that already exist to measure players experiences in play testing~\cite{nordin2014,Jennett2008}. These come with the benefit of being more likely to be thoroughly tested such as the \textit{Immersive Experience
 Questionnaire} (IEQ) which uses Likert scale responses or Yee's taxonomy~\cite{nordin2014,Jennett2008, Yee2006, Yee2012}.
  
-However, Nordin \textit{et al}~\cite{nordin2014} say there are many issues with using preexisting questionnaires. Firstly, many of these questionnaires are not readily available. Another issue is that not all questionnaires have been thoroughly checked for validity. There is also the potential issue of a researcher not fully understanding the questions put forward by another researcher or they may not understand what data that question is intended to get.
+However, Nordin \textit{et al}~\cite{nordin2014} say there are many issues with using pre-existing questionnaires. Firstly, many of these questionnaires are not readily available. Another issue is that not all questionnaires have been thoroughly checked for validity. There is also the potential issue of a researcher not fully understanding the questions put forward by another researcher or they may not understand what data that question is intended to get.
 
 Another potential issue with a questionnaire is self report bias. Some of the hypothesis being tested relate to the player being confused or not understanding the visualisations. Players are unlikely to admit to not understanding the game making the data gained invalid. \textbf{FIND REF}
 
 Most of the hypotheses here can be tested using the quantitative data from the play tests. However, some require qualitative data so a questionnaire will be necessary. 
-Yee's questionnaire for player taxonomy's will be used in combination with questions based of the hypotheises that require qualitative data.
+Yee's questionnaire for player taxonomy's will be used in combination with questions based of the hypotheses that require qualitative data.
 
 \textbf{NEW STUFF} \\
 Looked at Bartle not validated \cite{Bartle1996} but used: 
@@ -395,9 +395,9 @@ Looked at Bartle not validated \cite{Bartle1996} but used:
 \section{Software Development} \label{softdev}
 The software used to develop the play testing software was Unity 5.6.3f1\footnote[3]{Unity 5.6 Available: https://unity3d.com/get-unity/download/archive} and Visual Studio Community 2017  15.5.4\footnote[4]{Visual Studio Community 2017 Available: https://www.visualstudio.com/downloads/}.
 
-The analysis was carreid out in R version 3.4.?? in R Studio.
+The analysis was carried out in R version 3.4.?? in R Studio.
 
-The development cycle of this software was a combination of the Incremental and Agile software developement cycles. Basic features were developed and then iterated on until the software was useable for play testing. Trello\footnote[5]{Trello Available: https://trello.com/} was used to manage tasks.
+The development cycle of this software was a combination of the Incremental and Agile software development cycles. Basic features were developed and then iterated on until the software was usable for play testing. Trello\footnote[5]{Trello Available: https://trello.com/} was used to manage tasks.
 
 \section{Software Testing} \label{softtest}
 To test the play-testing a series of simple bots were developed to move though the level to test various functionality.
@@ -407,10 +407,10 @@ TODO: Bot runs forward/back/jumps checks metrics are recorded. \\
 The first bot was to test whether the doors recorded whether the player had moved through them. Whether a door has been walked through it used to determine what percent of the level the player explored.
 The test was a bot moving through the door and checking that the GameState class recorded it.
 
-\textbf{SCREENSHOTS OF BOT AND DOOR AND GAMESTATE}
+\textbf{SCREEN SHOTS OF BOT AND DOOR AND GAME STATE}
 
 \subsection{Timer and Data Export}
-The second bot was to check whether the software could successfaully export the necessary data to a .csv file. This bot is based of the door bot, the only difference is that it closes the game at the end to trigger the data export.  
+The second bot was to check whether the software could successfully export the necessary data to a .csv file. This bot is based of the door bot, the only difference is that it closes the game at the end to trigger the data export.  
 
 \textbf{SHOW TIMER ON SCREEN AND EXPORTED DATA}
 
