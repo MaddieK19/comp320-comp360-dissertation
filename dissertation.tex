@@ -52,9 +52,14 @@
 % Insert additional usepackage commands here
 \graphicspath{ {Figures/} }
 \usepackage{float}
-\usepackage{wrapfig}
+%\usepackage{wrapfig}
 \usepackage{amsmath}
-\usepackage[linesnumbered,ruled]{algorithm2e}
+%\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage{todonotes}
+\usepackage{algpseudocode}
+%\usepackage{algorithm}% http://ctan.org/pkg/algorithms
 
 \begin{document}
 %
@@ -89,26 +94,11 @@ While previous papers have researched AI visualisation and how to achieve it the
 % Action: 
 	This paper looks at visualising various methods of path-finding on enemy NPCs in a 3D metroidvania game developed in Unity.\\
 %Resolution:
- Analysis of the results showed that ......\\
+ \todo[inline]{Analysis of the results showed that...}
 
 \end{abstract}
 
 \section{Introduction} \label{introduction}
-% The very first letter is a 2 line initial drop letter followed
-% by the rest of the first word in caps.
-% 
-% form to use if the first word consists of a single letter:
-% \IEEEPARstart{A}{demo} file is ....
-% 
-% form to use if you need the single drop letter followed by
-% normal text (unknown if ever used by the IEEE):
-% \IEEEPARstart{A}{}demo file is ....
-% 
-% Some journals put the first two words in caps:
-% \IEEEPARstart{T}{his demo} file is ....
-% 
-% Here we have the typical use of a "T" for an initial drop letter
-% and "HIS" in caps to complete the first word.
 \IEEEPARstart{T}{his} project will look at visualising the path-finding of an enemy \textit{Non Player Character} (NPC) using \textit{Rapidly-exploring Random Tree} (RRT) path-finding.  Figure~\ref{KuffnerRRT} shows an example of RRT path-finding. Here the RRT explores the area and then draws a path along the tree between the start and the goal nodes~\cite{Kuffner2000}. 
 
 This paper will look at visualising the tree produced by RRT and the process taken to produce it. The visualisation will be around an enemy NPC. This will allow the players to see where the enemy NPC is going and what their line of sight is. 
@@ -119,10 +109,10 @@ Previous papers have researched visualising~\textit{Artifical Intelligence} (AI)
 The research question proposed in this project is: how does visualising RRT path finding in a NPC affect how a player explores a game level?
 
 \section{Related Work} \label{RelatedWork}
-As the focus of this paper is on path-finding that was the first area researched. The methods looked at were A* path-finding in section \ref{A*PF} and RRT path-finding in section \ref{RRTadnPathfinding}.  After that Foregrounding and Visualising AI was researched in section \ref{VisualisingAI}. While there is research on AI visualisation there was a lack of it for digital games and what research was on games often focused on game developement and level design as can be seen in section \ref{VisualisingAI}. 
+As the focus of this paper is on path-finding that was the first area researched. The methods looked at were A* path-finding in section \ref{A*PF} and RRT path-finding in section \ref{RRTadnPathfinding}.  After that Foregrounding and Visualising AI was researched in section \ref{VisualisingAI}. While there is research on AI visualisation there was a lack of it for digital games and what research was on games often focused on game development and level design as can be seen in section \ref{VisualisingAI}. 
 
 The literature review .... not many papers on the field of AI visualisation in digital games. 
-EXPLAIN NOT MUCH IN FIELD ON GAMES MAKING THIS 'NEEDED'
+\todo[inline]{EXPLAIN NOT MUCH IN FIELD ON GAMES MAKING THIS 'NEEDED'}
 
 
 
@@ -156,31 +146,13 @@ RRTs are a search method used more in robotics than in digital games~\cite{LaVal
 	\label{KuffnerRRT}
 \end{figure} 
 
-\begin{algorithm}
-	\underline{BUILD RRT} $(qinit)$\;
-	$T$.init($q$init)\;
-%	\For{$k\gets1$ \KwTo $K$ \KwBy}{
-%		$qrand$\gets RANDOM CONFIG()\\
-%		EXTEND($T$, $qrand$)\\
-%	}\\
-%	Return $T$ 
-%	\\\hrulefill
-%	\\  
-%	\underline{EXTEND} $(T,q)$ \\
-	%
-%	$q$near\gets NEAREST NEIGHBOR$(q,T)$ ;\ \\
-%	\uIf{NEW CONFIG($q, q$near, $q$new)}{  \\
-%		$T$.addVertex($q$new) \\
-%		$T$.addEdge($q$near,$q$new)\\
-%		\uIf{$q$new = q}{
-%			Return $Reached$ 
-%		}
-%		\uElse{	Return $Advanced$}{}		
-%	}
-%	\uElse{	Return $Trapped$}{} 
+\todo[inline]{PSEUDOCODE FOR RRT}
 
-	\caption{RRT}
-\end{algorithm}
+%\begin{algorithmic}
+%	\For{$k$ \gets $1$ to $K$} 
+	
+%	\EndFor
+%\end{algorithmic}
 
 
 The process for RRT involves the random placement of nodes. A parent is then selected by finding the closest pre-existing node~\cite{Kuffner2000}. Figure~\ref{RRTPseudocode} shows the pseudo-code for the RRT algorithm. 
@@ -283,17 +255,17 @@ The proposed research question is: how does visualising path-finding in a NPC af
 
 \textbf{POWERANALYSIS SCREENSHOT}
 
-All?? players were university students, most from game developement related courses. -> This may have influenced the results as students studying game developement using the Unity engine are likely to be to guess what the visualisations are showing??
+All?? players were university students, most from game developement related courses. $\to$ This may have influenced the results as students studying game developement using the Unity engine are likely to be to guess what the visualisations are showing??
 Another potential issue is that some partcipants may have user tested a variation of the game before and therefore known parts of the level layouts which could influence how much they explored. 
 
 
 \subsection{Hypothesis:} \label{hypothesis}
-\begin{table}[h]
+\begin{table*}[h]
 	\centering
 	\caption{Hypothesis}
 	\label{table:Hypothesis}
 	\def\arraystretch{1.5}
-	\begin{tabular}{|p{0.1cm}|p{3.75cm}|p{3.75cm}|}
+	\begin{tabular}{|c|p{7.5cm}|p{7.5cm}|}
 		\hline
 		 & \textbf{Hypothesis}& \textbf{Null Hypothesis} \\
 		\hline
@@ -337,7 +309,7 @@ Another potential issue is that some partcipants may have user tested a variatio
 		&  The comprehensibility of  the visualisation of RRT pathfinding is different to Unity navmesh visualisation to players.
 		\\ \hline
 	\end{tabular}
-\end{table}
+\end{table*}
 Table \ref{table:Hypothesis} shows the hypothesis being tested in this experiment. The methodology that will be used to test these hypotheses will be play testing and a questionnaire. This will require human participants for both parts. Ethics approval for this methodology was gained from Falmouth University’s Research Ethics board.
 
 The game the enemy NPC will be tested in is a 3D metroidvania game which has a focus on exploration. A metroidvania game is an action-adventure game with a focus on exploration to discover new areas and power ups. Players will be given one of the game variations to play and then asked to complete a questionnaire on their experience. The game will also log the player's position at regular intervals to calculate what percent of the level they explore. How long a participant spends exploring the level will also be logged.
@@ -402,17 +374,18 @@ The development cycle of this software was a combination of the Incremental and 
 \section{Software Testing} \label{softtest}
 To test the play-testing a series of simple bots were developed to move though the level to test various functionality.
 
-TODO: Bot runs forward/back/jumps checks metrics are recorded. \\ 
+\todo[inline]{Bot runs forward/back/jumps checks metrics are recorded.}
+
 \subsection{Doors}
 The first bot was to test whether the doors recorded whether the player had moved through them. Whether a door has been walked through it used to determine what percent of the level the player explored.
 The test was a bot moving through the door and checking that the GameState class recorded it.
 
-\textbf{SCREENSHOTS OF BOT AND DOOR AND GAMESTATE}
+\todo[inline]{SCREENSHOTS OF BOT AND DOOR AND GAMESTATE.}
 
 \subsection{Timer and Data Export}
 The second bot was to check whether the software could successfaully export the necessary data to a .csv file. This bot is based of the door bot, the only difference is that it closes the game at the end to trigger the data export.  
 
-\textbf{SHOW TIMER ON SCREEN AND EXPORTED DATA}
+\todo[inline]{SHOW TIMER ON SCREEN AND EXPORTED DATA.}
 
 \subsection{Visualisations}
 The final test was whether the path-finding visualisation worked as intended. This did not require a bot it can be seen tested by observing the scene in Unity. Figure \ref{image:navmeshVisuals} shows the visualisation of the Unity navmesh working in engine.  Figure \ref{image:RRTVisuals} shows the visualisation of the RRT path-finding working in engine.
@@ -430,12 +403,14 @@ The final test was whether the path-finding visualisation worked as intended. Th
 	\label{image:RRTVisuals}
 \end{figure}  
 
-\section{Analysis and Interpreteation}
-Data collected, detail on that \\
-Analysis of data \\
-Interpretation 
+\section{Analysis and Interpretation}
 
-\section{Conclusion} \textbf{NEEDS UPDATING BASED OFF DATA}
+\todo[inline]{Data collected, detail on that.}
+\todo[inline]{Analysis of data.}
+\todo[inline]{Interpretation.}
+
+\section{Conclusion} 
+\todo[inline]{NEEDS UPDATING BASED OFF DATA}
 In conclusion, while the use of RRTs is more frequent in robotics than digital games its use appears feasible in this project. Its past use in game design tools shows that clustering can make the output understandable to the user. However, the need of optimisations such as RRT* or the use of A* may arise to produce a shorter path or to find any path. 
 
 Visualisation and foregrounding of AI have been successfully used before suggesting that it can used here. Finally, previous studies have looked at way-finding and player exploration. These suggest that environmental factors in digital environments do have some effect on player exploration.
