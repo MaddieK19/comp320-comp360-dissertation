@@ -59,7 +59,7 @@
 \usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
 \usepackage{todonotes}
 \usepackage{algpseudocode}
-%\usepackage{algorithm}% http://ctan.org/pkg/algorithms
+\usepackage{algorithm}% http://ctan.org/pkg/algorithms
 
 \begin{document}
 %
@@ -147,27 +147,38 @@ RRTs are a search method used more in robotics than in digital games~\cite{LaVal
 	\label{KuffnerRRT}
 \end{figure} 
 
-\todo[inline]{PSEUDO CODE FOR RRT}
+\begin{algorithm}
+	\begin{algorithmic}
+		\State \hrulefill 
+	\State\textbf{ BUILD\_RRT($q$init)}
+		\State $T$.init($q.init$)
+		\For{$k = 1$ to $K$} 
+			\State $q$rand $ \gets  RANDOM$\_$CONFIG() $
+			\State EXTEND ($T$, $q$rand)
+		\EndFor
+	\State \hrulefill
+	\State \hrulefill 
+	\State \textbf{EXTEND($T$, q)}
+		\State $q$near $ \gets $ NEAREST\_NEIGHBOR($q, T$);
+		 \If {NEW\_CONFIG($q, qnear, qnew$)}
+		 	\State $T$.add\_vertex($q$new);
+		 	\State $T$.add\_edge(qnear, qnew);
+		 	\If {$q$new = $q$}
+		 		\State Return $Reached$;
+		    \Else
+		 		\State  Return $Advanced$;
+		 \EndIf
+		 \State Return $Trapped$
+		 \EndIf
+	\State \hrulefill 
+	\end{algorithmic}
+\caption{RRT Pseudo Code}
+\label{RRTPseudocode}
+\end{algorithm}
 
-\begin{algorithmic}
-	\For{$k \gets 1$ to $K$} 
-	
-	\EndFor
-\end{algorithmic}
-
-\missingfigure{RRT PSEUDO CODE a long text string}
-
-
-The process for RRT involves the random placement of nodes. A parent is then selected by finding the closest pre-existing node~\cite{Kuffner2000}. Figure~\ref{RRTPseudocode} shows the pseudo-code for the RRT algorithm. 
-
-\begin{figure}[h]
-	\includegraphics[width=1.0\linewidth]{RRTPseudocode.png}
-	\caption{ Kuffner and LaValle's RRT algorithm pseudo-code for RRT construction~\cite{Kuffner2000}.}
-	\label{RRTPseudocode}
-\end{figure} 
+The process for RRT involves the random placement of nodes. A parent is then selected by finding the closest pre-existing node~\cite{Kuffner2000}. Algorithm~\ref{RRTPseudocode} shows the pseudo-code for the RRT algorithm. 
 
 RRTs goal is to find a path between two points with no collisions. The path found may not be the optimal path though~\cite{Kuffner2000, Karaman2011}. Karaman and Sertac~\cite{karaman2010} say that the chance of RRT finding an optimal path is very unlikely~\cite{karaman2010, Tremblay2014}.  Karaman \textit{et al} propose a variant of RRT called RRT*. RRT* starts the same as RRT, however, when a new node has to choose a parent node instead of selecting the nearest node it evaluates the cost of the nodes in regards to reaching its goal. Each iteration re-evaluates the parent nodes to reduce the cost. Rewiring of the tree happens when a lower cost path is found.
-
 
 \subsection{Path-finding} \label{Pathfinding}
 Bauer and Popovic~\cite{bauer2012} use RRT for level design in digital games. Like other papers mentioned in section \ref{VisualisingAI}, they visualise the data to aid users~\cite{bauer2012, Haworth2010}. This data visualisation is for use in game development to aid game developers or to analyse procedurally generated levels. 
