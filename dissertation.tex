@@ -111,11 +111,8 @@
 	\section{Related Work} \label{RelatedWork}
 	As the focus of this paper is on path-finding that was the first area researched. The methods looked at were A* path-finding in section \ref{A*PF} and RRT path-finding in section \ref{RRTadnPathfinding}.  After that Foregrounding and Visualising AI was researched in section \ref{VisualisingAI}. While there is research on AI visualisation there was a lack of it for digital games and what research was on games often focused on game development and level design as can be seen in section \ref{VisualisingAI}. 
 	
-	This literature review found that while there are many papers on AI visualisation there are very few on AI visualisation in digital games and many of the ones on games are on visualising AI to aid development, not for the end user. 
-	
-	\todo[inline]{EXPLAIN NOT MUCH IN FIELD ON GAMES MAKING THIS 'NEEDED'}
-	
-	
+	This literature review found that while there are many papers on AI visualisation there are few on AI visualisation in digital games and many of the ones on games are on visualising AI to aid development, not for the end user. 
+		
 	
 	\subsection{A* Path-finding} \label{A*PF}
 	A* path-finding is widely used in both robotics and digital games~\cite{Algfoor2015}. In games, A* appears to be the most commonly used path-finding algorithm~\cite{Algfoor2015}.
@@ -150,7 +147,7 @@
 	\begin{algorithm}
 		\begin{algorithmic}
 			\State \hrulefill 
-			\State\textbf{ BUILD\_RRT($q$init)}
+			\State \textbf{ BUILD\_RRT($q$init)}
 			\State $T$.init($q.init$)
 			\For{$k = 1$ to $K$} 
 			\State $q$rand $ \gets  RANDOM$\_$CONFIG() $
@@ -266,23 +263,16 @@
 	A paper looked at in section \ref{VisualisingAI} was Haworth~\textit{et al}'s ~\cite{Haworth2010} study. While they did not look at player exploration the game they used involved a map where participants had to explore a maze. Participants which had the decision tree visualisation found it easier to navigate the maze. While Moura and Bartram~\cite{moura2014} suggested way-finding alone was not enough to guide a player this suggests that visualisation could aid the exploration process~\cite{Haworth2010}.
 	
 	\section{Methodology} \label{methodology}
-	The proposed research question is: how does visualising path-finding in an NPC affect how players explore a game level? The hypothesis drawn from this question are listed in subsection \ref{hypothesis}.  For an effect size of 0.4 in this study, a minimum of  52 to participants were needed as can be seen in figure \ref{image:PowerAnalysis}. 
+	The proposed research question is: how does visualising pathfinding in an NPC affect how players explore a game level? The hypothesis drawn from this question are listed in subsection \ref{hypothesis}.  
 	
-	\begin{figure}[h]
-		\includegraphics[width=1.0\linewidth]{PowerAnalysis.png}
-		\caption{ A screen-shot of a Power Analysis from G*Power}
-		\label{image:PowerAnalysis}
-	\end{figure}  
-	
-	
-	The play-testing was completed by participants both online and in person. Both participant types were given the same data and for in-person tastes, the researcher sat away from them to prevent them being affected by observation.
+	An A priori power analysis was performed to determine how many participants were required for an effect size of 0.4. The results showed that a minimum of 52 participants were required. As not all data sets were complete further participants were tested resulting in 62 sets of results. 	
+	The play-testing was completed by participants both online and in person to reach the required sample size. Both participant types were given the same instructions and questionnaire.
 	
 	A large majority of the players were students on game development-related courses, this gave the issue that they treated the playtest as an evaluation of the game itself and gave feedback on that, not the visualisation.  Another potential issue with this is that many students were familiar with Unity and therefore may have been able to guess what the visualisations showed. 
 	Another further issue is that some participants may have user tested a variation of the game before and therefore known parts of the level layouts which could influence how much they explored. 
 	\todo[inline]{Update when playtesting complete.}
 	
-	The rest of the playtesters were done online mostly through Reddit. The subreddits it was posted on were mostly related to surveys and gaining participants for studies so this likely effected results as not many people go online looking for surveys??  
-	
+	The rest of the playtests were done online through Reddit and Twitter. The subreddits it was posted on were: /r/SampleSize, /r/UniUk, r/PlayMyGame and r/PlayTesters. These subreddits all relate to gaining participants and playtesters.  This could have effected the results as only a certain type of person  would go online looking for surveys and playtests to complete. Again some of the subreddits listed were related to game development and therefore the feedback given was related to the state of the game not the pathfinding. 	
 	
 	
 	\subsection{Hypothesis:} \label{hypothesis}
@@ -338,7 +328,10 @@
 	\end{table*}
 	Table \ref{table:Hypothesis} shows the hypothesis being tested in this experiment. The methodology that will be used to test these hypotheses will be playtesting and a questionnaire. This will require human participants for both parts. Ethics approval for this methodology was gained from Falmouth University’s Research Ethics Board.
 	
-	The game the enemy NPC will be tested in is a 3D Metroidvania game which has a focus on exploration. A Metroidvania game is an action-adventure game with a focus on exploration to discover new areas and power-ups. Players will be given one of the game variations to play and then asked to complete a questionnaire on their experience. The game will also log the player's position at regular intervals to calculate what percent of the level they explore. How long a participant spends exploring the level will also be logged.
+	The game the pathfinding variations will be tested in is `Gates of Amenti' a 3D Metroidvania game which has a been designed with a focus on exploration. A Metroidvania game is an action-adventure game with a focus on exploration to discover new areas and power-ups.
+\todo[inline]{Reference about metroidvanias?}
+	
+	 Players will be given one of the game variations to play and then asked to complete a questionnaire on their experience. The game will also log the player's position at regular intervals to calculate what percent of the level they explore. How long a participant spends exploring the level will also be logged.
 	
 	\subsection{Play-testing}
 	\todo[inline]{More details on game used. Justify GoA use}
@@ -361,24 +354,25 @@
 		\end{tabular}
 	\end{table}
 	
-	During the playtests players were randomly assigned either RRT or navmesh path-finding variations of the game. The players were asked to play that version for as long as they wanted. While playing the software logged the time the player spent in the level per life and what percent to the level they explored. The percent explored was calculated by recording how many doors the player walked through as the game requires players to unlock doors to progress. This data is then exported into a .CSV. The .CSV is then analysed using R\footnote[2]{R Available: https://www.r-project.org/}.
+	During the playtests players were randomly assigned one of the four finding variations of the game. The players were asked to play that version for as long as they wanted. While playing the software logged the time the player spent in the level per life and what percent to the level they explored. The percent explored was calculated by recording how many doors the player walked through as the game requires players to unlock doors to progress. This data is then exported into a .CSV. The .CSV is then analysed using R\footnote[2]{R Available: https://www.r-project.org/}.
 	
 	\todo[inline]{Detail stats tests done.}
 	
-	After completing a playtest of the game participants will be asked to complete a questionnaire on their experience.
+	After completing a playtest of the game participants were asked to complete a questionnaire on their thoughts on parts of the game and Yee's taxonomy to determine their player type..
 	
 	\subsection{Questionnaire} \label{Questionnaire}
 	
-	Alongside playtesting, participants will also be asked to fill out a questionnaire on the game online using Google Forms. Nordin \textit{et al}~\cite{nordin2014} say that questionnaires are vital for understanding how players feel when playing digital games~\cite{nordin2014,Denisova2016}. They can also help give uniformity and consistency to the data gathered from participants~\cite{Denisova2016}.
+	Alongside playtesting, participants were also asked to fill out a questionnaire on the game online using Google Forms. Nordin \textit{et al}~\cite{nordin2014} say that questionnaires are vital for understanding how players feel when playing digital games~\cite{nordin2014,Denisova2016}. They can also help give uniformity and consistency to the data gathered from participants~\cite{Denisova2016}.
 	
-	Questionnaires are also beneficial as they can prompt players to give answers they may not have given spontaneously. The two options here are to either create a questionnaire specifically for the experiment or to use an existing one. There are a wide variety of questionnaires that already exist to measure players experiences in play testing~\cite{nordin2014, Jennett2008}. These come with the benefit of being more likely to be thoroughly tested such as the \textit{Immersive Experience Questionnaire} (IEQ) which uses Likert scale responses or Yee's taxonomy~\cite{nordin2014, Jennett2008, Yee2006, Yee2012}.
+	Questionnaires are also beneficial as they can prompt players to give answers they may not have given spontaneously. The two options here are to either create a questionnaire specifically for the experiment or to use an existing one. There are a wide variety of questionnaires that already exist to measure players experiences in play testing~\cite{nordin2014, Jennett2008}. These come with the benefit of being more likely to be thoroughly tested such as the \textit{ Immersive Experience Questionnaire} (IEQ) which uses Likert scale responses or Yee's taxonomy~\cite{nordin2014, Jennett2008, Yee2006, Yee2012}.
 	
 	However, Nordin \textit{et al}~\cite{nordin2014} say there are many issues with using pre-existing questionnaires. Firstly, many of these questionnaires are not readily available. Another issue is that not all questionnaires have been thoroughly checked for validity. There is also the potential issue of a researcher not fully understanding the questions put forward by another researcher or they may not understand what data that question is intended to get.
 	
-	Another potential issue with a questionnaire is self-report bias. Some of the hypothesis being tested relate to the player being confused or not understanding the visualisations. Players are unlikely to admit to not understanding the game making the data gained invalid. \todo[inline]{FIND REF}
+	Another potential issue with the questionnaire is self-report bias. Some of the hypothesis being tested relate to the player being confused or not understanding the visualisations. Players are unlikely to admit to not understanding the game making the data gained invalid. \todo[inline]{FIND REF}
 	
-	Most of the hypotheses here can be tested using the quantitative data from the playtests. However, some require qualitative data so a questionnaire will be necessary. 
-	Yee's questionnaire for player taxonomies will be used in combination with questions based on the hypotheses that require qualitative data.
+	Most of the hypotheses required quantitative data from the playtests. However, some required qualitative data so a questionnaire was necessary.  In addition to the hypotheses based questions there were also questions to determine the participants player type, as some players are more interested in exploration in games than others and that could influence the results. 
+	Firstly Bartle's Taxonomy \cite{Bartle1996} was looked at, this taxonomy appears to be widely used but is not validated. Instead Yee's player taxonmy 
+	Yee's questionnaire for player taxonomies will be used in combination with questions based on the hypotheses that require qualitative data. 
 	
 	\todo[inline]{New stuff: Looked at Bartle not validated \cite{Bartle1996} used \cite{Yee2006, Yee2012}}
 	
@@ -427,30 +421,8 @@
 	\todo[inline]{Analysis of data.}
 	\todo[inline]{Interpretation.}
 	
-	\subsection{RRT Used and Percent explored:}
-	\begin{table}[H]
-		\centering
-		\caption{RRT Use and Percent Explored}
-		\label{table:RRTPercent}
-		\def\arraystretch{1.5}
-		\begin{tabular}{ |l|l|l|}
-			\hline
-			\textbf{Correlation}& \textbf{T-Test P Value} \\
-			\hline
-			0.5707515    & 0.019 \\
-			\hline
-		\end{tabular}
-	\end{table}
 	
-	\begin{figure}[h]
-		\includegraphics[width=1.0\linewidth]{BoxPlot_RRTUsePercent.png}
-		\caption{Boxplot of the percent of the level explored and the percent of the level explored.}
-		\label{graph:BoxPlot_RRTUsePercent}
-	\end{figure} 
 	
-	As can be seen in table \ref{table:RRTPercent} the percent of the level explored and whether RRT was used has a correlation of 0.5707515 and, when t-tested, a P value of 0.019. This suggests that the results are statistically significant.
-	
-	Some players did comment that the thought the RRT visualisation lead somewhere so would follow it whenever they saw it, this coincides with the result above.
 	
 	\subsection{Potential Issues and Future Work}
 	\todo[inline]{EXPAND ON.}
