@@ -379,25 +379,34 @@
 	\section{Software Development} \label{softdev}
 	The software used to develop the playtesting software was Unity 5.6.3f1\footnote[3]{Unity 5.6 Available: https://unity3d.com/get-unity/download/archive} and Visual Studio Community 2017  15.5.4\footnote[4]{Visual Studio Community 2017 Available: https://www.visualstudio.com/downloads/}.
 	
-	The analysis was carried out in R version 3.4.?? in R Studio.
+	The analysis was carried out in R version 3.4 in R Studio.
 	
-	The development cycle of this software was a combination of the Incremental and Agile software development cycles. Basic features were developed and then iterated on until the software was usable for playtesting. Trello\footnote[5]{Trello Available: https://trello.com/} was used to manage tasks.
+	The base game `Gates of Amenti' was developed with a group using Agile. The game was still in development while being adapted to be used for playtesting and was therefore unfinished, this is a potential issue looked at in section \ref{PotentialIssues}. The additions for use in the playtests for this paper used the prototyping life cycle method \cite{isaias2015}. The basic versions of the data collection such as the timer and a script to generate the RRT were added early on and then analysed and revised until it met the requirements for the playtesting. 
 	
-	\section{Software Testing} \label{softtest}
-	To test the play-testing software a simple bot was developed that could move forward to test different areas of the game.
+	\subsection{Software Testing} \label{softtest}
+	To test the playtesting software was working as required a simple bot was developed. All the bot needed to do was move forward to test whether the doors registered when walked though and then whether the timer and data export worked.
 	
-	\subsection{Doors}
+	\subsubsection{Doors}
 	The first bot was to test whether the doors recorded whether the player had moved through them. Whether a door has been walked through it used to determine what percent of the level the player explored.
 	The test was a bot moving through the door and checking that the GameState class recorded it.
 	
-	\todo[inline]{SCREENSHOTS OF BOT AND DOOR AND GAMESTATE.}
 	
-	\subsection{Timer and Data Export}
-	The second bot was to check whether the software could successfully export the necessary data to a .CSV file. This bot is based on the door bot, the only difference is that it closes the game at the end to trigger the data export.  
+	\begin{figure}[h]
+		\includegraphics[width=1.0\linewidth]{DoorCode.png}
+		\caption{A segment of the DoorState class that updates the door when the player walks through.}
+		\label{image:DoorCode}
+	\end{figure} 
+		
+	\subsubsection{Timer and Data Export}
+	The second bot was to check whether the software could successfully export the necessary data to a .CSV file. This bot is the same as the door testing bot. Figure \ref{image:ExportData} shows an example of the data exported from the game .  
 	
-	\todo[inline]{SHOW TIMER ON SCREEN AND EXPORTED DATA.}
-	
-	\subsection{Visualisations}
+	\begin{figure}[h]
+		\includegraphics[width=1.0\linewidth]{ExportData.png}
+		\caption{An example of the data exported from the game.}
+		\label{image:ExportData}
+	\end{figure} 
+		
+	\subsubsection{Visualisations}
 	The final test was whether the path-finding visualisation worked as intended. This did not require a bot it can be seen tested by observing the scene in Unity. Figure \ref{image:navmeshVisuals} shows the visualisation of the Unity navmesh working in the engine.  Figure \ref{image:RRTVisuals} shows the visualisation of the RRT path-finding working in engine.
 	
 	\begin{figure}[h]
@@ -424,18 +433,17 @@
 		\def\arraystretch{1.5}
 		\begin{tabular}{|l|l|l|l|}
 			\hline
-			\textbf{Hypothesis} & & \textbf{Correlation} & \textbf{T-Test - P Values} \\ \hline 
-			\textbf{Independent Variable }    &  \textbf{Dependent Variable }    &        &                   \\ \hline
-			Visualised Pathfinding & Percent Explored   & -0.1766742   & 0.2009            \\ \hline
-			RRT Used                & Percent Explored     & 0.1697141    & 0.4229            \\ \hline
-			Visualised RRT           & Percent Explored   & 0.2807048    & 0.04425           \\ \hline
-			Visualised NavMesh     & Percent Explored   & -0.4893995   & 0.01176           \\ \hline
-			Visualised Pathfinding & Time        & 0.0002296794 & 0.9987            \\ \hline
-			RRT Used               & Time       & 0.06559258    & 0.6445            \\ \hline
-			Visualised RRT            & Time       & -0.0153404    & 0.9384            \\ \hline
-			Visualised NavMesh       & Time       & 0.001491802   & 0.9943            \\ \hline
+			\textbf{Independent Variable }    &  \textbf{Dependent Variable } & \textbf{Correlation} & \textbf{T-Test - P Values}                   \\ \hline
+			Visualised Pathfinding & Percent Explored   	& -0.1766742   & 0.2009            \\ \hline
+			RRT Used               & Percent Explored     	& 0.1697141    & 0.4229            \\ \hline
+			Visualised RRT         & Percent Explored   	& 0.2807048    & 0.04425           \\ \hline
+			Visualised NavMesh     & Percent Explored   	& -0.4893995   & 0.01176           \\ \hline
+			Visualised Pathfinding & Time					& 0.0002296794 & 0.9987            \\ \hline
+			RRT Used               & Time					& 0.06559258   & 0.6445            \\ \hline
+			Visualised RRT         & Time       			& -0.0153404   & 0.9384            \\ \hline
+			Visualised NavMesh     & Time       			& 0.001491802  & 0.9943            \\ \hline
 			Visualised Pathfinding & Understandable Visuals & 0.1627247    & 0.2731            \\ \hline
-			RRT Used                & Understandable Visuals & 0.1910156    & 0.3341            \\ \hline
+			RRT Used               & Understandable Visuals & 0.1910156    & 0.3341            \\ \hline
 			Pathfinding Visualised & Logical Enemy Movement & -0.2728879   & 0.06224           \\ \hline
 			RRT Used               & Logical Enemy Movement & -0.01419318  & 0.9234            \\ \hline
 		\end{tabular}
@@ -447,11 +455,13 @@
 	The first case was a small positive correlation of 0.2807 between the percent of the level explored when  RRT pathfinding is visualised. This suggests that players explored more in the RRT variation with visualisation. 
 	However, there was no correlation between RRT visualisation and the time spent in the level...
 	
+	Some participants said that they thought the RRT was leading somewhere and followed it through the level/went to it when they saw it 
+	
+	However 
+	
 	The second case was a negative correlation of 0.4894 between the percent explored and the NavMesh pathfinding being visualised. This suggests that player explored less when the NavMesh was visualised.
 	
-	
-	
-	\begin{figure}[h]
+		\begin{figure}[h]
 		\includegraphics[width=1.0\linewidth]{GraphTime.png}
 		\caption{Box and Whisker plot of the time spent in the level with the 4 game variations.}
 		\label{graph:Time}
@@ -463,39 +473,44 @@
 		\label{graph:Percent}
 	\end{figure}
 	
-	\subsection{Potential Issues and Future Work}
-	\todo[inline]{EXPAND ON}
+	\subsection{Null Hypotheses}
+	\todo[inline]{Section on nulls}
 	
-	A first potential issue with the playtesting is that the game was not designed specifically for this paper. While the game is a Metroidvania game with a focus on exploration a few participants noted the enemies in the game were very aggressive and a majority of players died at least once which could have affected the players desire to explore. In a future study, a game would either be designed specifically for the playtesting or altered more to suit the study.  Another issue with using the game `Gates of Amenti' is that many of the students tested had seen the game before either in playtesting or in the show and tell day, this meant that they were looking for things they had seen in the trailer and that was affecting the exploration instead of the visualisation.
+
 	
-	A second issue was the RRT variation was more intensive than the navmesh version. This lead to a slight frame rate drop at the start of the game. While testing in person I could ensure all players used the same computers with the same specification however for the remote testing I could not control what computers were used. 
+	\section{Potential Issues and Future Work} \label{PotentialIssues}
+	\todo[inline]{Finish off}
+	While the methodology of the study ...... there were many areas that could be improved in future work to improve the quality of the data collected. 	This section will identify a number of weaknesses in this study and how they could be improved on in future work. 
 	
-	The visualisation itself was also an issue as many players did not know what it was or what it represented or assumed it was part of the games aesthetic and ignored it.
+	\subsection{Playtesting Game} 
+	A first potential issue with the playtesting is that the game was not designed specifically for this paper. While the game is a Metroidvania game with a focus on exploration a few participants noted the enemies in the game were very aggressive and a majority of players died at least once which could have affected their desire to explore. In a future study, a game would either be designed specifically for the playtesting or altered more to suit the study.  
+	
+	\subsection{Participants}
+	Another issue with using the game `Gates of Amenti' is that many of the play tests used game development students who had playtested other levels of the game or seen the game trailer during the university show and tell day. This meant that they could have been looking for things they had seen in the trailer as opposed to exploring or being affected by the visualisation.
 	
 	In future work the player would also be selected randomly and from a larger pool of people. In this study, a majority of players were students studying a game development course.
 	
+	\subsection{Performance Issues}
+	A second issue was the RRT variations of the game were more resource intensive to run than the navmesh versions. This lead to a slight frame rate drop at the start of the game. 
+	Many of the playtests used Falmouth Games Academy's computers which were capable of running both versions well. However, some playtests were done remotely and therefore their computer specification and therefore the performance of the game are unknown. In future studies this would be combated by either doing all the playtests in one location ensuring everyone uses similar computers or to expand on the games data collection to include the frame rate or expand the questionnaire to include player's computer specifications. 	
+	\todo[inline]{Get machine specs?}
+			
+	\subsection{Visualisation}	
+	The visualisation itself was also an issue as many players did not know what it was or they assumed it was part of the games aesthetic and ignored it.	
 	
 	As players did not understand the visualisation this also suggests the questionnaire should have explained it to some extent to get better answers. This also combined with the issue of self-report bias many players did not know  
 	
-	While the data collected from the game did work it could be refined to get more data that would allow for better analysis. For example, currently the game only records how many doors the player walks through, an improvement on this would be to record what door they walk through to create heat maps and perform more statistical analysis to see whether players explore differently in the different game variations.
-	
-	Most people did not understand what the visualisation showed \\ 
-	Mostly students tested \\
-	First 10?? participants all played version 1A NOT RANDOM \\
-	Did some tests online  - couldn't verify how they played -> only a certain type of person looks for surveys online??
-	Some playtests were done after the show and tell day so players had seen the game trailer and were looking for things such as the boss battle that was not in this build \\
-	Only record number of doors walked through not which door \\
-	Self-report bias\\
 	RRT needed to be better performance wise so it could be bigger and then have clustering to make more usable 
 	
-	The in-person play-tests used computers from the Games Academy that all had the same specification 
+	\subsection{Collected Data}	
+	While the data collected from the game did work it could be refined to get more data that would allow for better analysis. For example, currently the game only records how many doors the player walks through, an improvement on this would be to record what door they walk through to create heat maps and perform more statistical analysis to see whether players explore differently in the different game variations.
+	* Self Report Bias
 	
 	\section{Conclusion} 
 	\todo[inline]{NEEDS UPDATING BASED OFF DATA}
 	In conclusion, while the use of RRT is more frequent in robotics than digital games its use appears feasible in this project. Its past use in game design tools shows that clustering can make the output understandable to the user. However, the need of optimisations such as RRT* or the use of A* may arise to produce a shorter path or to find any path. 
 	
 	Visualisation and foregrounding of AI have been successfully used before suggesting that it can be used here. Finally, previous studies have looked at way-finding and player exploration. These suggest that environmental factors in digital environments do have some effect on player exploration.
-	
 	
 	% references section
 	\bibliographystyle{IEEEtran}
@@ -504,11 +519,11 @@
 	% Appendices
 	
 	\appendices
-	\section{First appendix}
-	Appendices are optional. Delete or comment out this part if you do not need them.
+	%\section{First appendix}
+	%Appendices are optional. Delete or comment out this part if you do not need them.
 	
-	* Play testing takes a long time
-	* Data logging needs to be better 
+%	* Play testing takes a long time
+%	* Data logging needs to be better 
 	
 	
 	% that's all folks
