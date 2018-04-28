@@ -92,7 +92,7 @@
 		%    Challenge: 
 		While previous papers have researched AI visualisation and how to achieve it there did not appear to be many papers on the field of visualising AI in video games. There has been research into the visualisation of path-finding. However, the focus was most commonly on the use of visualisation in game design. 
 		% Action: 
-		This paper looks at visualising various methods of path-finding on enemy NPCs in a 3D Metroidvania game developed in Unity.\\
+		This paper looks at visualising various methods of path-finding on enemy NPCs in a 3D Metroidvania game developed in Unity.
 		%Resolution:
 		\todo[inline]{Analysis of the results showed that...}
 		
@@ -104,16 +104,16 @@
 	This paper looks at visualising the tree produced by RRT and the process taken to produce it. The visualisation is around an enemy NPC. This allows the players to see where the enemy NPC is going and what their line of sight is. 
 	
 	Implementation of the visualisation was developed in a level of a 3D game made in Unity 5.6\footnote[1]{Unity 5.6 Available: https://unity3d.com/get-unity/download/archive}. Logging tools in the playtesting software export the amount of time the players spent in a level and what percent of the level they explored. Analysis of this data will then determine whether the visualisation has had any effect on how participants explore.
-	\todo[inline]{UPDATE ^^}
+	\todo[inline]{UPDATE}
 	
-	Previous papers have researched visualising~\textit{Artificial Intelligence} (AI) and foregrounding AI. However, there is little on what effect this has on how the players explore the game.
+	Previous papers have researched visualising \textit{Artificial Intelligence} (AI) and foregrounding AI. However, there is little on what effect this has on how the players explore the game.
 	The research question proposed in this project is: how does visualising RRT pathfinding in an NPC affect how a player explores a game level?
 	
-	\subsetion{Signpost/Roadmap??}
+	\subsection{Signpost/Roadmap??}
 	Section~\ref{RelatedWork} is the related work section and looks at previous work relating to this .....
 	The areas looked at are pathfinding 
-
-		
+	
+	
 	\section{Related Work} \label{RelatedWork}
 	As the focus of this paper is on path-finding that was the first area researched. The methods looked at were A* path-finding in section~\ref{A*PF} and RRT path-finding in section~\ref{RRTadnPathfinding}.  After that Foregrounding and Visualising AI was researched in section~\ref{VisualisingAI}. While there is research on AI visualisation there was a lack of it for digital games and what research was on games often focused on game development and level design as can be seen in section~\ref{VisualisingAI}. 
 	
@@ -269,13 +269,32 @@
 	A paper looked at in section~\ref{VisualisingAI} was Haworth~\textit{et al}'s ~\cite{Haworth2010} study. While they did not look at player exploration the game they used involved a map where participants had to explore a maze. Participants which had the decision tree visualisation found it easier to navigate the maze. While Moura and Bartram~\cite{moura2014} suggested way-finding alone was not enough to guide a player this suggests that visualisation could aid the exploration process~\cite{Haworth2010}.
 	
 	\section{Methodology} \label{methodology}
-	The proposed research question is: how does visualising pathfinding in an NPC affect how players explore a game level? The hypothesis drawn from this question are listed in subsection~\ref{hypothesis}.  
+	The proposed research question is: how does visualising pathfinding in an NPC affect how players explore a game level? The hypotheses drawn from this question are listed in subsection~\ref{hypothesis}.  
 	
-	An A priori power analysis was performed to determine how many participants were required for an effect size of 0.4. The results showed that a minimum of 52 participants were required. As not all datasets were complete further participants were tested resulting in 62 sets of results.     
-	The play-testing was completed by participants both online and in person to reach the required sample size. Both participant types were given the same instructions and questionnaire.
+	An A priori power analysis was performed to determine how many participants were required for an effect size of 0.4. 0.4 was chosen as a larger percentage would have a more significant impact on gameplay.
+	
+	The results showed that a minimum of 52 participants was required. As not all datasets were complete further participants were tested resulting in 62 sets of results.     
+	The play-testing was completed by participants both online and in person to reach the required sample size. Both participant types were given the same instructions and questionnaire. While 21 playtests were completed online 10 of them had incomplete or invalid data. Therefore, those participants were removed and more tests were done in person to reach the sample size.
 	
 	A large majority of the players were students on game development-related courses, this gave the issue that they treated the playtest as an evaluation of the game itself and gave feedback on that, not the visualisation.  Another potential issue with this is that many students were familiar with Unity and therefore may have been able to guess what the visualisations showed. 
 	Another further issue is that some participants may have user tested a variation of the game before and therefore known parts of the level layouts which could influence how much they explored. 
+	
+	\begin{table}[H]
+		\centering
+		\caption{Subreddits Used For Playtesting}
+		\label{table:Subreddits}
+		\def\arraystretch{1.5}
+		\begin{tabular}{ |l|l|}
+			\hline
+			\textbf{Subreddit}    & \textbf{Subject} \\     \hline
+			r/SampleSize        & Finding participants  \\ \hline
+			r/UniUK             & Thread on finding participants \\ \hline
+			r/gamedev             & Game Development \\ \hline
+			r/Unity3D             & Game Development \\ \hline
+			r/playmygame         & Finding game playtesters \\ \hline
+			r/playtesters         & Finding game playtesters \\ \hline
+		\end{tabular}
+	\end{table}
 	
 	The rest of the playtests were done online through Reddit and Twitter. Many of the subreddits it was posted on were related to gaining participants and playtesters. This could have affected the results as only a certain type of person would go online looking for surveys and playtests to complete. Again some of the subreddits listed were related to game development and therefore the feedback given was related to the state of the game, not the pathfinding.     
 	
@@ -485,7 +504,7 @@
 	A first potential issue with the playtesting is that the game was not specifically designed for this paper. While the game is a Metroidvania game with a focus on exploration a few participants noted the enemies in the game were very aggressive and a majority of players died at least once which could have affected their desire to explore. In a future study, a game would either be designed specifically for the playtesting or altered more to suit the study.  
 	
 	\subsection{Participants}
-	Another issue with using the game `Gates of Amenti' is that many of the playtests used game development students who had playtested other levels of the game or seen the game trailer during the university show and tell day. This meant that they could have been looking for things they had seen in the trailer as opposed to exploring or being affected by the visualisation.
+	Another issue with using the game `Gates of Amenti' is that many of the playtesters were game development students who had playtested other levels of the game or seen the game trailer during the university show and tell day. This meant that they could have been looking for things they had seen in the trailer as opposed to exploring or being affected by the visualisation.
 	
 	In future work the player would also be selected randomly and from a larger pool of people. In this study, a majority of players were students studying a game development course.
 	
@@ -502,8 +521,8 @@
 	RRT needed to be better performance wise so it could be bigger and then have clustering to make more usable 
 	
 	\subsection{Collected Data}    
-	While the data collected from the game was usable it could be refined to get more data that would allow for more in depth analysis. For example, currently the game only records how many doors the player walks through, an improvement on this would be to record what doors they walked through to create heat maps and perform more statistical analysis to see whether players explore differently in the different game variations or if player's died in similar locations.
-	Another issue with the collected data is that with the questionnaire relied on players being honest. There could have been self report bias where players gave different answers, for example player's were asked if they understood the visualisation and they were unlikely to admit to not understanding. This could be addressed in future work by relying more on in game data and wording the questions differently.
+	While the data collected from the game was usable it could be refined to get more data that would allow for more in-depth analysis. For example, currently the game only records how many doors the player walks through, an improvement on this would be to record what doors they walked through to create heat maps and perform more statistical analysis to see whether players explore differently in the different game variations or if the player's died in similar locations.
+	Another issue with the collected data is that with the questionnaire relied on players being honest. There could have been self-report bias where players gave different answers, for example, players were asked if they understood the visualisation and they were unlikely to admit to not understanding. This could be addressed in future work by relying more on in-game data and wording the questions differently.
 	
 	\section{Conclusion} 
 	\todo[inline]{NEEDS UPDATING BASED OFF DATA}
