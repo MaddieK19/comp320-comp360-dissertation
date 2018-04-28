@@ -109,10 +109,14 @@
 	Previous papers have researched visualising \textit{Artificial Intelligence} (AI) and foregrounding AI. However, there is little on what effect this has on how the players explore the game.
 	The research question proposed in this project is: how does visualising RRT pathfinding in an NPC affect how a player explores a game level?
 	
-	\subsection{Signpost/Roadmap??}
-	Section~\ref{RelatedWork} is the related work section and looks at previous work relating to this .....
-	The areas looked at are pathfinding 
+	\section{Signpost/Roadmap??}
+	Section~\ref{RelatedWork} is a review of the literature on existing relevant work. The areas researched are A* path-finding, RRT path-finding, path-finding, foregrounding AI and exploring game environments. 
 	
+	Section~\ref{methodology} details the methodology used in the experiments in this study and section~\ref{PotentialIssues} details the potential issues and ways to address them in future work.
+	
+	Section~ref{sofwaredeve} details the development of the software used for the experiments in this study.
+	
+	Section~\ref{datacollection} details the data collected and how it was filtered and section~\ref{analysis} looks at the analysis of this data and what the results infer. 
 	
 	\section{Related Work} \label{RelatedWork}
 	As the focus of this paper is on path-finding that was the first area researched. The methods looked at were A* path-finding in section~\ref{A*PF} and RRT path-finding in section~\ref{RRTadnPathfinding}.  After that Foregrounding and Visualising AI was researched in section~\ref{VisualisingAI}. While there is research on AI visualisation there was a lack of it for digital games and what research was on games often focused on game development and level design as can be seen in section~\ref{VisualisingAI}. 
@@ -271,7 +275,7 @@
 	\section{Methodology} \label{methodology}
 	The proposed research question is: how does visualising pathfinding in an NPC affect how players explore a game level? The hypotheses drawn from this question are listed in subsection~\ref{hypothesis}.  
 	
-	An A priori power analysis was performed to determine how many participants were required for an effect size of 0.4. 0.4 was chosen as a larger percentage would have a more significant impact on gameplay.
+	An A priori power analysis was performed to determine how many participants were required for an effect size of 0.4. 0.4 was chosen as a larger percentage would have a more significant impact on gameplay.  An effect size of 0.3 would have also found a large enough difference to impact gameplay. However, a power analysis for an effect size of 0.3 found that 90 participants would have been required, which was not feasible in the given time frame of this study.
 	
 	The results showed that a minimum of 52 participants was required. As not all datasets were complete further participants were tested resulting in 62 sets of results.     
 	The play-testing was completed by participants both online and in person to reach the required sample size. Both participant types were given the same instructions and questionnaire. While 21 playtests were completed online 10 of them had incomplete or invalid data. Therefore, those participants results were filtered out of the final dataset more tests were done in person to reach the sample size.
@@ -350,12 +354,12 @@
 			\\ \hline
 		\end{tabular}
 	\end{table*}
-	Table~\ref{table:Hypothesis} shows the hypothesis being tested in this experiment. The methodology that will be used to test these hypotheses will be playtesting and a questionnaire. This will require human participants for both parts. Ethics approval for this methodology was gained from Falmouth University’s Research Ethics Board.
+	Table~\ref{table:Hypothesis} shows the hypothesis that are tested in this experiment. The methodology that was used to test these hypotheses was playtesting and a questionnaire. This required human participants for both parts. Ethics approval for this methodology was gained from Falmouth University’s Research Ethics Board.
 	
 	The game the pathfinding variations will be tested in is `Gates of Amenti' a 3D Metroidvania game which has a been designed with a focus on exploration. A Metroidvania game is an action-adventure game with a focus on exploration to discover new areas and power-ups.
 	\todo[inline]{Reference about Metroidvanias?}
 	
-	Players will be given one of the game variations to play and then asked to complete a questionnaire on their experience. The game will also log the player's position at regular intervals to calculate what percent of the level they explore. How long a participant spends exploring the level will also be logged.
+	Players were given one of the game variations to play and then asked to complete a questionnaire on their experience. The game also logged the player's position at regular intervals to calculate what percent of the level they explore. How long a participant spent exploring the level was also logged.
 	
 	\subsection{Play-testing}
 	There are four variations of the game that can be seen in table~\ref{table:PlaytestVariations}.  A random number generator was used to randomly select a game version for each participant.
@@ -443,8 +447,8 @@
 		\label{image:RRTVisuals}
 	\end{figure}  
 	
-	\section{Data Collection and Removal}
-	All the data used either came from the game's exported data or from the questionnaire. When the player dies in-game, the game resets so a number of results had 0 percent explored a low play times. As these were not proper playtests I removed them from the results set being analysed.  Many players also died within the first few minutes of playing, giving a playtest with a low time and exploration amount, these results were also removed for the analysis.
+	\section{Data Collection and Filtering}
+	All the data used either came from the game's exported data or from the questionnaire. When the player dies in-game, the game resets so a number of results had 0 percent explored a low play times. As these were not proper playtests the 5 instances of this were removed from the dataset set being analysed.  Many players also died within the first few minutes of playing, giving a playtest with a low time and exploration amount, the 34 instances of this were also removed from the dataset.
 	
 	\section{Analysis and Interpretation}
 	\begin{table*}[]
@@ -472,7 +476,7 @@
 	\end{table*}
 	
 	
-	Table~\ref{StatsTable} shows the correlations and P-Values from the T-Test results calculated from the playtest and questionnaire results using R. In a majority of cases the null hypothesis was proven. However, two cases had a P-Value of less than 0.05 and are therefore statistically significant. 
+	Table~\ref{StatsTable} shows the correlations and P-Values from the T-Test results calculated from the playtest and questionnaire results using R. In a majority of cases there was insufficient evidence to reject the null hypothesis. However, two cases had a P-Value of less than 0.05 and are therefore statistically significant. 
 	
 	\begin{figure}[h]
 		\includegraphics[width=1.0\linewidth]{GraphTime.png}
