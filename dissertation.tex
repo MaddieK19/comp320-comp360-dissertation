@@ -299,7 +299,7 @@
 	
 	The rest of the play-tests were done online through Reddit and Twitter. Many of the subreddits it was posted on were related to gaining participants and play-testers. This could have affected the results as only a certain type of person would go online looking for surveys and play-tests to complete. Again some of the subreddits listed were related to game development and therefore the feedback given was related to the state of the game, not the path-finding.     
 	
-	While 21 play-tests were completed online 10 of them had incomplete or invalid data. Therefore, those participants results were filtered out of the final dataset more tests were done in person to reach the sample size.     
+	While 21 play-tests were completed online 10 of them have incomplete or invalid data. Therefore, those participants results were filtered out of the final dataset more tests were done in person to reach the sample size.     
 	
 	
 	\subsection{Hypothesis:} \label{hypothesis}
@@ -402,14 +402,10 @@
 	\section{Software Development} \label{softdev}
 	The software used to develop the play-testing software was Unity 5.6.3f1\footnote[3]{Unity 5.6 Available: https://unity3d.com/get-unity/download/archive} and Visual Studio Community 2017  15.5.4\footnote[4]{Visual Studio Community 2017 Available: https://www.visualstudio.com/downloads/}.  The analysis was carried out and the graphs were produced in R version 3.4 in R Studio.
 	
-	The base game `Gates of Amenti' was developed with the student-led games studio `Bears are OP'. The game itself was developed over the course of seven months using Agile and Scrum project management techniques. The game was still in development while being adapted for use for in the play-testing so was unfinished. This is a potential issue looked at in section~\ref{PotentialIssues}. 
-	For use in the play-testing the Prototyping lifecycle method was used~\cite{isaias2015}. The main features required for play-testing had a basic version developed early on in the project and these were then improved on and added to until the software met the requirements for the play-testing.
+	The base game `Gates of Amenti' was developed with the student-led games studio Bears are OP\footnote[5]{Gates of Amenti: https://bearsareop.itch.io/}. The game was developed over the course of seven months using Agile and Scrum project management techniques. The game was still in development while being adapted for use for in the play-testing so was unfinished. This is a potential issue looked at in section~\ref{PotentialIssues}. 
+	For use in the play-testing for this experiment the Prototyping life cycle method was used~\cite{isaias2015}. The main features required for play-testing had a basic implementation developed early on in the project and these were then improved on and added to until the software met the requirements for the play-testing.
 	
-	The first feature implemented was the RRT, this was developed in a separate project in the game at first. The first iteration of the RRT would build an RRT in 2 dimensions in a cube. This was to test the implementation of RRT before trying it in a more complex environment.  In the game, the basic data recording functionality was added early on but the ability to export it and it being a part of the UI was added near the end of the development cycle. The first iteration of the navmesh visualisation was done using Unity's low-level graphics library, GL\footnote[5]{Unity GL Library: https://docs.unity3d.com/ScriptReference/GL.html}. This was only used for testing as it could only be observed using the in-game camera,  it was not visible in screen view. This was a test to see how the navmesh could look.
-	
-	\todo[inline]{Expand on dev a bit more}
-	
-	The additions for use in the play-tests for this paper used the prototyping life cycle method~\cite{isaias2015}. The basic versions of the data collection such as the timer and a script to generate the RRT were added early on and then analysed and revised until it met the requirements for the play-testing. 
+	The first feature implemented was the RRT. This was developed in a separate scene in the game at first. The first iteration of the RRT built an RRT in 2 dimensions in a cube. This was to test the implementation of RRT before trying it in a more complex environment.  In the game, the basic data recording functionality was added early on but the ability to export it and view it as a part of the UI were added near the end of the development cycle. The first iteration of the navmesh visualisation was implemented using Unity's low-level graphics library, GL\footnote[5]{Unity GL Library: https://docs.unity3d.com/ScriptReference/GL.html}. This was only used for testing as it could only be observed using the in-game camera,  it was not visible in screen view. This was a test to see how the navmesh could look. This was remade to use Unity line renderers to draw the polygons of the navmesh, as can be seen in figure~\ref{image:RRTVisuals}. The RRT was then visualised in a similar manner using line renderers to draw the branches. 
 	
 	\subsection{Software Testing} \label{softtest}
 	To test the play-testing software was working as required a simple bot was developed. All the bot needed to do was move forward to test whether the doors registered when walked through and then whether the timer and data export worked.
@@ -449,7 +445,9 @@
 	\end{figure}  
 	
 	\section{Data Collection and Filtering}  \label{datacollection}
-	All the data used either came from the game's exported data or from the questionnaire. When the player dies in-game, the game resets so a number of results had 0 percent explored a low play times. As these were not proper play-tests the 5 instances of this were removed from the dataset set being analysed.  Many players also died within the first few minutes of playing, giving a play-test with a low time and exploration amount, the 34 instances of this were also removed from the dataset.  There is a potential issue here where the player may not explore and area again if they had already explored it before dying. However, data from playthroughs where the player died in the first 5 minutes would likely have had more of an effect. 
+	All the data used either came from the game's exported data or from the questionnaire.  Play-testing gave 107 datasets from 62 participants. However, as not all participants gave complete datasets 10 datasets have been be removed leaving 97 datasets from 52 participants. 
+	
+	When the player dies in-game the game resets, this lead to a number of results having 0 percent explored and low play times. As these were not proper play-tests the 11 instances of this were removed from the dataset leaving 86 datasets. Many players also died within the first few minutes of playing, giving a play-test with a low time and exploration amount, the 34 instances of this were also removed from the dataset. Removing these left 52 datasets; one per player. There is a potential issue here where the player may not explore and area again if they have already explored it before dying. However, data from playthroughs where the player died in the first 5 minutes would have been more likely to have had an effect. 
 	
 	\section{Analysis and Interpretation} \label{Analysis}
 	\begin{table*}[]
@@ -460,24 +458,27 @@
 		\begin{tabular}{|l|l|l|l|}
 			\hline
 			\textbf{Independent Variable }    &  \textbf{Dependent Variable } & \textbf{Correlation} & \textbf{T-Test - P Values}                   \\ \hline
-			Visualised Path-finding & Percent Explored       & -0.1766742   & 0.2009            \\ \hline
-			RRT Used               & Percent Explored        & 0.2807048    & 0.04425          \\ \hline
-			Non-Visualised RRT Use & Percent Explored       & 0.2807048    & 0.04425           \\ \hline
-			Visualised RRT         & Percent Explored       & 0.1697141    & 0.4229            \\ \hline
-			Visualised NavMesh     & Percent Explored       & -0.4893995   & 0.01176           \\ \hline
+			Visualising Path-finding& Percent Explored       & -0.1766742   & 0.2009            \\ \hline
+			Visualised Path-Finding Methods	& Percent Explored		 & 0.5500408	& 0.003752			\\ \hline
+			RRT Used                & Percent Explored       & 0.2807048    & 0.04425           \\ \hline
+			Non-Visualised RRT Use  & Percent Explored       & 0.2807048    & 0.04425           \\ \hline
+			Visualised RRT          & Percent Explored       & 0.1697141    & 0.4229            \\ \hline
+			Visualised NavMesh      & Percent Explored       & -0.4893995   & 0.01176           \\ \hline
 			Visualised Path-finding & Time                   & 0.0002296794 & 0.9987            \\ \hline
-			RRT Used               & Time                   & 0.06559258   & 0.6445            \\ \hline
-			Visualised RRT         & Time                   & -0.0153404   & 0.9384            \\ \hline
-			Visualised NavMesh     & Time                   & 0.001491802  & 0.9943            \\ \hline
+			RRT Used                & Time                   & 0.06559258   & 0.6445            \\ \hline
+			Visualised RRT          & Time                   & -0.0153404   & 0.9384            \\ \hline
+			Visualised NavMesh      & Time                   & 0.001491802  & 0.9943            \\ \hline
 			Visualised Path-finding & Understandable Visuals & 0.1627247    & 0.2731            \\ \hline
-			RRT Used               & Understandable Visuals & 0.1910156    & 0.3341            \\ \hline
+			RRT Used                & Understandable Visuals & 0.1910156    & 0.3341            \\ \hline
 			Path-finding Visualised & Logical Enemy Movement & -0.2728879   & 0.06224           \\ \hline
-			RRT Used               & Logical Enemy Movement & -0.01419318  & 0.9234            \\ \hline
+			RRT Used                & Logical Enemy Movement & -0.01419318  & 0.9234            \\ \hline
+			RRT Used				& Deaths				 & -0.2656382	& 0.05917			\\ \hline
+			Visualised Path-finding & Deaths				 & 0.318452		& 0.01833			\\ \hline
 		\end{tabular}
 	\end{table*}
 	
 	
-	Table~\ref{StatsTable} shows the correlations and P-Values from the T-Test results calculated from the play-test and questionnaire results using R. In a majority of cases there was insufficient evidence to reject the null hypothesis. However, three cases had a P-Value of less than 0.05 and are therefore statistically significant. 
+	Table~\ref{StatsTable} shows the correlations and P-Values from the T-Test results calculated from the play-test and questionnaire results using R. In a majority of cases there was insufficient evidence to reject the null hypothesis. However, there are a number of cases that have a P-Value of less than 0.05 and are therefore statistically significant. 
 	
 	\begin{figure}[h]
 		\includegraphics[width=1.0\linewidth]{GraphTime.png}
@@ -490,29 +491,51 @@
 		\caption{Box and Whisker plot of the percent of the level explored with the 4 game variations.}
 		\label{graph:Percent}
 	\end{figure}
+
+	\subsection{RRT and the Percent of the Level Explored}
 	
-	The first case was a small positive correlation of 0.2807 between the percent of the level explored when the RRT path-finding is used. This suggests that players explored more in the RRT variation. 
+	The first significant correlation was a small positive correlation of 0.2807 between the percent of the level explored and the use RRT path-finding. This suggests that players explored more in the RRT variations. 	
+	The graph in figure~\ref{graph:Percent} shows that the percent explored between the two RRT variations are both close with the not visualised variation being slightly lower. 
 	
-	The graph in figure~\ref{graph:Percent} shows that the percent explored between the two RRT variations were both very close to the mean of the not visualised variations being slightly lower.......  
+	There was no significant correlation between the RRT being visualised and the percent which would suggest that visualising the RRT does not affect the percent of the level explored. However, there is a 
 	
-	
-	There was no significant correlation between RRT visualisation and the percent suggesting visualising the RRT does not affect the percent of the level explored. There is also no significant correlation between RRT use and the time spent in the level. This suggests while the player's explored more when the RRT was used they do not spend more time in the level.  
+	 There is also no significant correlation between RRT use and the time spent in the level. This suggests while the player's explored more when the RRT was used they do not spend more time in the level.  
 	
 	Some participants commented that they thought the RRT was leading somewhere and followed it through the level or went to it when they saw it however that only accounts for when the RRT is visualised
 	
 	In the play-testing software each RRT was limited to a single room as enemies could not follow players out of rooms this may have allowed them to avoid combat, or make combat faster, allowing them to explore more. 
 	
+	\subsection{Comparing Visualised RRT and NavMeshes}
+	Another significant correlation was between the type of visualised path-finding used and the percent of the level explored. 
+	
+	\subsection{Navmesh Visualisation and the Percent of the Level Explored}
+	
 	The second case was a negative correlation of -0.4894 between the percent explored and the NavMesh path-finding being visualised. This suggests that players explored less when the NavMesh was visualised.  As many play-testers were game development students using Unity they may have known what the visualisation was of the NavMesh was. This may have helped them find a quicker route through the level or lead them to avoid rooms with enemies in.
 	
-	The third significant correlation was between non-visualised RRT and the percent explored. This had a significant positive correlation of 0.281. 
+	
+	\subsection{Non-Visualised RRT and the Percent of the Level Explored}
+	
+	The third significant correlation was between non-visualised RRT and the percent explored. This has a significant positive correlation of 0.281. 
+	
 	\todo[inline]{FINISH}
 	
+	\subsection{Visualised Path-Finding and Player Deaths}
 	
-	There was no correlation or statistical significance between the questionnaire data and the exported game data. This could potentially be due to poorly worded questions or players not understanding what the visualisation. Many players claimed to understand the path-finding visualisation however the comments after playing suggested that they do not as many believed it was an aesthetic choice.
+	\begin{figure}[h]
+		\includegraphics[width=1.0\linewidth]{DeathsHisto.png}
+		\caption{Box and Whisker plot of the percent of the level explored with the 4 game variations.}
+		\label{graph:DeathsHisto}
+	\end{figure}
+	Another significant correlation  is the positive correlation between the use of RRT and the number of player deaths. This means that players with the the variations with visualised path-finding died more than players without it. One reason for this could be the player being distracted by the visualisation and therefore 
 	
-	Apart from the three cases above, there was insufficient evidence to reject the null hypothesis.  This suggests that neither of the visualisations was more understandable than one another to the player. Also neither the change is path-finding method or the visualisation affected the time spent in the level even when the percent explored increased.
+	In the RRT variation the tree visuals are only in areas where there are enemies, as some players claim to move to he RRT whenever they saw it they could have been more likely to find enemies than players without the visualisation.
 	
-	Figure~\ref{graph:Time} shows that the times for all four variations were close. However, unlike figure~\ref{graph:Percent} there are a number of outliers on the navmesh variations. Firstly, on visualised navmeshes, there was an outlier with over 4000 seconds spent in the level where a majority of the other play-tests for all four variations were under 2000. Finding this outlier in the play-test data showed that this player had a very high play time with a low exploration percent. As this was a remote player this suggests that the player just launched the level and left the game running without playing. Though the player did die so they may have made some attempt to play.
+	
+	There was no correlation or statistical significance between the questionnaire data and the exported game data. This could potentially be due to poorly worded questions or players not understanding what the visualisation, as mentioned in more detail in section~\ref{PotentialIssues}. Many players claimed to understand the path-finding visualisation however the comments after playing suggested that they do not as many believed it was an aesthetic choice.
+	
+	Apart from the cases above, there was insufficient evidence to reject the null hypothesis......  This suggests that neither of the visualisations was more understandable than one another to the player. Also neither the change is path-finding method or the visualisation affected the time spent in the level even when the percent explored increased.
+	
+	Figure~\ref{graph:Time} shows that the times for all four variations were close. However, unlike figure~\ref{graph:Percent} there are a number of outliers on the navmesh variations. Firstly, on visualised navmeshes, there was an outlier with over 4000 seconds spent in the level where a majority of the other play-tests for all four variations were under 2000. Finding this outlier in the play-test data showed that this player has a very high play time with a low exploration percent. As this was a remote player this suggests that the player just launched the level and left the game running without playing. Though the player did die so they may have made some attempt to play.
 	
 	
 	\section{Potential Issues and Future Work} \label{PotentialIssues}
@@ -522,7 +545,7 @@
 	A first potential issue with the play-testing is that the game was not specifically designed for this paper. While the game is a Metroidvania game with a focus on exploration a few participants noted the enemies in the game were very aggressive and a majority of players died at least once which could have affected their desire to explore. In a future study, a game would either be designed specifically for the play-testing or altered more to suit the study.  
 	
 	\subsection{Participants}
-	Another issue with using the game `Gates of Amenti' is that many of the play-testers were game development students who had play-tested other levels of the game or seen the game trailer during the university show and tell day. This meant that they could have been looking for things they had seen in the trailer as opposed to exploring or being affected by the visualisation.
+	Another issue with using the game `Gates of Amenti' is that many of the play-testers were game development students who have play-tested other levels of the game or seen the game trailer during the university show and tell day. This meant that they could have been looking for things they have previously seen in the trailer as opposed to exploring or being affected by the visualisation.
 	
 	In future work the player would also be selected randomly and from a larger pool of people. In this study, a majority of players were students studying a game development course.
 	
@@ -540,7 +563,7 @@
 	\subsection{Collected Data}    
 	While the data collected from the game was usable it could be refined to get more data that would allow for more in-depth analysis. For example, currently the game only records how many doors the player walks through, an improvement on this would be to record what doors they walked through to create heat maps and perform more statistical analysis to see whether players explore differently in the different game variations or if the player's died in similar locations.
 	Another issue with the collected data is that with the questionnaire relied on players being honest. There could have been self-report bias where players gave different answers, for example, players were asked if they understood the visualisation and they were unlikely to admit to not understanding. This could be addressed in future work by relying more on in-game data and wording the questions differently.
-    
+     
     \section{Future Work} 
 	Better data collection 
 	
