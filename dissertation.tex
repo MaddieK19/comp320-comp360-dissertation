@@ -91,18 +91,18 @@
 	% in the abstract or keywords.
 	\begin{abstract}
 		% Opening: 
-		This paper looks at the use of path-finding and~\textit{Artificial Intelligence} (AI) visualisation in digital games.   Specifically at the use of foregrounding AI and the visualisation of path-finding. 
+		This paper looks at the use of path-finding and~\textit{Artificial Intelligence} (AI) visualisation in digital games.   Specifically at the foregrounding AI and the visualisation of path-finding. 
 		%    Challenge: 
 		While previous papers have researched AI visualisation and how to achieve it there does not appear to be many papers on the field of visualising AI in video games. There has been research into the visualisation of path-finding. However, the focus was most commonly on the use of visualisation in game design. 
 		% Action: 
 		This paper looks at visualising various methods of path-finding on enemy NPCs in a 3D Metroidvania game developed in Unity.
 		%Resolution:
-		The results found a number of cases where player exploration was effected by either a change in path-finding method or whether the path-finding is visualised. This suggests that these factors effect player exploration and could be taken into account when designing games.
+		The results found a number of cases where player exploration was affected by either a change in path-finding method or whether the path-finding is visualised. This suggests that these factors affect player exploration and could be taken into account when designing games.
 		
 	\end{abstract}
 	
 	\section{Introduction} \label{introduction}
-	\IEEEPARstart{T}{his} project looks at visualising the path-finding of an enemy~\textit{Non Player Character} (NPC) using~\textit{Rapidly-exploring Random Tree} (RRT) path-finding.  Figure~\ref{KuffnerRRT} shows an example of RRT path-finding. Here the RRT explores the area and then draws a path along the tree between the start and the goal nodes~\cite{Kuffner2000}. 
+	\IEEEPARstart{T}{his} project looks at visualising the path-finding of an enemy~\textit{Non Player Character} (NPC) using~\textit{Rapidly-exploring Random Tree} (RRT) path-finding and Unity's ~\textit{Navigation Meshes} (NavMeshes).  Figure~\ref{KuffnerRRT} shows an example of RRT path-finding. Here the RRT explores the area and then draws a path along the tree between the start and the goal nodes~\cite{Kuffner2000}. 
 	
 	This paper looks at visualising the tree produced by RRT and the process taken to produce it. The visualisation is around an enemy NPC. This allows the players to see where the enemy NPC is going and where it could go. 
 	
@@ -114,10 +114,10 @@
 	\section{Roadmap}
 	Section~\ref{RelatedWork} is a review of the literature on existing relevant work. The areas reviewed are A* path-finding, RRT path-finding, path-finding, foregrounding AI and exploring game environments. 
 	Section~\ref{methodology} details the methodology used in the experiments in this study. Section~\ref{softdev} details the development of the software used for the experiments in this study.
-	Section~\ref{datacollection} details the data collected and how it was filtered and section~\ref{Analysis} looks at the analysis of this data and what the results infer. Section~\ref{PotentialIssues} details the potential issues and ways to address them in future work. Section~\ref{FutureWork} looks at future research that could be done on this subject. 
+	Section~\ref{datacollection} details the data collected and how it was filtered and section~\ref{Analysis} looks at the analysis of this data and what the results imply. Section~\ref{PotentialIssues} details the potential issues and ways to address them in future work. Section~\ref{FutureWork} looks at future research that could be done on this subject. 
 	
 	\section{Related Work} \label{RelatedWork}
-	The focus of this paper is on path-finding so that is the main focus of the literature review. The path-finding methods looked at are A* path-finding in section~\ref{A*PF} and RRT path-finding in section~\ref{RRTadnPathfinding}.  Section~\ref{VisualisingAI} looks at foregrounding and visualising AI. While there is research on AI visualisation there is a lack of it for digital games and what research is on games often focuses on game development and level design as can be seen in section~\ref{VisualisingAI}. 
+	The focus of this paper is on path-finding so that is the main focus of the literature review. The path-finding methods looked at are A* path-finding in section~\ref{A*PF} and RRT path-finding in section~\ref{RRTadnPathfinding}. Section~\ref{AppPathfinding} looks at applications of path-finding  in games. Section~\ref{VisualisingAI} looks at foregrounding and visualising AI. While there is research on AI visualisation there is a lack of it for digital games and what research is on games often focuses on game development and level design as can be seen in section~\ref{VisualisingAI}. 
 	This literature review shows that while there are many papers on AI visualisation there are few on AI visualisation in digital games and many of the ones on games are on visualising AI to aid development, not for the end user.     
 	
 	\subsection{A* Path-finding} \label{A*PF}
@@ -131,11 +131,11 @@
 		\label{A*Pseudo}
 	\end{figure} 
 	
-	Algfoor~\textit{et al}~\cite{Algfoor2015} surveyed numerous papers on path-finding. Their focus was on the use of different grid shapes in path-finding and the numerous algorithms available~\cite{Algfoor2015}. The most popular being the A* algorithm for use in both digital games and robotics. They surveyed many grid types and gave the advantages of each. 
+	Algfoor~\textit{et al}~\cite{Algfoor2015} survey numerous papers on path-finding. Their focus is on the use of different grid shapes in path-finding and the numerous algorithms available~\cite{Algfoor2015}. The most popular being the A* algorithm for use in both digital games and robotics. They survey many grid types and gave the advantages of each. 
 	
 	Nash~\textit{et al}~\cite{Nash2007} say that A* cannot always find the true shortest path as it is limited to the grid. The shortest path can be found A* with post-smoothing paths or by using A* variants such as Theta*~\cite{Nash2007, Firmansyah2016}. Theta* expands on A* as it allows for all edges and angles in the grid to be used. Therefore, a path with a more optimal distance can be found.
 	
-	While their focus is on Android games Firmansyah~\textit{et al}~\cite{Firmansyah2016} compared A* with Theta*. They found that performed similarly time wise. However, A* produced a path with fewer nodes expanded and Theta* produced a shorter path. 
+	Firmansyah~\textit{et al}~\cite{Firmansyah2016} compare A* with Theta*. They found that they performed similarly time wise. However, A* produces a path with fewer nodes expanded and Theta* produces a shorter path. 
 	
 	Hu~\textit{et al}~\cite{Hu2012} propose an implementation of A* path-finding in the Unity engine, the engine used in this project.  While their implementation is in an older version Unity the implementation in Unity 5.6 should still be similar. A further paper on path-finding is Wang and Lu's~\cite{wang2012} paper which looks at path-finding in a 3-Dimensional environment. While again they were using A* they look at using A* in 3D and suggest using nodes instead of a grid.
 	
@@ -144,7 +144,7 @@
 	For this project, the algorithm will only be run once as it is being used at runtime in the game instead of in the game design stage that Tremblay~\textit{et al}~\cite{Tremblay2014} tested in. As A* has a 100 percent chance of finding the shortest path this should not cause an issue. 
 	
 	\subsection{RRT and Path-finding} \label{RRTadnPathfinding}
-	RRTs are a search method used more in robotics than in digital games~\cite{LaValle1998, Kuffner2000}. Kuffner and LaValle~\cite{Kuffner2000} first proposed RRT in 2000. They intended to produce a random algorithm more efficient than the other search algorithms available at the time.  Figure~\ref{KuffnerRRT} shows Kuffner and LaValle's~\cite{Kuffner2000} RRT Path Planner. Path Planner is a variant of RRT which has the intended use of finding paths from the generated tree.
+	\textit{Rapidly Exploring Random Trees} (RRT) is a search method used more in robotics than in digital games~\cite{LaValle1998, Kuffner2000}. Kuffner and LaValle~\cite{Kuffner2000} first proposed RRT in 2000. They intended to produce a random algorithm more efficient than the other search algorithms available at the time.  Figure~\ref{KuffnerRRT} shows Kuffner and LaValle's~\cite{Kuffner2000} RRT Path Planner. Path Planner is a variant of RRT which has the intended use of finding paths from the generated tree.
 	
 	\begin{figure}[h]
 		\includegraphics[width=1.0\linewidth]{KuffnerRRT.png}
@@ -186,7 +186,7 @@
 	RRTs goal is to find a path between two points with no collisions.  The path found may not be the optimal path though~\cite{Kuffner2000, Karaman2011}. Karaman and Sertac~\cite{karaman2010} say that the chance of RRT finding an optimal path is very unlikely~\cite{karaman2010, Tremblay2014}. Where A* is guaranteed to find the shortest path as seen in section~\ref{A*PF}, RRT is unlikely to find the shortest path and may not even find a path at all.  
 	Karaman~\textit{et al} propose a variant of RRT called RRT*. RRT* starts the same as RRT, however, when a new node has to choose a parent node instead of selecting the nearest node it evaluates the cost of the nodes in regards to reaching its goal. Each iteration re-evaluates the parent nodes to reduce the cost. Rewiring of the tree happens when a lower cost path is found.
 	
-	\subsection{Path-finding} \label{Pathfinding}
+	\subsection{Applications of Path-finding} \label{AppPathfinding}
 	Bauer and Popovic~\cite{bauer2012} use RRT for level design in digital games. Like other papers mentioned in section~\ref{VisualisingAI}, they visualise the data to aid users~\cite{bauer2012, Haworth2010}. This data visualisation is for use in game development to aid game developers or to analyse procedurally generated levels. 
 	
 	\begin{figure}[h]
@@ -195,9 +195,7 @@
 		\label{BauerRRT}
 	\end{figure} 
 	
-	Their focus is on level design, not game-play. They propose a tool that analyses a level generated by PCG or a level designer. They then use RRT to calculate possible routes the player could take when playing.  Figure~\ref{BauerRRT} shows the output of the tool once it has been run on a basic level design.  The first image, image a, may be difficult to read. So, they make use of Dongen's method for graph clustering to make the output more legible as shown in the second image, image b~\cite{bauer2012, Dongen2001}.  
-	
-	The focus of this project is on a similar type of visualisation but running in the game instead of during the game development. Therefore, there is a need for a similar technique to cluster the output of RRT. This should make the visualisation more useful as it should aid the player in a way that they can look at the visualisation and interpret what the NPC is going to do. 
+	Their focus is on level design, not game-play. They propose a tool that analyses a level generated by PCG or a level designer. They then use RRT to calculate possible routes the player could take when playing.  Figure~\ref{BauerRRT} shows the output of the tool once it has been run on a basic level design.  Figure~\ref{BauerRRT}(a)  may be difficult to for designers to interpret. So, they use van Dongen's method~\cite{Dongen2001} for graph clustering to make the output more legible as shown in Figure~\ref{BauerRRT}(b)~\cite{bauer2012}.  
 	
 	Mendonça~\textit{et al}~\cite{Mendonça2015} look at path-finding both in robotics and digital games. Their focus is on stealth path-finding in games and applying that to robotics. Like RRT, the methods they propose do not necessarily find the shortest path~\cite{karaman2010, Mendonça2015}. Instead, they try to find the path where the agent spends most of the time in cover. They generate custom~\textit{navigation meshes} (navmeshes). Then they assign a weight to each polygon in the navmesh depending on how close it is to being behind cover. 
 	
@@ -225,7 +223,7 @@
 	While A* is consistently fast with high success rates, RRT has varying results. RRT using MCTS for motion planning varied between 35 and 84 percent success rates and had the longest run times. In comparison, RRT with A* motion planning consistently had a success rate of over 60 percent. However, the run times for this combination varied. 
 	Both of Tremblay~\textit{et al}'s~\cite{Tremblay2014, Tremblay2013} papers showed that a potential issue with the use of RRT is that it may not find a path. Both papers ran RRT combinations over 1000 times. In comparison, this paper runs RRT at runtime and only runs the algorithm once unless an RRT variant such as RRT* is used. If a path is not found a tree is still produced and visualised so may still influence players.
 	
-	Section~\ref{VisualisingAI} looks at Third Eye Crime in more detail for its use of AI visualisation. However, it also uses visualisation of enemy paths as an important mechanic~\cite{Isla2014, game:ThirdEyeCrime}.  Isla~\cite{Isla2014} uses Occupancy Maps to show where the enemy NPC thinks the player could be. Occupancy or Influence Maps do not produce a path instead they show the probability of the player being in different locations across the map~\cite{Isla2014, Miles2006}. Isla used Occupancy Maps to show where the enemy AI thinks the player currently is. The enemy then moves to investigate that area reducing the probability of the player being there.  Similarly, Miles and Louis~\cite{Miles2006} also used influence maps. While their example is specific to~\textit{Real Time Strategy} (RTS) games, like Isla they used Occupancy Maps.  They used them as a base for A* path-finding instead of A* using the map itself for path-finding.
+	Section~\ref{VisualisingAI} looks at Third Eye Crime in more detail for its use of AI visualisation. However, it also uses visualisation of enemy paths as an important mechanic~\cite{Isla2014, game:ThirdEyeCrime}.  Isla~\cite{Isla2014} uses Occupancy Maps to show where the enemy NPC thinks the player could be, as can be seen in figure~\ref{image:ThirdEyeCrime}. Occupancy or Influence Maps do not produce a path instead they show the probability of the player being in different locations across the map~\cite{Isla2014, Miles2006}. The enemy then moves to investigate that area reducing the probability of the player being there.  Similarly, Miles and Louis~\cite{Miles2006} also used influence maps. While their example is specific to~\textit{Real Time Strategy} (RTS) games, like Isla they used Occupancy Maps.  They used them as a base for A* path-finding instead of A* using the map itself for path-finding.
 	
 	
 	\subsection{Foregrounding and Visualising AI} \label{VisualisingAI}
@@ -237,7 +235,7 @@
 	This paper uses the ``AI as a villain" pattern as each enemy NPC has their path-finding visualised around them. The players can consider this when exploring a level so they do not get attacked by the enemy. The use of this pattern also aims to have an NPC that creates an experience rather than one that always finds the player, similar to Alien Isolation~\cite{game:AlienIsolation,treanor2015}. While the player likely does not want to be caught by the enemy NPC they may want it to chase them so they can learn its patterns or lead it away from other enemies to make it easier to attack. 
 	
 	The second relevant design pattern is ``AI is Visualised".  This is where there is a visual representation of the AI's state or decision making in the game~\cite{treanor2015}. Most games hide this from the player but this design pattern visualises it making it mechanic.  
-	The example given by Treanor~\textit{et al}~\cite{treanor2015} is the game Third Eye Crime.  Third Eye Crime is a game that follows the ``AI is Visualised" design pattern~\cite{Isla2014, game:ThirdEyeCrime}. The game uses probabilistic object tracking through Occupancy Maps. The game uses Occupancy Maps to display where the enemy thinks the player could be on the map, as can be seen in figure~\ref{image:ThirdEyeCrime}. As the enemy moves around the map it removes areas where the player is not from the Occupancy Map~\cite{Isla2014}.  Generally, stealth games involve avoiding enemies.  This design encourages the player to trigger the mechanic, allowing them to use the visualisation to mislead and avoid the enemy~\cite{Isla2014, game:ThirdEyeCrime}. 
+	The example given by Treanor~\textit{et al}~\cite{treanor2015} is the game Third Eye Crime.  Third Eye Crime is a game that follows the ``AI is Visualised" design pattern~\cite{Isla2014, game:ThirdEyeCrime}. The game uses probabilistic object tracking through Occupancy Maps. As the enemy moves around the map it removes areas where the player is not from the Occupancy Map~\cite{Isla2014}.  Generally, stealth games involve avoiding enemies.  This design encourages the player to trigger the mechanic, allowing them to use the visualisation to mislead and avoid the enemy~\cite{Isla2014, game:ThirdEyeCrime}. 
 	
 	\begin{figure}[h]
 		\includegraphics[width=1.0\linewidth]{ThirdEyeCrime.jpg}
@@ -269,10 +267,10 @@
 	% Player Exploration
 	Si~\textit{et al}~\cite{si2017} investigated how players explore virtual environments. While their experiments were specific to Real Time Strategy (RTS) games the results may apply to other game types. Si~\textit{et al}~\cite{si2017} say that three common types of spatial exploration are; environment mapping, bonus item collecting and location/landmark discovery. The relevant exploration type for this project is spatial mapping. Firstly, as it logs what the enemy NPC is doing.  Secondly, as it is the player behaviour that is being measured by the logging tool in the software.
 	
-	A paper looked at in section~\ref{VisualisingAI} was Haworth~\textit{et al}'s ~\cite{Haworth2010} study. While they do not look at player exploration the game they used involved a map where participants had to explore a maze. Participants which had the decision tree visualisation found it easier to navigate the maze. While Moura and Bartram~\cite{moura2014} suggested way-finding alone was not enough to guide a player this suggests that visualisation could aid the exploration process~\cite{Haworth2010}.
+	A paper looked at in section~\ref{VisualisingAI} was Haworth~\textit{et al}'s ~\cite{Haworth2010} study. While they do not look at player exploration the game they used involved a map where participants had to explore a maze. Participants who had the decision tree visualisation found it easier to navigate the maze. While Moura and Bartram~\cite{moura2014} suggested way-finding alone was not enough to guide a player this suggests that visualisation could aid the exploration process~\cite{Haworth2010}.
 	
 	\section{Methodology} \label{methodology}
-	The proposed research question is: how does visualising path-finding in an NPC affect how players explore a game level? The hypotheses drawn from this question are listed in subsection~\ref{hypothesis}.  
+	The research question addressed in this project is: how does visualising path-finding in an NPC affect how players explore a game level? The hypotheses drawn from this question are listed in subsection~\ref{hypothesis}.  
 	
 	An A priori power analysis was performed to determine how many participants were required for an effect size of 0.4. 0.4 was chosen as a larger percentage would have a more significant impact on gameplay.  An effect size of 0.3 would have also found a large enough difference to impact gameplay. However, a power analysis for an effect size of 0.3 found that 90 participants would have been required, which was not feasible in the given time frame of this study.
 	
@@ -301,68 +299,7 @@
 	
 	While 21 play-tests were completed online 10 of them have incomplete or invalid data. Therefore, those participants results were filtered out of the final dataset more tests were done in person to reach the sample size, the filtration of the data is discussed in more detail in section~\ref{datacollection}.     
 	
-	
-	\subsection{Hypothesis:} \label{hypothesis}
-	\begin{table*}[h]
-		\centering
-		\caption{Hypotheses}
-		\label{table:Hypothesis}
-		\def\arraystretch{1.5}
-		\begin{tabular}{|c|p{7.5cm}|p{7.5cm}|}
-			\hline
-			& \textbf{Hypothesis}& \textbf{Null Hypothesis} \\
-			\hline
-			1 & Visualising path-finding has an effect on the percent of the level the participant explores.
-			& Visualising path-finding has no effect on the percent of the level the participant explores.
-			\\ \hline
-			
-			2 & Visualising RRT path-finding has an effect on the percent of the level the participant explores.
-			& Visualising RRT path-finding has no effect on the percent of the level the participant explores.
-			\\ \hline
-			
-			3 & Visualising Unity navmeshes has an effect on the percent of the level the participant explores.
-			& Visualising Unity navmeshes has no effect on the percent of the level the participant explores
-			\\ \hline
-			
-			4 & Visualising RRT has an effect on the length of time the participant spends in the level. 
-			& Visualising RRT has no effect on the length of time the participant spends in the level. 
-			\\ \hline
-			
-			5 & Visualising Unity navmeshes has an effect on the length of time the participant spends in the level. 
-			& Visualising Unity navmeshes has no effect on the length of time the participant spends in the level.
-			\\ \hline
-			
-			6 & In comparison to RRT visualisation visualising Unity navmeshes has an effect on the percent of the level the participant explores.
-			& In comparison to RRT visualisation visualising Unity navmeshes has no effect on the percent of the level the participant explores.
-			\\ \hline
-			
-			7 &  In comparison to RRT visualisation visualising Unity navmeshes has an effect on length of time the participant spends in the level.         
-			&   In comparison to RRT visualisation visualising Unity navmeshes has an effect on length of time the participant spends in the level.     
-			\\ \hline
-			
-			8 &   The visualisation of  Unity navmeshes is comprehensible to players.
-			&  The visualisation of  Unity navmeshes is not comprehensible to players.
-			\\ \hline
-			
-			9 &  The visualisation of  RRT path-finding is comprehensible to players.
-			&  The visualisation of  RRT path-finding is not comprehensible to players.
-			\\ \hline
-			
-			10 &  The comprehensibility of the visualisation of RRT path-finding is no different to Unity navmesh visualisation to players.
-			&  The comprehensibility of the visualisation of RRT path-finding is different to Unity navmesh visualisation to players.
-			\\ \hline
-		\end{tabular}
-	\end{table*}
-	Table~\ref{table:Hypothesis} shows the hypotheses that are tested in this experiment. The methodologies that are used to test these hypotheses were play-testing and a questionnaire. This required human participants for both parts. Ethics approval for this methodology was gained from Falmouth University’s Research Ethics Board.
-	
-	The game the path-finding variations have been tested in is `Gates of Amenti' a 3D Metroidvania game which has a been designed with a focus on exploration. A Metroidvania game is an action-adventure game with a focus on exploration to discover new areas and power-ups~\cite{online:metroidvania}.
-	
-	Players were given one of the game variations to play and then asked to complete a questionnaire on their experience. The game also logged the player's position at regular intervals to calculate what percent of the level they explore. How long a participant spent exploring the level was also logged.
-	
-	\subsection{Play-testing}
-	There are four variations of the game that can be seen in table~\ref{table:PlaytestVariations}.  A random number generator was used to randomly select a game version for each participant.
-	
-	\begin{table}[H]
+		\begin{table}[H]
 		\centering
 		\caption{Play-test Variations}
 		\label{table:PlaytestVariations}
@@ -376,6 +313,68 @@
 			Variation 4  &    &  \\ \hline
 		\end{tabular}
 	\end{table}
+
+	\subsection{Hypothesis:} \label{hypothesis}
+	\begin{table*}[h]
+		\centering
+		\caption{Hypotheses}
+		\label{table:Hypothesis}
+		\def\arraystretch{1.5}
+		\begin{tabular}{|c|p{7cm}|p{7cm}|p{1.75cm}|}
+			\hline
+			& \textbf{Hypothesis}& \textbf{Null Hypothesis} & Data Collection Source \\
+			\hline
+			1 & Visualising path-finding has an effect on the percent of the level the participant explores.
+			& Visualising path-finding has no effect on the percent of the level the participant explores.
+			& Game Data \\ \hline
+			
+			2 & In comparison to RRT visualisation visualising Unity navmeshes has an effect on the percent of the level the participant explores.
+			& In comparison to RRT visualisation visualising Unity navmeshes has no effect on the percent of the level the participant explores.
+			& Game Data \\ \hline
+			
+			
+			2 & Visualising RRT path-finding has an effect on the percent of the level the participant explores.
+			& Visualising RRT path-finding has no effect on the percent of the level the participant explores.
+				& Game Data \\ \hline
+			
+			3 & Visualising Unity navmeshes has an effect on the percent of the level the participant explores.
+			& Visualising Unity navmeshes has no effect on the percent of the level the participant explores
+				& Game Data \\ \hline
+			
+			4 & Visualising RRT has an effect on the length of time the participant spends in the level. 
+			& Visualising RRT has no effect on the length of time the participant spends in the level. 
+				& Game Data \\ \hline
+			
+			5 & Visualising Unity navmeshes has an effect on the length of time the participant spends in the level. 
+			& Visualising Unity navmeshes has no effect on the length of time the participant spends in the level.
+				& Game Data \\ \hline
+			
+			7 &  In comparison to RRT visualisation visualising Unity navmeshes has an effect on length of time the participant spends in the level.         
+			&   In comparison to RRT visualisation visualising Unity navmeshes has an effect on length of time the participant spends in the level.     
+				& Game Data \\ \hline
+			
+			8 &   The visualisation of  Unity navmeshes is comprehensible to players.
+			&  The visualisation of  Unity navmeshes is not comprehensible to players.
+				& Questionnaire Data \\ \hline
+			
+			9 &  The visualisation of  RRT path-finding is comprehensible to players.
+			&  The visualisation of  RRT path-finding is not comprehensible to players.
+			& Questionnaire Data \\ \hline
+			
+			10 &  The comprehensibility of the visualisation of RRT path-finding is no different to Unity navmesh visualisation to players.
+			&  The comprehensibility of the visualisation of RRT path-finding is different to Unity navmesh visualisation to players.
+			& Questionnaire Data \\ \hline
+		\end{tabular}
+	\end{table*}
+	Table~\ref{table:Hypothesis} shows the hypotheses that are tested in this experiment. The methodologies that are used to test these hypotheses were play-testing and a questionnaire. This required human participants for both parts. Ethics approval for this methodology was gained from Falmouth University’s Research Ethics Board.
+	
+	The game the path-finding variations have been tested in is `Gates of Amenti' a 3D Metroidvania game which has been designed with a focus on exploration. A Metroidvania game is an action-adventure game with a focus on exploration to discover new areas and power-ups~\cite{online:metroidvania}.
+	
+	Players were given one of the game variations to play and then asked to complete a questionnaire on their experience. The game also logged the player's position at regular intervals to calculate what percent of the level they explore. How long a participant spent exploring the level was also logged.
+	
+	\subsection{Play-testing}
+	There are four variations of the game that can be seen in table~\ref{table:PlaytestVariations}.  A random number generator was used to randomly select a game version for each participant.
+
 	
 	During the play-tests players were randomly assigned one of the four variations of the game. The players were asked to play that version for as long as they wanted. While playing the software logged the time the player spent in the level per life and what percent to the level they explored. The percent explored was calculated by recording how many doors the player walked through as the game requires players to unlock doors to progress. This data is then exported into a .CSV. The .CSV is then analysed using the R statistical package\footnote[2]{R Available at: https://www.r-project.org/} in R Studio\footnote[3]{R Studio Available at: https://www.rstudio.com/products/rstudio/download/}.
 	
@@ -481,7 +480,7 @@
 			Path-finding Visualised & Logical Enemy Movement & -0.2728879   & 0.06224           \\ \hline
 			RRT Used                & Logical Enemy Movement & -0.01419318  & 0.9234            \\ \hline
 			RRT Used                & Deaths                 & -0.2656382   & 0.05917           \\ \hline
-			Visualised Path-finding & Deaths                 & 0.318452        & 0.01833        \\ \hline
+			Visualised Path-finding & Deaths                 & 0.318452     & 0.01833           \\ \hline
 		\end{tabular}
 	\end{table*}
 	
@@ -570,10 +569,11 @@
 	
 	
 	\section{Future Work} \label{FutureWork}
-	The most unexpected significant results found in section~\ref{Analysis} was the NavMesh visualisation decreasing the percent of the level explored. Future research on this subject could research that in more detail to find a more definite reason for why that happened. 
+	The most unexpected significant result found in section~\ref{Analysis} is the NavMesh visualisation decreasing the percent of the level explored. Future research on this subject could research that in more detail to find a more definite reason for why that happened. 
 	
-	Also, as section~\ref{PotentialIssues} mentions there were issues with the game used in this study, as future research would require a different or more complete game it could also give interesting data to look at pathfinding in more complex environments and other game genres such as stealth games. 
+	Also, as section~\ref{PotentialIssues} mentions, there were issues with the game used in this study, as future research would require a different or more complete game it could also give interesting data to look at pathfinding in more complex environments and other game genres such as stealth games. 
 	
+	Another area that could be explored in future work the RRT visualisation and variations on it. As the use of RRT in this study had numerous small RRTs with less than 500 nodes another area to research could be comparing having a RRT per room to a RRT per level. Another area would be to try varying the number of nodes in the RRT and for larger RRT variations clustering methods such as the one mentioned in section~\ref{AppPathfinding} that Bauer and Popovic used to make their use of RRT more legible.
 	
 	\section{Conclusion} 
 	In conclusion, while the use of RRT is more frequent in robotics than digital games its use appears feasible in this project. Its past use in game design tools shows that clustering can make the output understandable to the user. However, the need of optimisations such as RRT* or the use of A* may arise to produce a shorter path or to find any path. 
@@ -594,6 +594,8 @@
 	\section{First appendix: Reflective Report}
 	%Appendices are optional. Delete or comment out this part if you do not need them.
 	While I am pleased with the final paper I produced there are many parts to this paper and the software that I could have improved on. 
+	
+	SMART
 	
 	\subsection{Play Testing}
 	The first issue was play-testing I vastly underestimated how long this would take and left it too late. This lead to me struggling to get enough participants and resorting to getting more online. One way to address this in the future would be to run a larger pilot study. In this paper the pilot study consisted of 4 players, one for each variation. These all took around 20 minutes however in the actual study player took up to an hour. 
