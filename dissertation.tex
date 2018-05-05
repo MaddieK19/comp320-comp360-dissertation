@@ -56,7 +56,7 @@
 \usepackage{amsmath}
 %\usepackage[linesnumbered,ruled]{algorithm2e}
 \usepackage{xargs}                      % Use more than one optional parameter in a new commands
-\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+\usepackage[table,pdftex,dvipsnames]{xcolor}  % Coloured text etc.
 \usepackage{todonotes}
 \usepackage{algpseudocode}
 \usepackage{algorithm}% http://ctan.org/pkg/algorithms
@@ -482,11 +482,12 @@
 			\hline
 			\textbf{Independent Variable }    &  \textbf{Dependent Variable } & \textbf{Correlation} & \textbf{T-Test - P Values}                   \\ \hline
 			Visualising Path-finding& Percent Explored       & -0.1766742   & 0.2009            \\ \hline
-			Visualised Path-Finding Methods    & Percent Explored         & 0.5500408    & 0.003752            \\ \hline
-			RRT Used                & Percent Explored       & 0.2807048    & 0.04425           \\ \hline
-			Non-Visualised RRT Use  & Percent Explored       & 0.2807048    & 0.04425           \\ \hline
+\rowcolor{lightgray}Visualised Path-Finding Methods    & Percent Explored         & 0.5500408    & 0.003752            \\ \hline
+\rowcolor{lightgray}RRT Used        & Percent Explored       & 0.2807048    & 0.04425 \\ \hline
+\rowcolor{lightgray}Non-Visualised RRT Use  
+									& Percent Explored       & 0.2807048    & 0.04425  \\ \hline
 			Visualised RRT          & Percent Explored       & 0.1697141    & 0.4229            \\ \hline
-			Visualised NavMesh      & Percent Explored       & -0.4893995   & 0.01176           \\ \hline
+\rowcolor{lightgray}	Visualised NavMesh      & Percent Explored       & -0.4893995   & 0.01176           \\ \hline
 			Visualised Path-finding & Time                   & 0.0002296794 & 0.9987            \\ \hline
 			RRT Used                & Time                   & 0.06559258   & 0.6445            \\ \hline
 			Visualised RRT          & Time                   & -0.0153404   & 0.9384            \\ \hline
@@ -496,7 +497,7 @@
 			Path-finding Visualised & Logical Enemy Movement & -0.2728879   & 0.06224           \\ \hline
 			RRT Used                & Logical Enemy Movement & -0.01419318  & 0.9234            \\ \hline
 			RRT Used                & Deaths                 & -0.2656382   & 0.05917           \\ \hline
-			Visualised Path-finding & Deaths                 & 0.318452     & 0.01833           \\ \hline
+\rowcolor{lightgray}Visualised Path-finding & Deaths                 & 0.318452     & 0.01833           \\ \hline
 		\end{tabular}
 	\end{table*}
 	
