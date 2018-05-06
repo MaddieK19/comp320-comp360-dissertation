@@ -98,7 +98,7 @@
 		This paper looks at visualising various methods of path-finding on enemy NPCs in a 3D Metroidvania game developed in Unity.
 		%Resolution:
 		The results found a number of cases where player exploration was affected by either a change in path-finding method or whether the path-finding is visualised. This suggests that these factors affect player exploration and could be taken into account when designing games.
-		
+			\addcontentsline{toc}{chapter}{Abstract}    
 	\end{abstract}
 	
 	\section{Introduction} \label{introduction}
@@ -111,7 +111,7 @@
 	Previous papers have researched visualising \textit{Artificial Intelligence} (AI) and foregrounding AI. However, there is little on what effect this has on how the players explore the game.
 	The research question proposed in this project is: how does visualising RRT path-finding in an NPC affect how a player explores a game level?
 	
-	\section{Roadmap}
+	\subsection{Road-map}
 	Section~\ref{RelatedWork} is a review of the literature on existing relevant work. The areas reviewed are A* path-finding, RRT path-finding, path-finding, foregrounding AI and exploring game environments. 
 	Section~\ref{methodology} details the methodology used in the experiments in this study. Section~\ref{softdev} details the development of the software used for the experiments in this study.
 	Section~\ref{datacollection} details the data collected and how it was filtered and section~\ref{Analysis} looks at the analysis of this data and what the results imply. Section~\ref{PotentialIssues} details the potential issues and ways to address them in future work. Section~\ref{FutureWork} looks at future research that could be done on this subject. 
@@ -272,7 +272,7 @@
 	\section{Methodology} \label{methodology}
 	The research question addressed in this project is: how does visualising path-finding in an NPC affect how players explore a game level? The hypotheses drawn from this question are listed in subsection~\ref{hypothesis}.  
 	
-	An A priori power analysis was performed to determine how many participants were required for an effect size of 0.4. 0.4 was chosen as a larger percentage would have a more significant impact on gameplay.  An effect size of 0.3 would have also found a large enough difference to impact gameplay. However, a power analysis for an effect size of 0.3 found that 90 participants would have been required, which was not feasible in the given time frame of this study.
+	An A-priori power analysis was performed to determine how many participants were required for an effect size of 0.4. 0.4 was chosen as a larger percentage would have a more significant impact on gameplay.  An effect size of 0.3 would have also found a large enough difference to impact gameplay. However, a power analysis for an effect size of 0.3 found that 90 participants would have been required, which was not feasible in the given time frame of this study.
 	
 	The results showed that a minimum of 52 participants was required. As not all datasets were complete further participants were tested resulting in 62 sets of results. The play-testing was completed by participants both online and in person to reach the required sample size. Both participant types were given the same instructions and questionnaire. 
 	
@@ -382,7 +382,7 @@
 			& Questionnaire Data \\ \hline
 		\end{tabular}
 	\end{table*}
-	Table~\ref{table:Hypothesis} shows the hypotheses that are tested in this experiment. The methodologies that are used to test these hypotheses were play-testing and a questionnaire. This required human participants for both parts. Ethics approval for this methodology was gained from Falmouth University’s Research Ethics Board.
+	Table~\ref{table:Hypothesis} shows the hypotheses that are tested in this experiment. The methodologies that are used to test these hypotheses were play-testing and a questionnaire. As this required human participants for both parts ethics approval for this methodology was gained from Falmouth University’s Research Ethics Board.
 	
 	The game the path-finding variations have been tested in is `Gates of Amenti' a 3D Metroidvania game which has been designed with a focus on exploration. A Metroidvania game is an action-adventure game with a focus on exploration to discover new areas and power-ups~\cite{online:metroidvania}.
 	
@@ -419,10 +419,12 @@
 	
 	The base game `Gates of Amenti' was developed with the student-led games studio Bears are OP\footnote[5]{Gates of Amenti: https://bearsareop.itch.io/}. The game was developed over the course of seven months using Agile and Scrum project management techniques. The game was still in development while being adapted for use in the play-testing so was unfinished. This is a potential issue looked at in section~\ref{PotentialIssues}. 
 	
-	Agile was not used for the adaption for the game 
+	Agile was not used for the play-testing variation of the game as it was developed by one programmer as opposed to the multi-disciplinary team developing the game. Daily stand-ups were not required and as a majority of the required features from the game had already been developed the prototyping 
 	For the development of the play-testing software for this experiment the Prototyping lifecycle method was used~\cite{isaias2015}. Prototyping was used as a majority of the game itself had already been developed. Therefore, only a few new features required implementation. These features were; RRT path-finding, path-finding visualisation, data recording and data exporting. A basic version of these features was added to the game and then improved on until the game was suitable for playtesting. In this case, suitable means that all features worked and players could play through the level with minimal glitches.  
 	
-	The first feature implemented was the RRT. This was developed in a separate scene in the game at first. The first iteration of the RRT built an RRT in 2 dimensions in a cube. This was to test the implementation of RRT before trying it in a more complex environment.  In the game, the basic data recording functionality was added early on but the ability to export it and view it as a part of the UI was added near the end of the development cycle. The first iteration of the NavMesh visualisation was implemented using Unity's low-level graphics library, GL\footnote[5]{Unity GL Library: https://docs.unity3d.com/ScriptReference/GL.html}. This was only used for testing as it could only be observed using the in-game camera,  it was not visible in screen view. This was a test to see how the navmesh could look. This was remade to use Unity line renderers to draw the polygons of the NavMesh, as can be seen in figure~\ref{image:RRTVisuals}. The RRT was then visualised in a similar manner using line renderers to draw the branches. 
+	The first feature implemented was the RRT. This was developed in a separate scene in the game at first. The first iteration of the RRT built an RRT in 2 dimensions in a cube. This was to test the implementation of RRT before trying it in a more complex environment.  In the game, the basic data recording functionality was added early on but the ability to export it and view it as a part of the UI was added near the end of the development cycle. The first iteration of the NavMesh visualisation was implemented using Unity's low-level graphics library, GL\footnote[5]{Unity GL Library: https://docs.unity3d.com/ScriptReference/GL.html}. This was only used for testing as it could only be observed using the in-game camera,  it was not visible in screen view. This was a test to see how the navmesh could look. This was remade to use Unity line renderers to draw the polygons of the NavMesh, as can be seen in figure~\ref{image:RRTVisuals}. The RRT was then visualised in a similar manner using line renderers to draw the branches.   
+	
+	The quality of the software is judged on its functionality and whether it is a playable game. For functionality, the features it was judged on were whether the data could be exported in a form that it could be analysed, as the game exported the time, exploration percent and game version to a .CSV file this requirement was met. The other two main requirements were that the software could generate an RRT and that both RRT and NavMesh path-finding could be visualised. While both of these were functional they could have been of a higher quality which is discussed in more detail in section~\ref{PotentialIssues}.
 	
 	\subsection{Software Testing} \label{softtest}
 	To test the play-testing software was working as required a simple bot was developed. All the bot needed to do was move forward to test whether the doors registered when walked through and then whether the timer and data export worked.
@@ -608,24 +610,34 @@
 	% Appendices    
 	\appendices
 	\section{Acknowledgements}
-	I would like to thank my project supervisor Dr Edward Powley...
-	
+	  would like to thank my project supervisor Dr. Ed Powley whose guidance and assistance were invaluable while producing this project.
+	 I would also like to thank Bears are OP for allowing me to use their game in my playtesting and all the playtesters who took part in the playtesting as I would have had no data without them.
+	 Finally, I would like to thank the other third year BSc students whose peer reviews and support I greatly appreciated throughout this project. 
+	 
 	\section{First appendix: Reflective Report}
 	%Appendices are optional. Delete or comment out this part if you do not need them.
-	While I am pleased with the final paper I produced there are many parts to this paper and the software that I could have improved on. 
 	
-	SMART
+	While I am pleased with the final paper I produced there are many parts to this paper and the software that I could have improved on. While I was slightly behind schedule on the written part of my dissertation I believe my main weaknesses during this project lay in the software and playtesting side of the project.    
 	
 	\subsection{Play Testing}
-	The first issue was play-testing I vastly underestimated how long this would take and left it too late. This lead to me struggling to get enough participants and resorting to getting more online. One way to address this in the future would be to run a larger pilot study. In this paper the pilot study consisted of 4 players, one for each variation. These all took around 20 minutes however in the actual study player took up to an hour. 
+	The first issue was play-testing I vastly underestimated how long this would take and left it too late. This lead to me struggling to get enough participants and resorting to getting more online. One way to address this in the future would be to run a larger pilot study. In this paper, the pilot study consisted of 4 players, one for each variation. These all took around 20 minutes however in the actual study player took up to an hour. 
+	
+	Another issue was that I found it hard to ask people to participate in the study this was partially due to me leaving the play-testing too late so many students were working on assignments and not willing to do the study. Again this could be solved by starting the playtesting earlier or designing a shorter game so that potential participants would not have to devote so much time to the play-test.
 	
 	\subsection{Data Collection}
+	The data collection using Google Forms and exporting from Unity both worked well as all the data was gathered and easy to analyses the main issue was the that the two datasets were separate so when analysing the data they had to be combined by matching up the player numbers on each set which was time-consuming. In the future I would want to combine the two, potentially making a Unity scene for the questionnaire so all the data is exported from the game. This removes the need for Google forms and player numbers but would mean that playtesting would need to be done in person as otherwise the file produced by the game would need to be emailed to me and there is a chance that the participants could tamper with the data.
+	
+	As well as improving data collection I would also want to improve what data is collected. In this study, I ran a small pilot study of four participants to see how long play tests take and to see what data I would get. I ran brief statistical tests on this data but not enough. In the future, I would want to do a larger pilot study and run more tests to see if the data exported from the game is enough or useful. For example in this study the game 
+	
 	Another area that I would improve on in the future would be how the data is collected and what data is collected. One issue I had with the data collected in this experiment is that the data from the game and the data from the questionnaire were both separate 
 	
-	* Play testing takes a long time
-	* Data logging needs to be better 
+	\subsection{Play Testing Game}
+	One decision I had to make was what game I used for play-testing, my two options were to make a basic Unity game myself or use my COMP340 group game. In the time frame I had I did not think I could make a game that would be engaging enough to investigate player exploration so I choose to use the group game. 
+	Another benefit of using the group game is that it gave me more time to work on other aspects of the projects such as the RRT implementation and writing the paper it. The main issue with using the group game is that it was an unfinished game, it had white boxed areas and missing features such as the end of level boss and saving, which meant players had to restart after dying.
+	In this case with the given time frame, I think using the group game was the best option due to the time it saved. However, if I were to research this area again a game designed for the study would be more appropriate. This would allow for more experimentation with the path-finding visualisation and how it is used in a level and would allow for a more complete game level to be made as the game would be planned around the project rather than another module's assignment deadlines.
 	
 	
-	
+	\subsection{Conclusion}
+	In conclusion, given the time frame, available resources and this being my first time doing first hand(???) research the end result was satisfactory. However, as listed above there are many things I learned through doing this project that would improve any future research I do in this area.
 	% that's all folks
 \end{document}
