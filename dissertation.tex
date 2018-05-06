@@ -97,19 +97,21 @@
 		% Action: 
 		This paper looks at visualising various methods of path-finding on enemy NPCs in a 3D Metroidvania game developed in Unity.
 		%Resolution:
-		The results found a number of cases where player exploration was affected by either a change in path-finding method or whether the path-finding is visualised. This suggests that these factors affect player exploration and could be taken into account when designing games.
-			\addcontentsline{toc}{chapter}{Abstract}    
+		The results found a number of cases where player exploration and player deaths are affected by either a change in path-finding method or whether the path-finding is visualised. This suggests that these factors affect player exploration and could be taken into account when designing games.  
 	\end{abstract}
 	
 	\section{Introduction} \label{introduction}
 	\IEEEPARstart{T}{his} project looks at visualising the path-finding of an enemy~\textit{Non Player Character} (NPC) using~\textit{Rapidly-exploring Random Tree} (RRT) path-finding and Unity's ~\textit{Navigation Meshes} (NavMeshes).  Figure~\ref{KuffnerRRT} shows an example of RRT path-finding. Here the RRT explores the area and then draws a path along the tree between the start and the goal nodes~\cite{Kuffner2000}. 
+
+	This paper looks at visualising the tree produced by RRT, the mesh produced by Unity NavMeshes and the process taken to produce each. The visualisations are around an enemy NPC. This allows the players to see where the enemy NPC is going and where it could go.      
+	Implementation of the visualisation was developed in a level of a 3D game made in Unity 5.6\footnote[1]{Unity 5.6 Available: https://unity3d.com/get-unity/download/archive}. Logging tools in the play-testing software export the amount of time the players spent in a level and what percent of the level they explored. Analysis of this data found a number of cases where the different path-finding methods and visualisations affected the percent of the level explored and the number of player deaths but no cases where the time spent in the level was affected. These are analysed in more detail in section \ref{Analysis}.
+
+	As section~\ref{RelatedWork} shows, previous papers explore visualising \textit{Artificial Intelligence} (AI), foregrounding AI and visualising path-finding. However, there is little on using this in digital games beyond game design. The potential impact of the results of this study could be in game design as the use of different path-finding techniques here had an affect on how players explore. Game designers could take this into account in games ...use this when designing games
 	
-	This paper looks at visualising the tree produced by RRT and the process taken to produce it. The visualisation is around an enemy NPC. This allows the players to see where the enemy NPC is going and where it could go. 
-	
-	Implementation of the visualisation was developed in a level of a 3D game made in Unity 5.6\footnote[1]{Unity 5.6 Available: https://unity3d.com/get-unity/download/archive}. Logging tools in the play-testing software export the amount of time the players spent in a level and what percent of the level they explored. Analysis of this data found that only two cases had an effect on player exploration. These two were the visualisation of the Unity navmeshes had a negative correlation with the amount of the level explored and the use of RRT path-finding increasing the amount of the level explored. This is analysed in more detail in section \ref{Analysis}.
-	
-	Previous papers have researched visualising \textit{Artificial Intelligence} (AI) and foregrounding AI. However, there is little on what effect this has on how the players explore the game.
-	The research question proposed in this project is: how does visualising RRT path-finding in an NPC affect how a player explores a game level?
+	The results of this study also find that the visualisation of path-finding It could also be used in a game beyond design as the visuals a
+
+	The research question that will be addressed in this project is: how does visualising path-finding in an NPC affect how a player explores a game level?
+
 	
 	\subsection{Road-map}
 	Section~\ref{RelatedWork} is a review of the literature on existing relevant work. The areas reviewed are A* path-finding, RRT path-finding, path-finding, foregrounding AI and exploring game environments. 
@@ -596,12 +598,17 @@
 	
 	Another area that could be explored in future work the RRT visualisation and variations on it. As the use of RRT in this study had numerous small RRTs with less than 500 nodes another area to research could be comparing having an RRT per room to an RRT per level. Another area would be to try varying the number of nodes in the RRT and for larger RRT variations clustering methods such as the one mentioned in section~\ref{AppPathfinding} that Bauer and Popovic used to make their use of RRT more legible.
 	
+
 	\section{Conclusion} 
-	In conclusion, while the use of RRT is more frequent in robotics than digital games its use appears feasible in this project. Its past use in game design tools shows that clustering can make the output understandable to the user. However, the need of optimisations such as RRT* or the use of A* may arise to produce a shorter path or to find any path. 
+	While the use of RRT is more frequent in robotics than digital games its use was feasible in this project. Its past use in game design tools shows that it can be used in games. However, the need of optimisations such as RRT* or the use of A* may arise in the future to produce shorter paths or to guarantee a path. 
+	The visualisation and foregrounding of AI have been successfully used before and while it was used here the results suggest that the players did not understand it and that future work would be required to see if it is suitable for use in games. Previous studies have looked at way-finding and player exploration and suggest that environmental factors in digital environments do have some effect on player exploration.  Similarly, this study found player exploration changed between games variations. 
 	
-	Visualisation and foregrounding of AI have been successfully used before suggesting that it can be used here. Finally, previous studies have looked at way-finding and player exploration. These suggest that environmental factors in digital environments do have some effect on player exploration.
+	This study found a number of significant results which suggest that the pathfinding method and visualisation do affect player exploration in a game level.  
+	Like many of the papers reviewed in section~\ref{RelatedWork} this could be applied in game design. Level designers could take it into account what type of path-finding will give the result they want as different results may be wanted for different genres or even different sections of the game. 
 	
-	The results found a number of significant results which means that to some extent the pathfinding method and visualisation affects the player's exploration in a level.  Like many of the papers reviewed in section~\ref{RelatedWork} this could be applied in game design. Level designers could take it into account what type of pathfinding will give the result they want as different results may be wanted for different genres or even different sections of the game. In this study visualising the pathfinding to the player often resulted in the player being unsure of what the visualisation was so more research may be required to use the visualisations in video games rather than just designing them.
+	In this study visualising the path-finding to the player often resulted in the player being unsure of what the visualisation was so more research may be required to use the visualisations in video games rather than just designing them.
+	
+	In conclusion, both the use of different path-finding techniques and the visualisation of these techniques in this study affected both player exploration and death frequency. 
 	
 	% references section
 	\bibliographystyle{IEEEtran}
@@ -610,8 +617,8 @@
 	% Appendices    
 	\appendices
 	\section{Acknowledgements}
-	  would like to thank my project supervisor Dr. Ed Powley whose guidance and assistance were invaluable while producing this project.
-	 I would also like to thank Bears are OP for allowing me to use their game in my playtesting and all the playtesters who took part in the playtesting as I would have had no data without them.
+	 I would like to thank my project supervisor Dr. Ed Powley whose guidance and assistance were invaluable while working this project.
+	 I would also like to thank Bears are OP for allowing me to use their game in my playtesting and all the playtesters who took part in the study as I would have had no data without them.
 	 Finally, I would like to thank the other third year BSc students whose peer reviews and support I greatly appreciated throughout this project. 
 	 
 	\section{First appendix: Reflective Report}
@@ -620,7 +627,8 @@
 	While I am pleased with the final paper I produced there are many parts to this paper and the software that I could have improved on. While I was slightly behind schedule on the written part of my dissertation I believe my main weaknesses during this project lay in the software and playtesting side of the project.    
 	
 	\subsection{Play Testing}
-	The first issue was play-testing I vastly underestimated how long this would take and left it too late. This lead to me struggling to get enough participants and resorting to getting more online. One way to address this in the future would be to run a larger pilot study. In this paper, the pilot study consisted of 4 players, one for each variation. These all took around 20 minutes however in the actual study player took up to an hour. 
+	The first issue was play-testing I vastly underestimated how long this would take and left it too late. This lead to me struggling to get enough participants and resorting to getting more online. One way to address this in the future would be to run a larger pilot study. In this paper, the pilot study consisted of 4 players, one for each variation. These all took around 20 minutes however in the actual study player took up to an hour....
+	 
 	
 	Another issue was that I found it hard to ask people to participate in the study this was partially due to me leaving the play-testing too late so many students were working on assignments and not willing to do the study. Again this could be solved by starting the playtesting earlier or designing a shorter game so that potential participants would not have to devote so much time to the play-test.
 	
