@@ -93,7 +93,7 @@
 		% Opening: 
 		This paper looks at the use of path-finding and~\textit{Artificial Intelligence} (AI) visualisation in digital games.   Specifically at the foregrounding AI and the visualisation of path-finding. 
 		%    Challenge: 
-		While previous papers have researched AI visualisation and how to achieve it there does not appear to be many papers in the field of visualising AI in video games. There has been research into the visualisation of path-finding. However, the focus was most commonly on the use of visualisation in game design. 
+		While previous papers have researched AI visualisation and how to achieve it there does not appear to be many papers in the field of visualising AI in video games.  There has been research into the visualisation of path-finding. However, the focus was most commonly on the use of visualisation in game design. 
 		% Action: 
 		This paper looks at visualising various methods of path-finding on enemy NPCs in a 3D Metroidvania game developed in Unity.
 		%Resolution:
@@ -102,16 +102,16 @@
 	
 	\section{Introduction} \label{introduction}
 	\IEEEPARstart{T}{his} project looks at visualising the path-finding of an enemy~\textit{Non Player Character} (NPC) using~\textit{Rapidly-exploring Random Tree} (RRT) path-finding and Unity's ~\textit{Navigation Meshes} (NavMeshes).  Figure~\ref{KuffnerRRT} shows an example of RRT path-finding. Here the RRT explores the area and then draws a path along the tree between the start and the goal nodes~\cite{Kuffner2000}. 
-
+	
 	This paper looks at visualising the tree produced by RRT, the mesh produced by Unity NavMeshes and the process taken to produce each. The visualisations are around an enemy NPC. This allows the players to see where the enemy NPC is going and where it could go.      
 	Implementation of the visualisation was developed in a level of a 3D game made in Unity 5.6\footnote[1]{Unity 5.6 Available: https://unity3d.com/get-unity/download/archive}. Logging tools in the play-testing software export the amount of time the players spent in a level and what percent of the level they explored. Analysis of this data found a number of cases where the different path-finding methods and visualisations affected the percent of the level explored and the number of player deaths but no cases where the time spent in the level was affected. These are analysed in more detail in section \ref{Analysis}.
-
-	As section~\ref{RelatedWork} shows, previous papers explore visualising \textit{Artificial Intelligence} (AI), foregrounding AI and visualising path-finding. However, there is little on using this in digital games beyond game design. The potential impact of the results of this study could be in game design as the use of different path-finding techniques here had an affect on how players explore. Game designers could take this into account in games ...use this when designing games
 	
-	The results of this study also find that the visualisation of path-finding It could also be used in a game beyond design as the visuals a
-
+	As section~\ref{RelatedWork} shows, previous papers explore visualising \textit{Artificial Intelligence} (AI), foregrounding AI and visualising path-finding. However, there is little on using this in digital games beyond game design. The potential impact of the results of this study could be in game design as the use of different path-finding techniques here had an effect on how players explore. Game designers could take this into account in games ...use this when designing games
+	
+	The results of this study also found that the visualisation of path-finding It could also be used in a game beyond design as the visuals a
+	
 	The research question that will be addressed in this project is: how does visualising path-finding in an NPC affect how a player explores a game level?
-
+	
 	
 	\subsection{Road-map}
 	Section~\ref{RelatedWork} is a review of the literature on existing relevant work. The areas reviewed are A* path-finding, RRT path-finding, path-finding, foregrounding AI and exploring game environments. 
@@ -272,13 +272,13 @@
 	A paper looked at in section~\ref{VisualisingAI} was Haworth~\textit{et al}'s ~\cite{Haworth2010} study. While they do not look at player exploration the game they used involved a map where participants had to explore a maze. Participants who had the decision tree visualisation found it easier to navigate the maze. While Moura and Bartram~\cite{moura2014} suggested way-finding alone was not enough to guide a player this suggests that visualisation could aid the exploration process~\cite{Haworth2010}.
 	
 	\section{Methodology} \label{methodology}
-	The research question addressed in this project is: how does visualising path-finding in an NPC affect how players explore a game level? The hypotheses drawn from this question are listed in subsection~\ref{hypothesis}.  
+	The research question addressed in this project is: how does visualising path-finding in an NPC affect how players explore a game level? The hypotheses drawn from this question are listed in section~\ref{hypothesis}.  
 	
-	An A-priori power analysis was performed to determine how many participants were required for an effect size of 0.4. 0.4 was chosen as a larger percentage would have a more significant impact on gameplay.  An effect size of 0.3 would have also found a large enough difference to impact gameplay. However, a power analysis for an effect size of 0.3 found that 90 participants would have been required, which was not feasible in the given time frame of this study.
+	An a-priori power analysis was performed to determine how many participants were required for an effect size of 0.4. 0.4 was chosen as this percentage would have a more significant impact on gameplay.  An effect size of 0.3 would have also found a large enough difference to impact gameplay. However, a power analysis for an effect size of 0.3 found that 90 participants would have been required, which was not feasible in the given time frame of this study.
 	
 	The results showed that a minimum of 52 participants was required. As not all datasets were complete further participants were tested resulting in 62 sets of results. The play-testing was completed by participants both online and in person to reach the required sample size. Both participant types were given the same instructions and questionnaire. 
 	
-	Of the play-tests done in person, a large majority of the players were students on game development-related courses, the potential issues relating to this are discussed in section~\ref{PotentialIssues}. 
+	Of the play-tests done in person, a large majority of the players were students studying game development-related courses, the potential issues relating to this are discussed in section~\ref{PotentialIssues}. 
 	
 	\begin{table}[H]
 		\centering
@@ -297,7 +297,7 @@
 		\end{tabular}
 	\end{table}
 	
-	The rest of the play-tests were done online through Reddit and Twitter. Many of the subreddits it was posted on were related to gaining participants and play-testers. This could have affected the results as only a certain type of person would go online looking for surveys and play-tests to complete. Again some of the subreddits listed were related to game development and therefore the feedback given was related to the state of the game, not the path-finding.     
+	The rest of the play-tests were done online through Reddit. Many of the subreddits it was posted on were related to gaining participants and play-testers. Where the in-person play-testing has the issue of the players all being students, the online players could have a similar problem as the players are all users of the subreddits listed above that are looking for surveys to complete. Again some of the subreddits listed were related to game development and therefore the feedback given was related to the state of the game, not the path-finding.     
 	
 	While 21 play-tests were completed online 10 of them have incomplete or invalid data. Therefore, those participants results were filtered out of the final dataset more tests were done in person to reach the sample size, the filtration of the data is discussed in more detail in section~\ref{datacollection}.     
 	
@@ -316,7 +316,7 @@
 		\end{tabular}
 	\end{table}
 	
-	\subsection{Hypothesis:} \label{hypothesis}
+	\subsection{Hypotheses:} \label{hypothesis}
 	\begin{table*}[h]
 		\centering
 		\caption{Hypotheses}
@@ -384,21 +384,16 @@
 			& Questionnaire Data \\ \hline
 		\end{tabular}
 	\end{table*}
-	Table~\ref{table:Hypothesis} shows the hypotheses that are tested in this experiment. The methodologies that are used to test these hypotheses were play-testing and a questionnaire. As this required human participants for both parts ethics approval for this methodology was gained from Falmouth University’s Research Ethics Board.
+	Table~\ref{table:Hypothesis} shows the hypotheses that are tested in this experiment. The methodologies that are used to test these hypotheses are play-testing and a questionnaire. As this required human participants for both parts ethics approval for this methodology was gained from Falmouth University’s Research Ethics Board.
 	
 	The game the path-finding variations have been tested in is `Gates of Amenti' a 3D Metroidvania game which has been designed with a focus on exploration. A Metroidvania game is an action-adventure game with a focus on exploration to discover new areas and power-ups~\cite{online:metroidvania}.
 	
-	Players were given one of the game variations to play and then asked to complete a questionnaire on their experience. The game also logged the player's position at regular intervals to calculate what percent of the level they explore. How long a participant spent exploring the level was also logged.
+	Players were given one of the game variations to play and then asked to complete a questionnaire on their experience. 
 	
 	\subsection{Play-testing}
-	There are four variations of the game that can be seen in table~\ref{table:PlaytestVariations}.  A random number generator was used to randomly select a game version for each participant.
+	There are four variations of the game that can be seen in table~\ref{table:PlaytestVariations}.  A random number generator was used to randomly select a game version for each participant.    
 	
-	
-	During the play-tests players were randomly assigned one of the four variations of the game. The players were asked to play that version for as long as they wanted. While playing the software logged the time the player spent in the level per life and what percent to the level they explored. The percent explored was calculated by recording how many doors the player walked through as the game requires players to unlock doors to progress. This data is then exported into a .CSV. The .CSV is then analysed using the R statistical package\footnote[2]{R Available at: https://www.r-project.org/} in R Studio\footnote[3]{R Studio Available at: https://www.rstudio.com/products/rstudio/download/}.
-	
-	% \todo[inline]{Detail stats tests done.}
-	
-	The primary statistical test used was a T-Test alongside correlations.
+	During the play-tests players were assigned one of the four variations of the game. The players were asked to play that version for as long as they wanted. While playing the software logged the time the player spent in the level per life and what percent to the level they explored. The percent explored is calculated by recording how many doors the player walks through as the game requires players to unlock doors to progress. This data is then exported into a .CSV. The .CSV is then analysed using the R statistical package\footnote[2]{R Available at: https://www.r-project.org/} in R Studio\footnote[3]{R Studio Available at: https://www.rstudio.com/products/rstudio/download/}.  The primary statistical test used was a T-Test alongside correlations.
 	
 	After completing a play-test of the game participants were asked to complete a questionnaire on their thoughts on parts of the game and Yee's taxonomy to determine their player type.
 	
@@ -406,33 +401,32 @@
 	
 	Alongside play-testing, participants were also asked to fill out a questionnaire on the game online using Google Forms. Nordin~\textit{et al}~\cite{nordin2014} say that questionnaires are vital for understanding how players feel when playing digital games~\cite{nordin2014,Denisova2016}. They can also help give uniformity and consistency to the data gathered from participants~\cite{Denisova2016}.
 	
-	Questionnaires are also beneficial as they can prompt players to give answers they may not have given spontaneously. The two options here are to either create a questionnaire specifically for the experiment or to use an existing one. There are a wide variety of questionnaires that already exist to measure players experiences in play testing~\cite{nordin2014, Jennett2008}. These come with the benefit of being more likely to be thoroughly tested such as the~\textit{ Immersive Experience Questionnaire} (IEQ) which uses Likert scale responses or Yee's taxonomy~\cite{nordin2014, Jennett2008, Yee2006, Yee2012}.
+	Questionnaires are also beneficial as they can prompt players to give answers they may not have given spontaneously. For this study either a new questionnaire could be made from the relevant hypotheses or an existing one could have been used. There are a wide variety of questionnaires that already exist to measure players experiences in play testing~\cite{nordin2014, Jennett2008}. These come with the benefit of being more likely to be thoroughly tested such as the~\textit{ Immersive Experience Questionnaire} (IEQ) which uses Likert scale responses or Yee's taxonomy~\cite{nordin2014, Jennett2008, Yee2006, Yee2012}.
 	
 	However, Nordin~\textit{et al}~\cite{nordin2014} say there are many issues with using pre-existing questionnaires. Firstly, many of these questionnaires are not readily available. Another issue is that not all questionnaires have been thoroughly checked for validity. There is also the potential issue of a researcher not fully understanding the questions put forward by another researcher or they may not understand what data that question is intended to get.
 	
-	Another potential issue with the questionnaire is self-report bias. Some of the hypotheses being tested relate to the player being confused or not understanding the visualisations. Players are unlikely to admit to not understanding the game making the data gained invalid~\cite{donaldson2002}.
+	Another issue with the use of questionnaires is self-report bias. Some of the hypotheses being tested relate to the player being confused or not understanding the visualisations. Players are unlikely to admit to not understanding the game making the data gained invalid~\cite{donaldson2002}.
 	
-	Most of the hypotheses require quantitative data from the play-tests. However, some require qualitative data so a questionnaire was necessary.  In addition to the hypotheses based questions, there were also questions to determine the participants player type, as some players are more interested in exploration in games than others and that could influence the results. 
-	Firstly Bartle's Taxonomy~\cite{Bartle1996} was looked at, this taxonomy appears to be widely used but is not validated. Instead Yee's player taxonomy 
-	Yee's questionnaire for player taxonomies is used in combination with questions based on the hypotheses that require qualitative data. 
+	Most of the hypotheses in this paper require quantitative data from the play-tests. However, some require qualitative data so a questionnaire is necessary.  In addition to the hypotheses based questions, there were also questions to determine the participants player type, as some players are more interested in exploration in games than others and that could influence the results. 
+	Firstly Bartle's Taxonomy~\cite{Bartle1996} was looked at, this taxonomy appears to be widely used but is not validated. Yee's Taxonomy similarly uses a questionnaire to determine a person's player type but is also been validated~\cite{Yee2006. Yee2012}.  In this paper, Yee's questionnaire for player taxonomies is used in combination with questions based on the hypotheses that require qualitative data. 
 	
 	\section{Software Development} \label{softdev}
-	The software used to develop the play-testing software was Unity 5.6.3f1\footnote[3]{Unity 5.6 Available: https://unity3d.com/get-unity/download/archive} and Visual Studio Community 2017  15.5.4\footnote[4]{Visual Studio Community 2017 Available: https://www.visualstudio.com/downloads/}.  The analysis was carried out and the graphs were produced in R version 3.4 in R Studio.
+	The engine used to develop the play-testing software was Unity 5.6.3f1\footnote[3]{Unity 5.6 Available: https://unity3d.com/get-unity/download/archive} and Visual Studio Community 2017  15.5.4\footnote[4]{Visual Studio Community 2017 Available: https://www.visualstudio.com/downloads/}.  The analysis was carried out and the graphs were produced in R version 3.4 in R Studio.
 	
 	The base game `Gates of Amenti' was developed with the student-led games studio Bears are OP\footnote[5]{Gates of Amenti: https://bearsareop.itch.io/}. The game was developed over the course of seven months using Agile and Scrum project management techniques. The game was still in development while being adapted for use in the play-testing so was unfinished. This is a potential issue looked at in section~\ref{PotentialIssues}. 
 	
-	Agile was not used for the play-testing variation of the game as it was developed by one programmer as opposed to the multi-disciplinary team developing the game. Daily stand-ups were not required and as a majority of the required features from the game had already been developed the prototyping 
-	For the development of the play-testing software for this experiment the Prototyping lifecycle method was used~\cite{isaias2015}. Prototyping was used as a majority of the game itself had already been developed. Therefore, only a few new features required implementation. These features were; RRT path-finding, path-finding visualisation, data recording and data exporting. A basic version of these features was added to the game and then improved on until the game was suitable for playtesting. In this case, suitable means that all features worked and players could play through the level with minimal glitches.  
+	Agile was not used while developing the play-testing variation of the game as it was being developed by one programmer as opposed to the multi-disciplinary team developing the main game. Daily stand-ups were not necessary and as a majority of the required features from the game had already been developed. 
+	For the development of the play-testing software, the Prototyping lifecycle method was used~\cite{isaias2015}. Prototyping was used as a majority of the game itself had already been developed, only a few new features required implementation. These features were; RRT path-finding, path-finding visualisation, data recording and data exporting. Basic versions of these features were added to the game and then improved on until the game was suitable for playtesting. In this case, suitable means that all the features worked and players could play through the level with minimal issues.  
 	
-	The first feature implemented was the RRT. This was developed in a separate scene in the game at first. The first iteration of the RRT built an RRT in 2 dimensions in a cube. This was to test the implementation of RRT before trying it in a more complex environment.  In the game, the basic data recording functionality was added early on but the ability to export it and view it as a part of the UI was added near the end of the development cycle. The first iteration of the NavMesh visualisation was implemented using Unity's low-level graphics library, GL\footnote[5]{Unity GL Library: https://docs.unity3d.com/ScriptReference/GL.html}. This was only used for testing as it could only be observed using the in-game camera,  it was not visible in screen view. This was a test to see how the navmesh could look. This was remade to use Unity line renderers to draw the polygons of the NavMesh, as can be seen in figure~\ref{image:RRTVisuals}. The RRT was then visualised in a similar manner using line renderers to draw the branches.   
+	The first feature implemented was the RRT. This was developed in a separate scene in the game at first. The first iteration of the RRT built a tree in 2 dimensions in a cube. This was to test the implementation of RRT before trying it in a more complex environment.  In the game, the basic data recording functionality was added early on but the ability to export it and view it as a part of the UI was added near the end of the development cycle. The first iteration of the NavMesh visualisation was implemented using Unity's low-level graphics library, GL\footnote[5]{Unity GL Library: https://docs.unity3d.com/ScriptReference/GL.html}. This was only used for testing as it could only be observed using the in-game camera,  it was not visible in the scene view. This was a test to see how the NavMesh could look. This was refactored to use Unity's line renderers to draw the polygons of the NavMesh, as can be seen in figure~\ref{image:RRTVisuals}. The RRT was then visualised in a similar manner using line renderers to draw the branches between the nodes.   
 	
-	The quality of the software is judged on its functionality and whether it is a playable game. For functionality, the features it was judged on were whether the data could be exported in a form that it could be analysed, as the game exported the time, exploration percent and game version to a .CSV file this requirement was met. The other two main requirements were that the software could generate an RRT and that both RRT and NavMesh path-finding could be visualised. While both of these were functional they could have been of a higher quality which is discussed in more detail in section~\ref{PotentialIssues}.
+	The quality of the software is judged on its functionality and whether it is a playable game. For functionality, the features it was judged on were whether the data could be exported in a form that it could be analysed in, as the game exported the time, exploration percent and game version to a .CSV file this requirement was met. The other two main requirements were that the software could generate an RRT and that both RRT and NavMesh path-finding could be visualised. While both of these were functional they could have been of a higher quality which is discussed in more detail in section~\ref{PotentialIssues}.
 	
 	\subsection{Software Testing} \label{softtest}
-	To test the play-testing software was working as required a simple bot was developed. All the bot needed to do was move forward to test whether the doors registered when walked through and then whether the timer and data export worked.
+	To test that the play-testing software was functioning as required a simple bot was developed. All the bot needed to do was move forward to test whether the doors registered when walked through and then whether the timer and data export worked.
 	
 	\subsubsection{Doors}
-	The first bot was to test whether the doors recorded whether the player had moved through them. Whether a door has been walked through is used to determine what percent of the level the player explored. Figure~\ref{image:DoorCode} shows an example of the code used in the bot to disable the door trigger collider after use. The test for the doors was a bot moving through the door and checking that the GameState class recorded it.
+	The first bot is used to test whether the doors record whether the player had moved through them. Whether a door has been walked through is used to determine what percent of the level the player explored. Figure~\ref{image:DoorCode} shows an example of the code used in the bot to disable the door trigger collider after use. The test for the doors is a bot moving through the door and checking that the GameState class recorded it.
 	
 	\begin{figure}[h]
 		\includegraphics[width=1.0\linewidth]{DoorCode.png}
@@ -441,7 +435,7 @@
 	\end{figure} 
 	
 	\subsubsection{Timer and Data Export}
-	The second bot was to check whether the software could successfully export the necessary data to a .CSV file. This bot is the same as the door testing bot. Figure~\ref{image:ExportData} shows an example of the data exported from the game.  
+	The second test is to check whether the software could successfully export the necessary data to a .CSV file. This bot is the same as the door testing bot. Figure~\ref{image:ExportData} shows an example of the data exported from the game.  
 	
 	\begin{figure}[h]
 		\includegraphics[width=1.0\linewidth]{ExportData.png}
@@ -450,7 +444,7 @@
 	\end{figure} 
 	
 	\subsubsection{Visualisations}
-	The final test was whether the path-finding visualisation worked as intended. This does not require a bot it can be seen tested by observing the scene in Unity. Figure~\ref{image:navmeshVisuals} shows the visualisation of the Unity navmesh working in the engine.  Figure~\ref{image:RRTVisuals} shows the visualisation of the RRT path-finding working in engine.
+	The final test is whether the path-finding visualisation works as intended. This does not require a bot it can be tested by observing the scene in Unity. Figure~\ref{image:navmeshVisuals} shows the visualisation of the Unity NavMesh working in the engine.  Figure~\ref{image:RRTVisuals} shows the visualisation of the RRT path-finding working in engine.
 	
 	\begin{figure}[h]
 		\includegraphics[width=1.0\linewidth]{NavmeshVis.png}
@@ -466,12 +460,12 @@
 	\end{figure}  
 	
 	\section{Data Collection and Filtering}  \label{datacollection}
-	All the data used either came from the game's exported data or from the questionnaire.  Play-testing gave 107 datasets from 62 participants. However, as not all participants gave complete datasets 10 datasets have been removed leaving 97 datasets from 52 participants. 
+	All the data used either came from the data exported from the game or from the questionnaire.  There are 107 datasets from play-testing 62 participants. However, as not all participants gave complete datasets 10 datasets have been removed leaving 97 datasets from 52 participants. 
 	
-	When the player dies in-game the game resets, this lead to a number of results having 0 percent explored and low play times. As these were not proper play-tests the 11 instances of this were removed from the dataset leaving 86 datasets. Many players also died within the first few minutes of playing, giving a play-test with a low time and exploration amount, the 34 instances of this were also removed from the dataset. Removing these left 52 datasets; one per player. There is a potential issue here where the player may not explore and area again if they have already explored it before dying. However, data from playthroughs where the player died in the first 5 minutes would have been more likely to have had an effect. 
+	When the player dies in-game the game resets, this lead to a number of results having 0 percent explored and low play times. As these were not proper play-tests the 11 instances of this were removed from the dataset leaving 86 datasets. Many players also died within the first few minutes of playing, giving a play-test with a low time and exploration amount, the 34 instances of this were also removed from the dataset. Removing these left 52 datasets; one per player. There is a potential issue here where the player may not explore and area again if they have already explored it before dying. However, data from play-throughs where the player died in under 5 minutes would likely have had a more significant effect. 
 	
 	\section{Analysis and Interpretation} \label{Analysis}
-	All the data analysis was conducted using R in R Studio. The results gathered can be seen in Table~\ref{StatsTable}.  Figure~\ref{image:RCor} shows an example of the code running in R, it shows a correlation and a T-Test that have been run. 
+	The data analysis was conducted using R in R Studio. The results from this can be seen in Table~\ref{StatsTable}.  Figure~\ref{image:RCor} shows an example of the code running in R, it shows a correlation and a T-Test that have been run. 
 	
 	\begin{figure}[h]
 		\includegraphics[width=1.0\linewidth]{RCor.png}
@@ -510,35 +504,36 @@
 	Table~\ref{StatsTable} shows the correlations and P-Values from the T-Test results calculated using R.  In a majority of cases there was insufficient evidence to reject the null hypothesis. However, there are some cases that have a P-Value of less than 0.05 and are thus statistically significant. 
 	
 	\begin{figure}[h]
-		\includegraphics[width=1.0\linewidth]{GraphTime.png}
-		\caption{Box and Whisker plot of the time spent in the level with the 4 game variations.}
-		\label{graph:Time}
-	\end{figure}  
-	
-	\begin{figure}[h]
 		\includegraphics[width=1.0\linewidth]{GraphPercent.png}
 		\caption{Box and Whisker plot of the percent of the level explored with the 4 game variations.}
 		\label{graph:Percent}
 	\end{figure}
 	
-	\subsection{RRT and the Percent of the Level Explored} \label{RRTExplore}
-	The first significant correlation is a small positive correlation of 0.2807 between the percent of the level explored and the use RRT path-finding. This suggests that players explore more in the RRT variations.    
+	\begin{figure}[h]
+		\includegraphics[width=1.0\linewidth]{GraphTime.png}
+		\caption{Box and Whisker plot of the time spent in the level with the 4 game variations.}
+		\label{graph:Time}
+	\end{figure}  
 	
+	
+	
+	\subsection{RRT and the Percent of the Level Explored} \label{RRTExplore}
+	The first significant correlation is a small positive correlation of 0.2807 between the percent of the level explored and the use of RRT path-finding. This suggests that players explore more in the RRT variations.        
 	
 	The graph in figure~\ref{graph:Percent} shows that the percent explored between the two RRT variations are both close, with the not visualised variation being slightly lower. 
 	
 	There is no significant correlation between the RRT being visualised and the percent which would suggest that visualising the RRT does not affect the percent of the level explored. However, when just looking at visualised path-finding there is another significant correlation between the type of visualised path-finding used and the percent of the level explored. There is a strong positive correlation of 0.55 which again suggests that players explore more when RRT is used in comparison to NavMeshes. Another RRT related significant correlation is between non-visualised RRT and the percent explored which has a positive correlation of 0.281.  
 	
-	There is also no significant correlation between RRT use and the time spent in the level. This suggests while the players explored more when the RRT was used they do not spend more time in the level.  
+	There is no significant correlation between RRT use and the time spent in the level. This suggests while players explore more when the RRT is used they do not spend more time in the level.  
 	
-	Some participants commented that they thought the RRT was leading somewhere and followed it through the level or went to it when they saw it.  However this only accounts for when the RRT is visualised. Another possibility is the RRT itself was spawned in a square and often did not fill a room which may encourage players to move around the edge of the room rather than down the middle they may have been more likely to find hidden doors increasing their exploration percentage.
+	Some participants commented that they thought the RRT was leading somewhere and followed it through the level or went to it when they saw it.  However, this only accounts for when the RRT is visualised. Another possibility is that the RRT was spawned in a square and often did not fill a room which may encourage players to move around the edge of the room rather than down the middle. This may have made it easier to find hidden doors increasing their exploration percentage.
 	
 	Another reason for this could be that in the play-testing software each RRT was limited to a single room as enemies could not follow players out of rooms this may have allowed them to avoid combat, or make combat faster, allowing them to explore more. 
 	
 	
 	\subsection{NavMesh Visualisation and the Percent of the Level Explored}
 	
-	The second case was a negative correlation of -0.4894 between the percent explored and the NavMesh path-finding being visualised. This suggests that players explored less when the NavMesh was visualised.  As many play-testers were game development students using Unity they may have known what the visualisation was of the NavMesh was. This may have helped them find a quicker route through the level or lead them to avoid rooms with enemies in. Another reason could be that seeing the pathfinding showed them the possible pathways aiding them in finding a more direct path through the level
+	In contrast to RRT having a positive correlation with the percent of the level explored, the visualisation of NavMeshes has a negative correlation of -0.4894 with the percent explored. This suggests that players explored less when the NavMesh was visualised.  As many play-testers were game development students using Unity they may have known that the visualisation was of the NavMesh. This may have helped them find a quicker route through the level or lead them to avoid rooms with enemies in. Another reason could be that seeing the pathfinding showed them the possible pathways aiding them in finding a more direct path through the level
 	
 	\subsection{Visualised Path-Finding and Player Deaths}
 	
@@ -549,11 +544,13 @@
 	\end{figure}
 	Another significant correlation is the positive correlation between the visualised path-finding and the number of player deaths. This means that players with the variations with visualised path-finding died more than players without it. One reason for this could be the player being distracted by the visualisation and therefore did not focus on enemies. 
 	
-	In the RRT variation, the tree visuals are only in areas where there are enemies, as some players claim to move to the RRT whenever they saw it they could have been more likely to find enemies than players without the visualisation.
+	In the RRT variation, the tree visuals are only in areas where there are enemies, as some players claim to move to the RRT whenever they see it they could have been more likely to find enemies than players without the visualisation.
 	
-	As can be seen in the graph in figure~\ref{graph:DeathsHisto} an equal number of players died 0 or 1 time. The one death could likely be due to the player not knowing how to play the game and learning and may have skewed the results. A smaller number of players died 2 or 4 times. 
+	As can be seen in the graph in figure~\ref{graph:DeathsHisto} an equal number of players died 0 or 1 time. The one death could also be due to the player not knowing how to play the game which may have skewed the results. A smaller number of players died 2 or 4 times. 
 	
-	There is no correlation or statistical significance between the questionnaire data and the exported game data. This could potentially be due to poorly worded questions or players not understanding what the visualisation, as mentioned in more detail in section~\ref{PotentialIssues}. Many players claimed to understand the path-finding visualisation. However, the comments after playing suggested that they do not as many believed it was an aesthetic choice.
+	
+	\subsection{Questionnaire Data}
+	There is no correlation or statistical significance between the questionnaire data and the exported game data. This could potentially be due to poorly worded questions or players not understanding what the visualisation, as mentioned in more detail in section~\ref{PotentialIssues}. Many players claimed to understand the path-finding visualisation but, their comments after playing suggested that they do not as many believed it was an aesthetic choice.
 	
 	Apart from the cases above, there was insufficient evidence to reject the rest of the null hypothesis. This suggests that neither of the visualisations was more understandable than one another to the player. Also, neither the change in path-finding method nor the visualisation affected the time spent in the level even when the percent explored increased.
 	
@@ -561,34 +558,36 @@
 	
 	
 	\section{Potential Issues and Future Work} \label{PotentialIssues}
-	While the methodology of the study worked, in this case, there were many areas that could be improved in future work to improve the quality of the data collected. This section identifies a number of weaknesses in this study and how they could be improved on. 
+	While the methodology of the study was appropriate in this case, there were many areas that could be improved in future work to improve the quality of the data collected. This section identifies a number of weaknesses in this study and how they could be addressed in future work. 
 	
 	\subsection{Play-testing Game} 
-	A first potential issue with the play-testing is that the game was not specifically designed for this paper. While the game is a Metroidvania game with a focus on exploration a few participants noted the enemies in the game were very aggressive and a majority of players died at least once which could have affected their desire to explore. In a future study, a game would either be designed specifically for the play-testing or altered more to suit the study.  
+	One issue with the play-testing software is that the game was not specifically designed for use in this paper. While the game is a Metroidvania game with a focus on exploration a few participants noted the enemies in the game were very aggressive and a majority of players died at least once which could have affected their desire to explore. In a future study, a game would either be designed specifically for the play-testing or altered more to suit the study.  
 	
 	\subsection{Participants}
-	Another issue with using the game `Gates of Amenti' is that many of the play-testers were game development students who have play-tested other levels of the game or seen the game trailer during the university show and tell day. This meant that they could have been looking for things they have previously seen in the trailer as opposed to exploring or being affected by the visualisation.
+	Another issue with using the game `Gates of Amenti' is that many of the play-testers were game development students who may have play-tested other levels of the game or seen the game trailer during the university show and tell day. This means that they could have been looking for things they have previously seen in the trailer as opposed to exploring or being affected by the visualisation. As a majority of them were students studying a game development course they play-tested the game looking for bugs and issues instead of just playing the game which again may have affected the results.
 	
-	In future work the player would also be selected randomly and from a larger pool of people. In this study, a majority of players were students studying a game development course.
+	In future work the player would be selected randomly and from a larger pool of people.
 	
 	\subsection{Performance Issues}
-	The RRT variations of the game were more resource intensive to run than the Navmesh versions. This lead to a slight frame rate drop at the start of the game. 
-	Many of the play-tests used Falmouth Games Academy's computers which were capable of running both versions well. However, some play-tests were done remotely and therefore their computer specification and therefore the performance of the game is unknown. In future studies, this would be combated by either doing all the play-tests in one location ensuring everyone uses similar computers or to expand on the games data collection to include the frame rate or expand the questionnaire to include player's computer specifications.     
+	The RRT variations of the game were more resource intensive to run than the NavMesh versions. This lead to a frame rate drop at the start of the game in the RRT variations. 
+	Many of the play-tests used Falmouth Games Academy's computers which were capable of running both versions well. However, some play-tests were done remotely and therefore the computer specification and performance of the game are unknown. In future studies, this would be combated by either doing all the play-tests in one location ensuring everyone uses similar computers or to expand on the games data collection to include the frame rate or the questionnaire to include player's computer specification.     
 	
 	\subsection{Visualisation}    
-	The visualisation itself was also potentially an issue as many players do not know what it was or they assumed it was part of the game's aesthetic and ignored it. However, visualisation could still affect the player even if they do not understand the visualisation.  Many participants suggested they do not understand the RRT visualisation but the results still showed their exploration was affected. 
+	The visualisation itself is also potentially an issue as many players did not know what it was or they assumed it was part of the game's aesthetic and ignored it. However, the visualisation could still affect the player even if they do not understand it.  Many participants suggested they do not understand the RRT visualisation but the results still showed their exploration was affected. 
 	
-	However, as many players do not understand the visualisation it suggests that the questionnaire should have explained it to some extent to get better answers. This also combined with the issue of self-report bias which is looked at in section~\ref{CData}. 
+	As many players did not understand the visualisation it suggests that the questionnaire should have explained it to some extent to get better answers. This also combined with the issue of self-report bias which is looked at in section~\ref{CData}. 
 	
-	While the RRT visualisation worked as intended in future work an area to explore would be increasing the RRT size.  In this experiment, the RRT was performance heavy so in future work the RRT could be made more optimised and then the RRT can be increased in size and clustering could be used to filter the tree.
+	While the RRT visualisation worked as intended, in future work an area to explore would be increasing the RRT size.  In this experiment, the RRT was resource intensive so in future work the RRT could be optimised more and then the RRT could be increased in size and clustering could be used to filter the tree.
 	
 	\subsection{Collected Data}    \label{CData}
-	While the data collected from the game was usable it could be refined to get more data that would allow for more in-depth analysis. For example, currently the game only records how many doors the player walks through, an improvement on this would be to record what doors they walked through to create heat maps and perform more statistical analysis to see whether players explore differently in the different game variations or if the players died in similar locations.
-	Another issue with the collected data is that the questionnaire relied on players being honest. There could have been self-report bias where players gave different answers, for example, players were asked if they understood the visualisation and they were unlikely to admit to not understanding. This could be addressed in future work by relying more on in-game data and wording the questions differently.
+	The data collected from the game was usable but it could be improved to get more data that would allow for more in-depth analysis. For example, currently the game only records how many doors the player walks through, an improvement on this would be to record what doors they walked through to create heat maps and perform more statistical analysis to see whether players explore differently in the different game variations or if the players died in similar locations.
+	
+	Another issue with the collected data is that the questionnaire relied on players being honest. There could have been self-report bias where players gave different answers.  For example, players were asked if they understood the visualisation and they are unlikely to admit to not understanding. This could be addressed in future work by relying more on in-game data and wording the questions differently.
 	
 	\subsection{Random Nature of RRT}
-	As RRT randomly selects where to place its node each player would have a different RRT. This affects the enemy movement as it leads them to move in different ways. Also, some areas had clutter objects such as crates in them, if the path went through the crates they could be knocked over causing the enemy to have to move a different way and affecting how the player can move. 
-	While A* always find the shortest path between two points it is very unlikely that players and enemies will be in the exact same spot and thus unlikely that players will get the same path from A*. 
+	As RRT randomly selects where to place each node each player would have a different RRT. This affects the enemy movement as it leads them to move in different ways. Also, some areas had clutter objects such as crates in them, if the path went through the crates they could be knocked over causing the enemy to have to move a different way and affecting how the player can move. 
+	
+	While A* always find the shortest path between two points it is very unlikely that players and enemies will be in the exact same spot and thus unlikely that players will get the same path from A*. As both versions have the potential to give different paths each time this is not currently a major issue.
 	
 	
 	\section{Future Work} \label{FutureWork}
@@ -596,19 +595,16 @@
 	
 	Also, as section~\ref{PotentialIssues} mentions, there were issues with the game used in this study, as future research would require a different or more complete game it could also give interesting data to look at pathfinding in more complex environments and other game genres such as stealth games. 
 	
-	Another area that could be explored in future work the RRT visualisation and variations on it. As the use of RRT in this study had numerous small RRTs with less than 500 nodes another area to research could be comparing having an RRT per room to an RRT per level. Another area would be to try varying the number of nodes in the RRT and for larger RRT variations clustering methods such as the one mentioned in section~\ref{AppPathfinding} that Bauer and Popovic used to make their use of RRT more legible.
+	Another area that could be explored in future work is the RRT visualisation and variations of it. As the use of RRT in this study had numerous small RRTs with less than 500 nodes each, another area to research could be comparing having an RRT per room to an RRT per level or varying the number of nodes in the RRT. Also for larger RRT variations clustering methods such as the one mentioned in section~\ref{AppPathfinding} that Bauer and Popovic use could be used.
 	
-
+	
 	\section{Conclusion} 
-	While the use of RRT is more frequent in robotics than digital games its use was feasible in this project. Its past use in game design tools shows that it can be used in games. However, the need of optimisations such as RRT* or the use of A* may arise in the future to produce shorter paths or to guarantee a path. 
-	The visualisation and foregrounding of AI have been successfully used before and while it was used here the results suggest that the players did not understand it and that future work would be required to see if it is suitable for use in games. Previous studies have looked at way-finding and player exploration and suggest that environmental factors in digital environments do have some effect on player exploration.  Similarly, this study found player exploration changed between games variations. 
+	While the use of RRT is more frequent in robotics than digital games its use was feasible in this project. Its past use in game design tools and the results gathered here show that it can be used in games. Previous studies have looked at way-finding and player exploration and suggest that environmental factors in digital environments do have some effect on player exploration.  Similarly, this study found player exploration changed between games variations. 
 	
 	This study found a number of significant results which suggest that the pathfinding method and visualisation do affect player exploration in a game level.  
 	Like many of the papers reviewed in section~\ref{RelatedWork} this could be applied in game design. Level designers could take it into account what type of path-finding will give the result they want as different results may be wanted for different genres or even different sections of the game. 
 	
 	In this study visualising the path-finding to the player often resulted in the player being unsure of what the visualisation was so more research may be required to use the visualisations in video games rather than just designing them.
-	
-	In conclusion, both the use of different path-finding techniques and the visualisation of these techniques in this study affected both player exploration and death frequency. 
 	
 	% references section
 	\bibliographystyle{IEEEtran}
@@ -617,35 +613,35 @@
 	% Appendices    
 	\appendices
 	\section{Acknowledgements}
-	 I would like to thank my project supervisor Dr. Ed Powley whose guidance and assistance were invaluable while working this project.
-	 I would also like to thank Bears are OP for allowing me to use their game in my playtesting and all the playtesters who took part in the study as I would have had no data without them.
-	 Finally, I would like to thank the other third year BSc students whose peer reviews and support I greatly appreciated throughout this project. 
-	 
+	I would like to thank my project supervisor Dr. Ed Powley whose guidance and assistance were invaluable while working this project.
+	I would also like to thank Bears are OP for allowing me to use their game in my playtesting and all the playtesters who took part in the study.
+	Finally, I would like to thank the third year BSc students whose peer reviews and support I greatly appreciated throughout this project. 
+	
 	\section{First appendix: Reflective Report}
 	%Appendices are optional. Delete or comment out this part if you do not need them.
 	
-	While I am pleased with the final paper I produced there are many parts to this paper and the software that I could have improved on. While I was slightly behind schedule on the written part of my dissertation I believe my main weaknesses during this project lay in the software and playtesting side of the project.    
+	While I am pleased with the paper I produced, there are many parts of this paper, the software and the software development process that I could have improved on. While I was slightly behind schedule on the written part of my dissertation I believe my main weaknesses during this project lay in the software and playtesting side of the project.    
 	
 	\subsection{Play Testing}
-	The first issue was play-testing I vastly underestimated how long this would take and left it too late. This lead to me struggling to get enough participants and resorting to getting more online. One way to address this in the future would be to run a larger pilot study. In this paper, the pilot study consisted of 4 players, one for each variation. These all took around 20 minutes however in the actual study player took up to an hour....
-	 
+	The first issues were with play-testing, I underestimated how long this would take and left it too late. This lead to me struggling to get enough participants and resorting to getting more online. Online participants were not ideal as I had no control over what computer they used or whether the data they gave was legitimate. One way to address this in the future would be to run a larger pilot study. In this paper, the pilot study consisted of 4 players, one for each variation. These all took around 20 minutes however in the actual study player took up to an hour.     
 	
-	Another issue was that I found it hard to ask people to participate in the study this was partially due to me leaving the play-testing too late so many students were working on assignments and not willing to do the study. Again this could be solved by starting the playtesting earlier or designing a shorter game so that potential participants would not have to devote so much time to the play-test.
+	Another issue was that I found it hard to get people to participate in the study, this was partially due to me leaving the play-testing too late so many students were working on assignments and not willing to do the play-test. Again this could be solved by starting the playtesting earlier or designing a shorter game so participants would not have to devote so much time to the play-test.
 	
 	\subsection{Data Collection}
-	The data collection using Google Forms and exporting from Unity both worked well as all the data was gathered and easy to analyses the main issue was the that the two datasets were separate so when analysing the data they had to be combined by matching up the player numbers on each set which was time-consuming. In the future I would want to combine the two, potentially making a Unity scene for the questionnaire so all the data is exported from the game. This removes the need for Google forms and player numbers but would mean that playtesting would need to be done in person as otherwise the file produced by the game would need to be emailed to me and there is a chance that the participants could tamper with the data.
+	The data collection using Google Forms and exporting from Unity worked well, the data was gathered and easy to analyse. The main issue was that the two datasets were separate so when analysing the data they had to be combined by matching up the player numbers on each set which was time-consuming. In the future, I would want to combine the two. One way to do this could be making a Unity scene for the questionnaire so all the data is exported from the game into a single .CSV. This removes the need for Google forms and matching player numbers but would mean that playtesting would need to be done in person as otherwise the file produced by the game would need to be emailed to me and there is a chance that the participants could tamper with the data or not send it at all.
 	
-	As well as improving data collection I would also want to improve what data is collected. In this study, I ran a small pilot study of four participants to see how long play tests take and to see what data I would get. I ran brief statistical tests on this data but not enough. In the future, I would want to do a larger pilot study and run more tests to see if the data exported from the game is enough or useful. For example in this study the game 
+	As well as improving data collection I would also want to improve what data is collected. In this study, I ran a small pilot study of four participants to see how long play tests take and to see what data I would get. I ran brief statistical tests on this data but not enough. In the future, I would want to do a larger pilot study and run more tests to see if the data exported from the game is enough or useful. For example in this study the game exports what percent of the doors have been walked through, now I have more data it is obvious additional data such as what doors they walked through and when would have been useful.
 	
-	Another area that I would improve on in the future would be how the data is collected and what data is collected. One issue I had with the data collected in this experiment is that the data from the game and the data from the questionnaire were both separate 
 	
 	\subsection{Play Testing Game}
 	One decision I had to make was what game I used for play-testing, my two options were to make a basic Unity game myself or use my COMP340 group game. In the time frame I had I did not think I could make a game that would be engaging enough to investigate player exploration so I choose to use the group game. 
-	Another benefit of using the group game is that it gave me more time to work on other aspects of the projects such as the RRT implementation and writing the paper it. The main issue with using the group game is that it was an unfinished game, it had white boxed areas and missing features such as the end of level boss and saving, which meant players had to restart after dying.
-	In this case with the given time frame, I think using the group game was the best option due to the time it saved. However, if I were to research this area again a game designed for the study would be more appropriate. This would allow for more experimentation with the path-finding visualisation and how it is used in a level and would allow for a more complete game level to be made as the game would be planned around the project rather than another module's assignment deadlines.
+	
+	A benefit of using the group game is that it gave me more time to work on other aspects of the projects such as the RRT implementation and writing the paper it. 
+	The main issue with using the group game is that it was an unfinished game, it had white boxed areas and missing features such as the end of level boss and saving, which meant players had to restart after dying.
+	In this case with the given time frame, I think using the group game was the best option due to the time it saved. However, if I were to research this area again a game designed for the study would be more appropriate. This would allow for more experimentation with the path-finding visualisation and how it is used in a level and would allow for a complete game level to be made as the game would be planned around the study rather than another module's assignment deadlines.
 	
 	
 	\subsection{Conclusion}
-	In conclusion, given the time frame, available resources and this being my first time doing first hand(???) research the end result was satisfactory. However, as listed above there are many things I learned through doing this project that would improve any future research I do in this area.
+	In conclusion, given the time frame, available resources and this being my first time attempt at primary research the end result was satisfactory. However, as listed above there are many things I learned through doing this project that would improve any future research I do in this area.
 	% that's all folks
 \end{document}
